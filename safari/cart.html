@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Cart</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20230614190625">
+	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header data-scroll-show class="header">
+			<div class="header__container">
+				<div class="header__menu menu">
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item"><a href="home.html" class="menu__link  ">Home</a></li>
+							<li class="menu__item"><a href="clothes.html " class="menu__link ">Clothes</a></li>
+							<li class="menu__item"><a href="shoes.html " class="menu__link ">Shoes</a></li>
+							<li class="menu__item"><a href="accessories.html" class="menu__link ">Accessories</a></li>
+						</ul>
+					</nav>
+				</div>
+				<a href="home.html" class="header__logo "><img src="img/logo.svg" alt="logo"></a>
+				<div class="header__actions header-actions">
+					<form data-dev data-validate class="header-actions__search header-search">
+						<!-- action="files/sendmail/sendmail.php" method="POST" -->
+						<div class="header-search__body">
+							<input type="text" name="form[]" data-error="Error" placeholder="Search..." class="header-search__input">
+							<button type="submit" class="header-search__button _icon-search"></button>
+							<button type="button" class="header-search__icon _icon-search"></button>
+						</div>
+					</form>
+					<a href="account-information.html" class="header-actions__item _icon-profile "></a>
+					<a href="cart-order.html" class="header-actions__item _icon-cart active"></a>
+					<a href="account-favorite.html" class="header-actions__item _icon-favorite "></a>
+
+				</div>
+
+			</div>
+		</header>
+		<main class="page">
+			<section class="page__cart cart">
+				<div class="cart__container cart__container_content">
+					<form class="cart__body cart-body" action="files/sendmail/sendmail.php" method="POST">
+						<div class="cart-body__column  cart-column">
+							<div class="cart-column__wrapper cart-column__wrapper_pb-32">
+								<h2 class="cart-column__title _icon-circle-check ">Shipping Address</h2>
+								<div class="cart-column__body">
+									<div class="cart-column__item">
+										<label for="adr-1" class="label">Email</label>
+										<input id="adr-1" type="text" name="form[]" data-error="Error" data-required="email" class="input">
+									</div>
+									<div class="cart-column__item">
+										<label for="adr-2" class="label">Full name</label>
+										<input id="adr-2" type="text" name="form[]" data-error="Error" class="input">
+									</div>
+									<div class="cart-column__item">
+										<label for="adr-3" class="label">Address</label>
+										<textarea id="adr-3" class="textarea" name="form[]" data-error="Error"></textarea>
+									</div>
+									<div class="cart-column__item ">
+										<label for="adr-4" class="label">State/Province</label>
+										<select id="adr-4" name="form[]" data-class-modif="account">
+											<option selected value="1">Male</option>
+											<option value="2">Female</option>
+										</select>
+
+									</div>
+									<div class="cart-column__item ">
+										<label for="adr-5" class="label">City</label>
+										<select id="adr-5" name="form[]" data-class-modif="account">
+											<option selected value="1">Male</option>
+											<option value="2">Female</option>
+										</select>
+
+									</div>
+									<div class="cart-column__item">
+										<label for="adr-6" class="label">Phone number</label>
+										<input id="adr-6" type="number" name="form[]" data-error="Error" class="input">
+									</div>
+
+									<div class="cart-column__checkbox checkbox">
+										<input id="ac-6" data-error="Помилка" class="checkbox__input" type="checkbox" value="1" name="form[]">
+										<label for="ac-6" class="checkbox__label"><span class="checkbox__text">Set default shipping
+												address</span></label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="cart-body__column ">
+							<div class="cart-column__wrapper cart-column__wrapper_pb-32">
+								<h2 class="cart-column__title cart-column__title_min-marg _icon-circle-check _active">Delivery method
+								</h2>
+								<div class="cart-column__body">
+									<div class=" cart-column__options-delivery  options">
+										<div class="options__item">
+											<input id="m_1" class="options__input" checked type="radio" value="1" name="delivery">
+											<label for="m_1" class="options__label"><span class="options__text">₦ 2,000</span></label>
+											<label for="m_1" class="options__label"><span class="options__text">Delivery free</span></label>
+										</div>
+										<div class="options__item">
+											<input id="m_2" class="options__input" type="radio" value="2" name="delivery">
+											<label for="m_2" class="options__label"><span class="options__text">₦ 4,000</span></label>
+											<label for="m_2" class="options__label"><span class="options__text">Delivery free</span></label>
+											<label for="m_2" class="options__label"><span class="options__text">Door delivery</span></label>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<div class="cart-column__wrapper">
+								<h2 class="cart-column__title _icon-circle-check _active">Payment Methods</h2>
+
+								<div class="cart-column__body">
+									<div class="cart-column__options-payment options">
+										<div class="options__item">
+											<input id="pay_1" class="options__input" type="radio" value="1" name="payment">
+											<label for="pay_1" class="options__label"><span class="options__text">Pay with card<small>(Get 5%
+														off total price and money
+														back guarantee)</small></span>
+
+											</label>
+											<div class="options__description">You will be redirected to Paystack payment gateway</div>
+										</div>
+										<div class="options__item">
+											<input id="pay_2" class="options__input" checked type="radio" value="2" name="payment">
+											<label for="pay_2" class="options__label"><span class="options__text">Pay on delivery
+
+												</span>
+											</label>
+											<ul class="options__list">
+												<li>Kindly note that we will only accept POS payment option on delivery</li>
+												<li>You have to make payment before opening package</li>
+												<li>Once the seal is broken, item can only be returned if damaged or defective</li>
+											</ul>
+
+
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="cart-body__column">
+							<div class="cart-column__wrapper cart-column__wrapper_pb-32">
+								<h1 class="cart-column__title cart-column__title_main ">ORDER SUMMARY</h1>
+								<div class="cart-column__body order-item">
+									<article class="order-item__body">
+										<a href="#" class="order-item__image-ibg">
+											<picture><source data-srcset="img/order/order_shoes1.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/order/order_shoes1.jpg" alt="order shoes"></picture>
+										</a>
+										<div class="order-item__about">
+											<a href="#" class="order-item__name">Casual flat loafers</a>
+											<div class="order-item__size">Size - EU: 36 US: 5.5</div>
+											<div class="order-item__value">₦ 10,000</div>
+
+											<div class="order-item__row">
+												<div class="order-item__label">Qty</div>
+												<div data-quantity class="order-item__quantity quantity">
+													<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+													<div class="quantity__input">
+														<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+													</div>
+													<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+												</div>
+											</div>
+										</div>
+
+
+									</article>
+									<article class="order-item__body">
+										<a href="#" class="order-item__image-ibg">
+											<picture><source data-srcset="img/order/order_clothes1.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/order/order_clothes1.jpg" alt="order lothes"></picture>
+										</a>
+										<div class="order-item__about">
+											<a href="#" class="order-item__name">Multicolored armless top</a>
+											<div class="order-item__size">Size - XS</div>
+											<div class="order-item__value">₦ 10,000</div>
+											<div class="order-item__row">
+												<div class="order-item__label">Qty</div>
+												<div data-quantity class="order-item__quantity quantity">
+													<button data-quantity-plus type="button" class="quantity__button quantity__button_plus"></button>
+													<div class="quantity__input">
+														<input data-quantity-value autocomplete="off" type="text" name="form[]" value="1">
+													</div>
+													<button data-quantity-minus type="button" class="quantity__button quantity__button_minus"></button>
+												</div>
+											</div>
+										</div>
+									</article>
+								</div>
+								<div class="cart-column__price order-price">
+									<div class="order-price__item main-price">
+										<div class="main-price__label">Cart sub-total</div>
+										<div class="main-price__value">₦ 20,000</div>
+									</div>
+									<div class="order-price__item discount-price">
+										<div class="discount-price__label">Card discount</div>
+										<div class="discount-price__value">- ₦ 1,000</div>
+									</div>
+									<div class="order-price__item delivery-price">
+										<div class="delivery-price__label">Delivery fee</div>
+										<div class="delivery-price__value">₦ 2,000</div>
+									</div>
+								</div>
+								<div class="cart-column__total-price total-price">
+									<div class="total-price__label">TOTAL</div>
+									<div class="total-price__value">₦ 21,000</div>
+								</div>
+							</div>
+							<div class="cart-column__question options">
+								<div class="options__question">Is this a gift?</div>
+								<div class="options__item">
+									<input id="qs_1" class="options__input" checked type="radio" value="1" name="question">
+									<label for="qs_1" class="options__label">Yes</label>
+								</div>
+								<div class="options__item">
+									<input id="qs_2" class="options__input" type="radio" value="2" name="question">
+									<label for="qs_2" class="options__label">No</label>
+								</div>
+								<div class="options__text">A complimentary gift receipt will be included in the package, and
+									prices will be hidden on the receipt.</div>
+							</div>
+							<button type="submit" class="cart-column__button main-button">PLACE ORDER</button>
+
+
+						</div>
+					</form>
+
+				</div>
+			</section>
+
+		</main>
+		<footer class="footer">
+			<div class="footer__container footer__container_content">
+				<a href="index.html" class="footer__logo"><img src="img/logo.svg" alt="logo"></a>
+				<div class="footer__body footer-body">
+					<nav class="footer-body__menu menu-footer">
+						<ul class="menu-footer__list">
+							<li class="menu-footer__item"><a href="#" class="menu-footer__link">About Us</a></li>
+							<li class="menu-footer__item"><a href="#" class="menu-footer__link">Contact</a></li>
+							<li class="menu-footer__item"><a href="#" class="menu-footer__link">Terms & Conditions</a></li>
+						</ul>
+
+					</nav>
+					<div class="footer-body__social social-footer">
+						<a href="#" class="social-footer__link _icon-social-fb">Facebook</a>
+						<a href="#" class="social-footer__link _icon-social-tw">Twitter</a>
+						<a href="#" class="social-footer__link _icon-social-ins">Instagram</a>
+					</div>
+					<div class="footer-body__subscribes subscribes-footer">
+						<div class="subscribes-footer__label">Subscibe to our newsletter</div>
+						<form class="subscribes-footer__form" action="#" method="#">
+							<input data-required="email" type="text" name="form[email]" data-error="Error" placeholder="Email Address" class="input">
+							<button type="submit" class="button">OK</button>
+						</form>
+					</div>
+				</div>
+				<div class="footer__contact footer-contact">
+					<ul class="footer-contact__list">
+						<li class="footer-contact__item"><a class="footer-contact__link" target="_blank" href="https://www.google.com/maps/place/Egipto+Viajeros/@38.7540614,-121.3276059,16z/data=!3m1!4b1!4m6!3m5!1s0x809b211c7901dfe3:0x810986b07a30ac5a!8m2!3d38.7540615!4d-121.3232285!16s%2Fg%2F11rb_8ppnj?entry=ttu">497
+								Evergreen Rd.Roseville, CA 95673</a></a></li>
+						<li class="footer-contact__item">
+							<a target="_blank" href="tel:+44345678903" class="footer-contact__link">+44 345 678 903</a>
+
+						</li>
+						<li class="footer-contact__item">
+							<a target="_blank" href="mailto:adobexd@mail.com" class="footer-contact__link">adobexd@mail.com</a>
+
+						</li>
+					</ul>
+
+
+				</div>
+				<button data-goto=".page" data-goto-header class="up _icon-arrow"></button>
+
+			</div>
+		</footer>
+	</div>
+	<script src="js/app.min.js?_v=20230614190625"></script>
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Account-information</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20230614190625">
+	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header data-scroll-show class="header">
+			<div class="header__container">
+				<div class="header__menu menu">
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item"><a href="home.html" class="menu__link  ">Home</a></li>
+							<li class="menu__item"><a href="clothes.html " class="menu__link ">Clothes</a></li>
+							<li class="menu__item"><a href="shoes.html " class="menu__link ">Shoes</a></li>
+							<li class="menu__item"><a href="accessories.html" class="menu__link ">Accessories</a></li>
+						</ul>
+					</nav>
+				</div>
+				<a href="home.html" class="header__logo "><img src="img/logo.svg" alt="logo"></a>
+				<div class="header__actions header-actions">
+					<form data-dev data-validate class="header-actions__search header-search">
+						<!-- action="files/sendmail/sendmail.php" method="POST" -->
+						<div class="header-search__body">
+							<input type="text" name="form[]" data-error="Error" placeholder="Search..." class="header-search__input">
+							<button type="submit" class="header-search__button _icon-search"></button>
+							<button type="button" class="header-search__icon _icon-search"></button>
+						</div>
+					</form>
+					<a href="account-information.html" class="header-actions__item _icon-profile active"></a>
+					<a href="cart-order.html" class="header-actions__item _icon-cart "></a>
+					<a href="account-favorite.html" class="header-actions__item _icon-favorite "></a>
+
+				</div>
+
+			</div>
+		</header>
+		<main class="page">
+			<section class="page__account account">
+				<div class="account__container account__container_content">
+					<aside data-spollers="767.98, max" class="account__dashboard account-dashboard">
+						<details class="account-dashboard__wrapper">
+							<summary>
+								<h2 class="account-dashboard__title">ACCOUNT DASHBOARD</h2>
+
+							</summary>
+							<div class="account-dashboard__body">
+								<ul class="account-dashboard__list">
+									<li class="account-dashboard__item  active">
+										<a href="account-information.html" class="account-dashboard__link _icon-account">Account Information</a>
+									</li>
+									<li class="account-dashboard__item ">
+										<a href="account-adress.html" class="account-dashboard__link _icon-address">Address Book</a>
+									</li>
+									<li class="account-dashboard__item ">
+										<a href="account-orders.html" class="account-dashboard__link _icon-orders">My Orders</a>
+									</li>
+									<li class="account-dashboard__item ">
+										<a href="account-favorite.html" class="account-dashboard__link _icon-favorite">My Favorites</a>
+									</li>
+								</ul>
+								<a href="sign-in.html" class="account-dashboard__button-out _icon-sign-out">SIGN OUT</a>
+							</div>
+						</details>
+					</aside>
+					<section class="account__information account-information">
+						<h1 class="account-information__title">User Information</h1>
+
+						<form class="account-information__form account-form  account-form_pass" action="files/sendmail/sendmail.php" method="POST">
+
+							<div class="account-form__body">
+								<div class="account-form__column">
+									<div class="account-form__item">
+										<label for="ac-1" class="label">First name</label>
+										<input id="ac-1" type="text" name="form[email]" data-error="Error" placeholder="Ayokunle" class="input">
+									</div>
+									<div class="account-form__item">
+										<label for="ac-2" class="label">Last name</label>
+										<input id="ac-2" type="text" name="form[email]" data-error="Error" placeholder="Oriolowo" class="input">
+									</div>
+									<div class="account-form__item">
+										<label for="ac-3" class="label">Email</label>
+										<input id="ac-3" type="text" name="form[email]" data-required="email" data-error="Error" placeholder="ayokunle@mail.com" class="input">
+									</div>
+									<div class="account-form__item ">
+										<label for="ac-4" class="label">Gender</label>
+										<select id="ac-4" name="form[]" data-class-modif="account">
+											<option selected value="1">Male</option>
+											<option value="2">Female</option>
+										</select>
+
+									</div>
+
+
+									<div class="account-form__item">
+										<label for="ac-5" class="label">Date of birth</label>
+										<input id="ac-5" type="number" name="form[email]" data-error="Error" class="input">
+									</div>
+									<div class="account-form__item">
+										<!-- <a href="account-password.html" class="account-form__link-pass">Change password</a> -->
+										<button type="button" class="account-form__link-pass">Change password</button>
+									</div>
+									<div class="account-form__checkbox checkbox">
+										<input id="ac-6" data-error="Помилка" class="checkbox__input" type="checkbox" value="1" name="form[]">
+										<label for="ac-6" class="checkbox__label"><span class="checkbox__text">Newsletter
+												subsciption</span></label>
+									</div>
+								</div>
+								<div class="account-form__column  account-form__column_pass">
+									<div class="account-form__item">
+										<label for="ac-7 " class="label">Current password</label>
+										<input id="ac-7" type="password" name="form[email]" data-error="Error" class="input">
+									</div>
+									<div class="account-form__item">
+										<label for="ac-8" class="label">New password</label>
+										<input id="ac-8" type="password" name="form[email]" data-error="Error" class="input">
+									</div>
+									<div class="account-form__item">
+										<label for="ac-9" class="label">Confirm new password</label>
+										<input id="ac-9" type="password" name="form[email]" data-error="Error" class="input">
+									</div>
+
+								</div>
+
+
+
+							</div>
+							<button type="submit" class="account-information__button main-button">save changes</button>
+						</form>
+					</section>
+				</div>
+			</section>
+
+		</main>
+		<footer class="footer">
+			<div class="footer__container footer__container_content">
+				<a href="index.html" class="footer__logo"><img src="img/logo.svg" alt="logo"></a>
+				<div class="footer__body footer-body">
+					<nav class="footer-body__menu menu-footer">
+						<ul class="menu-footer__list">
+							<li class="menu-footer__item"><a href="#" class="menu-footer__link">About Us</a></li>
+							<li class="menu-footer__item"><a href="#" class="menu-footer__link">Contact</a></li>
+							<li class="menu-footer__item"><a href="#" class="menu-footer__link">Terms & Conditions</a></li>
+						</ul>
+
+					</nav>
+					<div class="footer-body__social social-footer">
+						<a href="#" class="social-footer__link _icon-social-fb">Facebook</a>
+						<a href="#" class="social-footer__link _icon-social-tw">Twitter</a>
+						<a href="#" class="social-footer__link _icon-social-ins">Instagram</a>
+					</div>
+					<div class="footer-body__subscribes subscribes-footer">
+						<div class="subscribes-footer__label">Subscibe to our newsletter</div>
+						<form class="subscribes-footer__form" action="#" method="#">
+							<input data-required="email" type="text" name="form[email]" data-error="Error" placeholder="Email Address" class="input">
+							<button type="submit" class="button">OK</button>
+						</form>
+					</div>
+				</div>
+				<div class="footer__contact footer-contact">
+					<ul class="footer-contact__list">
+						<li class="footer-contact__item"><a class="footer-contact__link" target="_blank" href="https://www.google.com/maps/place/Egipto+Viajeros/@38.7540614,-121.3276059,16z/data=!3m1!4b1!4m6!3m5!1s0x809b211c7901dfe3:0x810986b07a30ac5a!8m2!3d38.7540615!4d-121.3232285!16s%2Fg%2F11rb_8ppnj?entry=ttu">497
+								Evergreen Rd.Roseville, CA 95673</a></a></li>
+						<li class="footer-contact__item">
+							<a target="_blank" href="tel:+44345678903" class="footer-contact__link">+44 345 678 903</a>
+
+						</li>
+						<li class="footer-contact__item">
+							<a target="_blank" href="mailto:adobexd@mail.com" class="footer-contact__link">adobexd@mail.com</a>
+
+						</li>
+					</ul>
+
+
+				</div>
+				<button data-goto=".page" data-goto-header class="up _icon-arrow"></button>
+
+			</div>
+		</footer>
+	</div>
+	<script src="js/app.min.js?_v=20230614190625"></script>
+</body>
+
+</html>
