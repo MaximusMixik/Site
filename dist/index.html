@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Digital Project</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20230804122221">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Максим Смоляк">
+	<meta name="description" content="Сайт о строительстве зданий и конструкций">
+	<meta name="keywords" content="строительство, здания, конструкции, ремонт, стройка">
+	<meta name="robots" content="index, follow">
+	<meta property="og:title" content="Digital Project">
+	<meta property="og:description" content="Сайт о строительстве зданий и конструкций">
+	<meta property="og:image" content="img/header_logo.png">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<a href="#" class="header__logo"><picture><source data-srcset="img/header_logo.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/header_logo.png" alt="logo"></picture></a>
+
+				<div class="header__menu menu">
+					<button type="button" aria-label="burger" class="menu__icon icon-menu"><span></span></button>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item"><a href="#" class="menu__link active">ГЛАВНАЯ</a></li>
+							<li class="menu__item"><a href="#" data-goto=".about" data-goto-header class="menu__link">ГАЛЕРЕЯ</a></li>
+							<li class="menu__item"><a href="#" data-goto=".projects" data-goto-header class="menu__link">ПРОЕКТЫ</a></li>
+							<li class="menu__item"><a href="#" data-goto=".task" data-goto-header class="menu__link">СЕРТИФИКАТЫ</a></li>
+							<li class="menu__item"><a href="#" data-goto=".contacts" data-goto-header class="menu__link">КОНТАКТЫ</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<section class="page__main main">
+				<div class="main__container">
+					<div class="main__content">
+						<h1 class="main__title title">PROJECT <span>HOME</span></h1>
+						<div data-da=".main__container, 991.98" class="main__navigation swiper-navigation">
+							<div class="swiper-navigation__buttons">
+								<button aria-label="button prev" type="button" class="swiper-navigation__button swiper-navigation__button_prev"><svg>
+										<use xlink:href="img/icons/icons.svg#arrow"></use>
+									</svg></button>
+								<button aria-label="button next" type="button" class="swiper-navigation__button swiper-navigation__button_next">
+									<svg>
+										<use xlink:href="img/icons/icons.svg#arrow"></use>
+									</svg>
+								</button>
+							</div>
+							<div data-da=".swiper-navigation__buttons, 991.98, 1" class="swiper-navigation__pagination"></div>
+
+						</div>
+					</div>
+					<div class="main__slider main-swiper">
+						<div class="main-swiper__wrapper swiper-wrapper">
+							<div class="main-swiper__slide main-slide swiper-slide">
+								<picture><source data-srcset="img/main/main_image.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/main/main_image.jpeg" alt="Здание"></picture>
+								<a data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" data-swiper-parallax-scale="0.15" data-swiper-parallax-duration="700" href="#" class="main-slide__button button">ВЗГЛЯНУТЬ <svg>
+										<use xlink:href="img/icons/icons.svg#arrow"></use>
+									</svg></a>
+							</div>
+							<div class="main__slide main-slide swiper-slide">
+								<picture><source data-srcset="img/main/main_image.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/main/main_image.jpeg" alt="Здание"></picture>
+								<a data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" data-swiper-parallax-scale="0.15" data-swiper-parallax-duration="700" href="#" class="main-slide__button button">ВЗГЛЯНУТЬ <svg>
+										<use xlink:href="img/icons/icons.svg#arrow"></use>
+									</svg></a>
+							</div>
+
+
+
+
+
+						</div>
+
+					</div>
+				</div>
+			</section>
+			<section class="page__about about">
+				<div class="about__container">
+					<div data-gallery class="about__gallery gallery">
+
+						<a data-watch data-watch-once href="img/about/about_img1.jpeg" class="gallery__item-ibg"><picture><source srcset="img/about/about_img1.webp" type="image/webp"><img src="img/about/about_img1.jpeg" alt="унікальний будинок"></picture></a>
+						<a data-watch data-watch-once href="img/about/about_img2.jpeg" class="gallery__item-ibg"> <picture><source srcset="img/about/about_img2.webp" type="image/webp"><img src="img/about/about_img2.jpeg" alt="унікальний будинок"></picture></a>
+						<a data-watch data-watch-once href="img/about/about_img3.jpeg" class="gallery__item-ibg"> <picture><source srcset="img/about/about_img3.webp" type="image/webp"><img src="img/about/about_img3.jpeg" alt="унікальний будинок"></picture></a>
+
+
+					</div>
+					<div class="about__content">
+						<h2 data-watch data-watch-once class="about__title title">О компании</h2>
+						<div data-watch data-watch-once class="about__text">
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+								industry's standard
+								dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+								a type specimen
+								book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+								essentially
+								unchanged.</p>
+						</div>
+						<a data-watch data-watch-once href="#" class="about__button button button_width">ЧИТАТЬ<svg>
+								<use xlink:href="img/icons/icons.svg#arrow"></use>
+							</svg></a>
+					</div>
+
+				</div>
+			</section>
+			<section class="page__task task">
+				<div class="task__container">
+
+					<h2 data-watch data-watch-once class="task__title title">Основные задачи</h2>
+					<ol class="task__list task-list">
+						<li data-watch data-watch-once class=" task-list__item">
+							<p>Создание комфортных условий и повышение качества обслуживания клиентов</p>
+						</li>
+						<li data-watch data-watch-once class=" task-list__item">
+							<p>Постоянно совершенствовать качество предоставляемых услуг путем обучения персонала, закупки нового
+								оборудования и
+								усиленной рекламы на рынке</p>
+						</li>
+
+					</ol>
+
+				</div>
+			</section>
+			<section class="page__projects projects">
+				<div class="projects__container">
+					<h2 data-watch data-watch-once class="projects__title title">Наши проекты</h2>
+					<div class="projects__body projects-body">
+						<article data-watch data-watch-once class=" projects-body__item item-projects">
+							<div class="item-projects__wrapper">
+								<a href="#" class="item-projects__image-ibg"><picture><source data-srcset="img/projects/projects_img1.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/projects/projects_img1.jpg" alt="Наши проекты"></picture>
+								</a>
+								<div class="item-projects__content">
+									<h2 class="item-projects__title title title_white">ДОСУГОВЫЙ
+										ЦЕНТР</h2>
+									<a href="#" class="item-projects__button button button_transparent">ПОДРОБНЕЕ<svg>
+											<use xlink:href="img/icons/icons.svg#arrow"></use>
+										</svg></a>
+									</a>
+								</div>
+						</article>
+						<article data-watch data-watch-once class=" projects-body__item item-projects">
+							<div class="item-projects__wrapper">
+								<a href="#" class="item-projects__image-ibg"><picture><source data-srcset="img/projects/projects_img2.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/projects/projects_img2.jpg" alt="Наши проекты"></picture>
+								</a>
+								<div class="item-projects__content">
+									<h2 class="item-projects__title title title_white title title_white">ДОСУГОВЫЙ
+										ЦЕНТР</h2>
+									<a href="#" class="item-projects__button button button_transparent">ПОДРОБНЕЕ<svg>
+											<use xlink:href="img/icons/icons.svg#arrow"></use>
+										</svg></a>
+									</a>
+								</div>
+						</article>
+						<article data-watch data-watch-once class="projects-body__item  item-projects">
+							<div class="item-projects__wrapper">
+								<a href="#" class="item-projects__image-ibg"><picture><source data-srcset="img/projects/projects_img3.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/projects/projects_img3.jpg" alt="Наши проекты"></picture>
+								</a>
+								<div class="item-projects__content">
+									<h2 class="item-projects__title title title_white">ДОСУГОВЫЙ
+										ЦЕНТР</h2>
+									<a href="#" class="item-projects__button button button_transparent">ПОДРОБНЕЕ<svg>
+											<use xlink:href="img/icons/icons.svg#arrow"></use>
+										</svg></a>
+									</a>
+								</div>
+						</article>
+						<article data-watch data-watch-once class="projects-body__item  item-projects">
+							<div class="item-projects__wrapper">
+								<a href="#" class="item-projects__image-ibg"><picture><source data-srcset="img/projects/projects_img4.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/projects/projects_img4.jpg" alt="Наши проекты"></picture>
+								</a>
+								<div class="item-projects__content">
+									<h2 class="item-projects__title title title_white">ДОСУГОВЫЙ
+										ЦЕНТР</h2>
+									<a href="#" class="item-projects__button button button_transparent">ПОДРОБНЕЕ<svg>
+											<use xlink:href="img/icons/icons.svg#arrow"></use>
+										</svg></a>
+									</a>
+								</div>
+						</article>
+						<article data-watch data-watch-once class="projects-body__item  item-projects">
+							<div class="item-projects__wrapper">
+								<a href="#" class="item-projects__image-ibg"><picture><source data-srcset="img/projects/projects_img5.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/projects/projects_img5.jpg" alt="Наши проекты"></picture>
+								</a>
+								<div class="item-projects__content">
+									<h2 class="item-projects__title title title_white">ДОСУГОВЫЙ
+										ЦЕНТР</h2>
+									<a href="#" class="item-projects__button button button_transparent">ПОДРОБНЕЕ<svg>
+											<use xlink:href="img/icons/icons.svg#arrow"></use>
+										</svg></a>
+									</a>
+								</div>
+						</article>
+						</a>
+
+					</div>
+					<a data-watch data-watch-once href="#" class="projects__button button button_black">ВСЕ ПРОЕКТЫ<svg>
+							<use xlink:href="img/icons/icons.svg#arrow"></use>
+						</svg></a>
+				</div>
+			</section>
+			<section class="page__contacts contacts">
+				<div class="contacts__container">
+					<h2 data-watch data-watch-once class="contacts__title title">Связаться с нами</h2>
+					<div class="contacts__body">
+						<form class="contacts__form form" action="files/sendmail/sendmail.php" method="POST">
+							<div class="form__wrapper">
+								<div data-watch data-watch-once class="form__item  form-item">
+									<!-- <label class="form-item__label" for="name">Имя</label> -->
+									<input class="form-item__input" type="text" placeholder="Имя" name="name" id="name" data-error="Error">
+								</div>
+								<div data-watch data-watch-once class="form__item form-item">
+									<input class="form-item__input" type="text" placeholder="Номер телефона*" name="phone-number" id="phone-number" data-error="Error">
+									<!-- <label class="form-item__label" for="phone-number">Номер телефона<span>*</span></label> -->
+								</div>
+								<div data-watch data-watch-once class="form__item form-item">
+									<input class="form-item__input" type="email" placeholder="E-mail*" name="email" id="email" data-error="Error">
+									<!-- <label class="form-item__label" for="email">E-mail<span>*</span></label> -->
+								</div>
+								<div data-watch data-watch-once class="form__item  form-item">
+									<select name="select" data-class-modif="form">
+										<option value="1" selected>Интересующий товар/услуга</option>
+										<option value="2">Пункт №2</option>
+										<option value="3">Пункт №3</option>
+										<option value="4">Пункт №4</option>
+									</select>
+								</div>
+								<div data-watch data-watch-once class="form__item form-item">
+									<textarea class="form-item__textarea" placeholder="Сообщение" name="textarea" id="textarea"></textarea>
+									<!-- <label class="form-item__label" for="textarea">Сообщение<span>*</span></label> -->
+								</div>
+							</div>
+							<div data-watch data-watch-once class="form__item checkbox">
+								<input id="checkbox" data-error="Помилка" class="checkbox__input" type="checkbox" value="1" name="checkbox">
+								<label for="checkbox" class="checkbox__label"><span class="checkbox__text">Отправляя заявку Вы
+										соглашаетесь
+										с политикой
+										конфиденциальности</span></label>
+							</div>
+
+							<button data-watch data-watch-once type="submit" class="form__button button button_black">ОТПРАВИТЬ<svg>
+									<use xlink:href="img/icons/icons.svg#arrow"></use>
+								</svg></button>
+						</form>
+						<div data-watch data-watch-once class="contacts__image-ibg">
+							<picture><source data-srcset="img/contacts/contacts_img.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/contacts/contacts_img.jpeg" alt="Контакты"></picture>
+						</div>
+					</div>
+				</div>
+
+
+			</section>
+
+
+		</main>
+		<footer class="footer">
+			<div class="footer__top footer-top">
+				<div class="footer-top__container">
+					<a data-watch data-watch-once href="#" class="footer-top__logo">
+						<picture><source data-srcset="img/logo-footer.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/logo-footer.png" alt="logo"></picture></a>
+
+
+					<div data-spollers="479.98, max" class="footer-top__spollers footer-spollers">
+						<details data-watch data-watch-once class="footer-spollers__item">
+							<summary class="footer-spollers__title">
+								<h3>Информация</h3>
+							</summary>
+							<ul class="footer-spollers__list footer-spollers-list">
+								<li class="footer-spollers-list__item"><a href="#" class="footer-spollers-list__link">Главная</a></li>
+								<li class="footer-spollers-list__item"><a href="#" data-goto=".about" data-goto-header class="footer-spollers-list__link">Галерея</a></li>
+								<li class="footer-spollers-list__item"><a href="#" data-goto=".projects" data-goto-header class="footer-spollers-list__link">Проекты</a></li>
+								<li class="footer-spollers-list__item"><a href="#" data-goto=".task" data-goto-header class="footer-spollers-list__link">Сертификаты</a></li>
+								<li class="footer-spollers-list__item"><a href="#" data-goto=".contacts" data-goto-header class="footer-spollers-list__link">Контакты</a></li>
+							</ul>
+						</details>
+						<details data-watch data-watch-once class="footer-spollers__item">
+							<summary class="footer-spollers__title">
+								<h3>Контакты</h3>
+							</summary>
+							<ul class="footer-spollers__list footer-spollers-list">
+								<li class="footer-spollers-list__item"><a href="https://goo.gl/maps/9rZpeK2zkbmY6tyP6" target="_blank" class="footer-spollers-list__link">
+										<svg>
+											<use xlink:href="img/icons/icons.svg#location"></use>
+										</svg>
+										100000, Республика Казахстан, <br>
+										г. Караганда, ул. Телевизионная 10</a></li>
+								<li class="footer-spollers-list__item"><a href="tel:+38(000)0000000" target="_blank" class="footer-spollers-list__link">
+										<svg>
+											<use xlink:href="img/icons/icons.svg#phone"></use>
+										</svg> +38 (000) 000 00 00</a></li>
+								<li class="footer-spollers-list__item"><a href="mailto:mail@gmail.com" target="_blank" class="footer-spollers-list__link">
+										<svg>
+											<use xlink:href="img/icons/icons.svg#mail"></use>
+										</svg> mail@gmail.com</a></li>
+							</ul>
+						</details>
+
+					</div>
+
+					<div data-watch data-watch-once class="footer-top__social footer-social">
+						<h3 class="footer-social__title">Социальные сети</h3>
+						<ul class="footer-social__list">
+							<li class="footer-social__item"><a aria-label="facebook" target="_blank" href="#" class="footer-social__link"><svg>
+										<use xlink:href="img/icons/icons.svg#social-facebook"></use>
+									</svg></a></li>
+							<li class="footer-social__item"><a href="#" aria-label="tweeter" target="_blank" class="footer-social__link"><svg>
+										<use xlink:href="img/icons/icons.svg#social-tweeter"></use>
+									</svg></a></li>
+							<li class="footer-social__item"><a href="#" aria-label="likedeen" target="_blank" class="footer-social__link"><svg>
+										<use xlink:href="img/icons/icons.svg#social-likedeen"></use>
+									</svg></a></li>
+							<li class="footer-social__item"><a href="#" aria-label="pinterest" target="_blank" class="footer-social__link"><svg>
+										<use xlink:href="img/icons/icons.svg#social-pinterest"></use>
+									</svg></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="footer__bottom footer-bottom">
+				<div data-watch data-watch-once class="footer-bottom__container">
+					<div class="footer-bottom__copyright">© 2019 Digital Project. Все права защищены.</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<!-- Стилі для body -->
+	<style>
+		.lock body {
+			overflow: hidden;
+			touch-action: none;
+			overscroll-behavior: none;
+		}
+
+		.loading body {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		.loaded body {
+			transition: opacity 0.5s ease 0s;
+			opacity: 1;
+			visibility: visible;
+		}
+	</style>
+	<div id="fls-preloader">
+		<style>
+			* {
+				padding: 0px;
+				margin: 0px;
+				border: 0px;
+			}
+
+			*,
+			*:before,
+			*:after {
+				box-sizing: border-box;
+			}
+
+			html {
+				overflow: hidden;
+				touch-action: none;
+				overscroll-behavior: none;
+			}
+
+			body {
+				background-color: #fcf8f3;
+
+			}
+
+			.fls-preloader {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 100px;
+				height: 100px;
+
+			}
+
+			.fls-preloader hr {
+				border: 0;
+				margin: 0;
+				width: 40%;
+				height: 40%;
+				position: absolute;
+				border-radius: 50%;
+				animation: spin 2s ease-out infinite
+			}
+
+			.fls-preloader :first-child {
+				background-color: #c6d8e2;
+				animation-delay: -1.5s
+			}
+
+			.fls-preloader :nth-child(2) {
+				background-color: #bdbdbd;
+				animation-delay: -1s
+			}
+
+			.fls-preloader :nth-child(3) {
+				background-color: #c6d8e2;
+				animation-delay: -0.5s
+			}
+
+			.fls-preloader :last-child {
+				background-color: #bdbdbd;
+			}
+
+			@keyframes spin {
+
+				0%,
+				100% {
+					transform: translate(0)
+				}
+
+				25% {
+					transform: translate(160%)
+				}
+
+				50% {
+					transform: translate(160%, 160%)
+				}
+
+				75% {
+					transform: translate(0, 160%)
+				}
+			}
+		</style>
+		<!-- Скріпт прелоадера -->
+		<script>
+			function preloader() {
+				const preloaderImages = document.querySelector('[data-preloader]') ? document.querySelectorAll('[data-preloader] img') : document.querySelectorAll('img');
+				const preloaderContainer = document.querySelector('#fls-preloader');
+				if (preloaderImages.length) {
+					const preloaderTemplate = `
+					<div class="fls-preloader">
+						<hr />
+	<hr />
+	<hr />
+	<hr />
+		</div>`;
+					document.querySelector('html').insertAdjacentHTML("beforeend", preloaderTemplate);
+
+					const
+						preloader = document.querySelector('.fls-preloader'),
+						showPecentLoad = document.querySelector('.fls-preloader__counter'),
+						showLineLoad = document.querySelector('.fls-preloader__line span'),
+						htmlDocument = document.documentElement;
+
+					let imagesLoadedCount = counter = progress = 0;
+
+					htmlDocument.classList.add('loading');
+					htmlDocument.classList.add('lock');
+
+					preloaderImages.forEach(preloaderImage => {
+						const imgClone = document.createElement('img');
+						if (imgClone) {
+							imgClone.onload = imageLoaded;
+							imgClone.onerror = imageLoaded;
+							preloaderImage.dataset.src ? imgClone.src = preloaderImage.dataset.src : imgClone.src = preloaderImage.src;
+						}
+					});
+
+					function setValueProgress(progress) {
+						showPecentLoad ? showPecentLoad.innerText = `${progress}%` : null;
+						showLineLoad ? showLineLoad.style.width = `${progress}%` : null;
+					}
+					showPecentLoad ? setValueProgress(progress) : null;
+
+					function imageLoaded() {
+						imagesLoadedCount++;
+						progress = Math.round((100 / preloaderImages.length) * imagesLoadedCount);
+						const intervalId = setInterval(() => {
+							counter >= progress ? clearInterval(intervalId) : setValueProgress(++counter);
+							counter >= 100 ? addLoadedClass() : null;
+						}, 10);
+					}
+
+					function addLoadedClass() {
+						htmlDocument.classList.add('loaded');
+						htmlDocument.classList.remove('lock');
+						htmlDocument.classList.remove('loading');
+						setInterval(() => {
+							preloader.remove();
+							preloaderContainer.remove();
+						}, 500);
+					}
+				} else {
+					preloaderContainer.remove();
+				}
+			}
+			preloader();
+		</script>
+	</div>
+	<script src="js/app.min.js?_v=20230804122221"></script>
+</body>
+
+</html>
