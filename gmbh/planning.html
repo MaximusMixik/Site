@@ -5,15 +5,126 @@
 	<title>Projektierung</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<script src="https://polyfill.io/v3/polyfill.min.js?features=default&_v=20230825123923"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20230825123923">
+
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="HBS Automation GmbH bietet europaweit Projektierung, Service und Wartung für Schaltanlagen, Gebäudeautomation und Prozesstechnik. Spezialisiert auf Automatisierung von Gebäuden, industriellen Anlagen und mehr.">
 	<meta name="keywords" content="HBS Automation, Schaltanlagen, Gebäudeautomation, Prozesstechnik, Automatisierung, Projektierung, Service, Wartung">
 	<meta name="author" content="HBS Automation GmbH">
+	<!-- Стилі для body -->
+	<style>
+		.lock body {
+			/* overflow: hidden; */
+			touch-action: none;
+			/* overscroll-behavior: none; */
+		}
 
+		.loading body {
+			opacity: 0;
+			visibility: hidden;
+			/* overflow: hidden; */
+			background: linear-gradient(150deg, rgba(0, 153, 153, 0.5027546174719888) 0%, rgba(255, 255, 255, 0) 50%, rgba(0, 153, 153, 0.4971523765756303) 100%);
+
+		}
+
+		.loaded body {
+			transition: opacity 0.5s ease 0s;
+			opacity: 1;
+			visibility: visible;
+		}
+	</style>
+	<!-- Стилі для прелоадера -->
+	<style>
+		* {
+			padding: 0px;
+			margin: 0px;
+			border: 0px;
+		}
+
+		*,
+		*:before,
+		*:after {
+			box-sizing: border-box;
+		}
+
+		html {
+			overflow: auto;
+			touch-action: none;
+			overscroll-behavior: none;
+		}
+
+
+		/* Головний блок */
+		.fls-preloader {
+			pointer-events: none;
+			z-index: -1;
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		/* Блок з елементами */
+		.fls-preloader__body {
+			padding: 0.93rem;
+			/* max-width: 31.25rem; */
+			display: flex;
+			flex-direction: column;
+			/* align-items: center; */
+			gap: 12px;
+			/* text-align: center; */
+		}
+
+		.fls-preloader__image {
+			width: 200px;
+			align-self: center;
+			text-align: center;
+
+		}
+
+		.fls-preloader__image img {
+			max-width: 100%;
+		}
+
+		/* Блок з лічильником */
+		.fls-preloader__counter {
+			font-size: 6rem;
+			text-align: center;
+		}
+
+		@media (max-width: 30em) {
+			.fls-preloader__counter {
+				font-size: 3rem;
+			}
+		}
+
+
+
+		/* Прогресбар */
+		.fls-preloader__line {
+			/* width: 100%;
+					
+					border: 1px solid #28bebe; */
+		}
+
+		/* Лінія прогресбару */
+		.fls-preloader__line span {
+			text-align: start;
+			display: inline-block;
+			border-radius: 20px;
+
+			transition: width 0.2s ease;
+			height: 0.8rem;
+			background-color: #28bebe;
+		}
+	</style>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=default&_v=20230825175522"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20230825175522">
 </head>
 
 <body>
@@ -129,291 +240,291 @@ downloads
 
 -->
 		<main class="page">
-			<section class="page__bread-crumbs bread-crumbs">
+			<div class="page__bread-crumbs bread-crumbs">
 				<nav class="bread-crumbs__container">
 					<span> Sie befinden sich hier:</span>
 					<a class="bread-crumbs__link _icon-arrow" href="home.html">Startseite</a>
 					<a class="bread-crumbs__link _icon-arrow active" href="#">Leistungen</a>
 					<a class="bread-crumbs__link _icon-arrow active" href="#">Projektierung</a>
 				</nav>
-			</section>
-			<section class="page__header-template header-template">
-				<div class="header-template__container">
-					<div class="header-template__active header-template-active">
-						<div class="header-template-active__icon">
-							<svg>
-								<use xlink:href="img/icons/icons.svg#pie"></use>
-							</svg>
-						</div>
-						<h1 class="header-template-active__title title">Projektierung</h1>
-					</div>
-					<nav class="header-template__navigation header-template-navigation">
-						<ul class="header-template-navigation__list">
-							<!-- <li class="header-template-navigation__item"><a href="#">Gebäudeautomation</a></li> -->
-							<li class="header-template-navigation__item">
-								<a href="automation.html" class="header-template-navigation__link">
-									<div class="header-template-navigation__icon"><svg>
-											<use xlink:href="img/icons/icons.svg#house"></use>
-										</svg></div>
-									<span class="header-template-navigation__title">Gebäude<br>automation</span>
-								</a>
-							</li>
-							<li class="header-template-navigation__item">
-								<a href="process.html" class="header-template-navigation__link">
-									<div class="header-template-navigation__icon"><svg>
-											<use xlink:href="img/icons/icons.svg#process"></use>
-										</svg></div>
-									<span class="header-template-navigation__title">Prozess<br>technik</span>
-								</a>
-							</li>
-							<li class="header-template-navigation__item">
-								<a href="service.html" class="header-template-navigation__link">
-									<div class="header-template-navigation__icon"><svg>
-											<use xlink:href="img/icons/icons.svg#gear"></use>
-										</svg></div>
-									<span class="header-template-navigation__title">Service /<br>Wartung</span>
-								</a>
-							</li>
-							<li class="header-template-navigation__item">
-								<a href="contacts.html" class="header-template-navigation__link">
-									<div class="header-template-navigation__icon"><svg>
-											<use xlink:href="img/icons/icons.svg#table"></use>
-										</svg></div>
-									<span class="header-template-navigation__title">Unsere <br>Kontakte</span>
-								</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
-			</section>
-			<div class="page__body-template body-template">
-				<div class=" body-template__container">
-					<div class="body-template__content body-template-content">
-						<div class="body-template-content__text text">
-							<p>Die Fachabteilung Projektierung der HBS Automation GmbH bietet fachgerechte Planung, Zeichnung und
-								Dokumentation für
-								Schaltanlagen jeder Art.</p>
-							<p>HBS Automation plant und konstruiert Schaltanlagen mittels <span>EPlan Electric P8 und WS-CAD</span>.
-								Von einfachen Installationsverteilern über Bedientableaus und -pulte bis zu hochkomplexen
-								Automatisierungsanlagen ist
-								alles möglich. </p>
-						</div>
-						<button data-goto=".contacts" data-goto-header class="body-template-content__button button">Termin
-							vereinbaren</button>
-
-					</div>
-					<div class="body-template__image-ibg"><picture><source data-srcset="img/main/planning.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/main/planning.jpg" alt="planning"></picture></div>
-				</div>
-			</div>
-			<section class="page__footer-template footer-template">
-				<div class="footer-template__container">
-					<div class="footer-template__desription footer-template-desription">
-						<h2 data-watch data-watch-once class="footer-template-desription__title title">Wodurch heben sich unsere
-							Methoden ab?</h2>
-						<div class="footer-template-desription__text text">
-							<p data-watch data-watch-once>Als herstellerunabhängiger Anwender von
-								Geräten für den Einbau in
-								Schaltanlagen sind wir in
-								der Lage
-								auf persönliche
-								Wünsche unserer Kunden einzugehen und unter Einhaltung aktueller Normen und Richtlinien individuelle
-								Lösungen für ihre
-								Anlage zu finden. </p>
-						</div>
-					</div>
-					<div class="footer-template__advantages footer-template-advantages">
-						<ul class="footer-template-advantages__list">
-							<li data-watch data-watch-once class="footer-template-advantages__item _icon-checked">Wir betreuen Ihr
-								Projekt von der
-								Planung über
-								die Inbetriebnahme bis hin zu Wartung und Service</li>
-							<li data-watch data-watch-once class="footer-template-advantages__item _icon-checked">HBS Automation
-								bietet Ihnen
-								europaweit die
-								Planung und Fertigung Ihrer Schaltanlage, sowie die Realisierung Ihres
-								Projektes, Wartung und Service</li>
-							<!-- <li    data-watch data-watch-once    class="footer-template-advantages__item _icon-checked"></li> -->
-						</ul>
-					</div>
-				</div>
-			</section>
-
-			<section class="page__social social">
-				<div data-watch data-watch-once class="social__container">
-					<div class="social__title">Teilen:</div>
-					<div class="social__items">
-						<a class="social__link _icon-message" aria-label="message" href="#"></a>
-						<a class=" social__link  _icon-facebook" aria-label="facebook" href="#"></a>
-						<a class=" social__link  _icon-tweeter" aria-label="tweeter" href="#"></a>
-					</div>
-
-				</div>
-			</section>
-			<section class="page__products products">
-				<div class="products__container">
-					<h2 data-watch data-watch-once class="products__title">Bilder unserer Bauvorhaben</h2>
-					<div data-watch data-watch-once class="products__body">
-						<div class="products__swiper products-swiper">
-							<div data-gallery class="products-swiper__wrapper swiper-wrapper">
-								<a href="img/production/big/production_img1.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg ">
-									<div class="swiper-lazy-preloader "></div>
-
-									<picture><source srcset="img/production/production_img1.webp" type="image/webp"><img src="img/production/production_img1.jpg" loading="lazy" alt="products slide"></picture>
-								</a>
-								<a href="img/production/big/production_img2.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg">
-									<div class="swiper-lazy-preloader "></div>
-
-									<picture><source srcset="img/production/production_img2.webp" type="image/webp"><img src="img/production/production_img2.jpg" loading="lazy" alt="products slide"></picture>
-								</a>
-								<a href="img/production/big/production_img3.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg">
-									<div class="swiper-lazy-preloader "></div>
-
-									<picture><source srcset="img/production/production_img3.webp" type="image/webp"><img src="img/production/production_img3.jpg" loading="lazy" alt="products slide"></picture>
-								</a>
-								<a href="img/production/big/production_img4.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg">
-									<div class="swiper-lazy-preloader "></div>
-
-									<picture><source srcset="img/production/production_img4.webp" type="image/webp"><img src="img/production/production_img4.jpg" loading="lazy" alt="products slide"></picture>
-								</a>
-								<a href="img/production/big/production_img5.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg">
-									<div class="swiper-lazy-preloader "></div>
-
-									<picture><source srcset="img/production/production_img5.webp" type="image/webp"><img src="img/production/production_img5.jpg" loading="lazy" alt="products slide"></picture>
-								</a>
-								<a href="img/production/big/production_img6.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg">
-									<div class="swiper-lazy-preloader "></div>
-
-									<picture><source data-srcset="img/production/production_img6.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/production/production_img6.jpg" loading="lazy" alt="products slide"></picture>
-								</a>
-								<a href="img/production/big/production_img7.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg">
-									<div class="swiper-lazy-preloader "></div>
-
-									<picture><source srcset="img/production/production_img7.webp" type="image/webp"><img src="img/production/production_img7.jpg" loading="lazy" alt="products slide"></picture>
-								</a>
-								<a href="img/production/big/production_img8.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg">
-									<div class="swiper-lazy-preloader "></div>
-
-									<picture><source srcset="img/production/production_img8.webp" type="image/webp"><img src="img/production/production_img8.jpg" loading="lazy" alt="products slide"></picture>
-								</a>
-								<a href="img/production/big/production_img9.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg">
-									<div class="swiper-lazy-preloader "></div>
-
-									<picture><source srcset="img/production/production_img9.webp" type="image/webp"><img src="img/production/production_img9.jpg" loading="lazy" alt="products slide"></picture>
-								</a>
-								<a href="img/production/big/production_img10.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg">
-									<div class="swiper-lazy-preloader "></div>
-									<picture><source srcset="img/production/production_img10.webp" type="image/webp"><img src="img/production/production_img10.jpg" loading="lazy" alt="products slide"></picture>
-								</a>
-								<a href="img/production/big/production_img11.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg">
-									<div class="swiper-lazy-preloader "></div>
-									<picture><source srcset="img/production/production_img11.webp" type="image/webp"><img src="img/production/production_img11.jpg" loading="lazy" alt="products slide"></picture>
-								</a>
-								<a href="img/production/big/production_img12.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg">
-									<div class="swiper-lazy-preloader "></div>
-									<picture><source srcset="img/production/production_img12.webp" type="image/webp"><img src="img/production/production_img12.jpg" loading="lazy" alt="products slide"></picture>
-								</a>
+				</в>
+				<section class="page__header-template header-template">
+					<div class="header-template__container">
+						<div class="header-template__active header-template-active">
+							<div class="header-template-active__icon">
+								<svg>
+									<use xlink:href="img/icons/icons.svg#pie"></use>
+								</svg>
 							</div>
+							<h1 class="header-template-active__title title">Projektierung</h1>
 						</div>
-						<div class="products__nawigation slider-navigation">
-							<button aria-label="arrow-left" type="button" class="slider-navigation__button slider-navigation__button_prev _icon-arrow"></button>
-							<button aria-label="arrow-right" type="button" class="slider-navigation__button slider-navigation__button_next _icon-arrow"></button>
-						</div>
-					</div>
-					<div data-watch data-watch-once class="products__image-ibg--contain"><picture><source data-srcset="img/production/production_bg3.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/production/production_bg3.png" alt="products background"></picture>
-					</div>
-				</div>
-				<div class="products__bg-ibg"><picture><source data-srcset="img/production/production_bg.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/production/production_bg.jpg" alt="products background"></picture></div>
-			</section>
-
-			<div class="page__map map">
-				<div data-watch data-watch-once class="map-body">
-					<div id="map"></div>
-
-					<div class="location-body">
-						<input id="pac-input" type="text" placeholder="Geben Sie einen Standort an" />
-						<button id="build" class="button button_inverse">Erstellen Sie eine Route</button>
-
-					</div>
-					<button id="showRouteButton" onclick="showRouteOnGoogleMaps()">Route auf Google
-						anzeigen
-						Karten</button>
-
-				</div>
-				<div id="infowindow-content" class="infowindow-content">
-					<span id="place-name" class="place-name"></span><br />
-					<span id="place-address" class="place-address"></span>
-				</div>
-			</div>
-
-
-
-			<section class="page__contacts contacts">
-				<div class="contacts__container">
-					<h2 data-watch data-watch-once class="contacts__title title title--center">Kontaktieren Sie uns</h2>
-					<div class="contacts__body">
-						<div class="contacts__column main-contacts">
-							<ul class="main-contacts__list">
-								<li data-watch data-watch-once class="main-contacts__item ">
-									<a href="https://goo.gl/maps/bQfzYLQPMKGhEdBKA" target="_blank" class="main-contacts__wrapper _icon-location">
-										<div class="main-contacts__text">
-											Alpha Automation GmbH, <br>
-											Friedbergstrasse 64, <br>
-											45147, Essen
-										</div>
+						<nav class="header-template__navigation header-template-navigation">
+							<ul class="header-template-navigation__list">
+								<!-- <li class="header-template-navigation__item"><a href="#">Gebäudeautomation</a></li> -->
+								<li class="header-template-navigation__item">
+									<a href="automation.html" class="header-template-navigation__link">
+										<div class="header-template-navigation__icon"><svg>
+												<use xlink:href="img/icons/icons.svg#house"></use>
+											</svg></div>
+										<span class="header-template-navigation__title">Gebäude<br>automation</span>
 									</a>
 								</li>
-								<li data-watch data-watch-once class="main-contacts__item ">
-									<a href="mailto:alpha.automation.gmbh@gmail.com" target="_blank" class="main-contacts__wrapper _icon-message">
-										<div class="main-contacts__text">
-											alpha.automation.gmbh@gmail.com
-										</div>
+								<li class="header-template-navigation__item">
+									<a href="process.html" class="header-template-navigation__link">
+										<div class="header-template-navigation__icon"><svg>
+												<use xlink:href="img/icons/icons.svg#process"></use>
+											</svg></div>
+										<span class="header-template-navigation__title">Prozess<br>technik</span>
 									</a>
 								</li>
-								<li data-watch data-watch-once class="main-contacts__item ">
-									<a href="tel:+49015221474639" target="_blank" class="main-contacts__wrapper _icon-phone">
-										<div class="main-contacts__text">
-											+49(0)15221474639
-										</div>
+								<li class="header-template-navigation__item">
+									<a href="service.html" class="header-template-navigation__link">
+										<div class="header-template-navigation__icon"><svg>
+												<use xlink:href="img/icons/icons.svg#gear"></use>
+											</svg></div>
+										<span class="header-template-navigation__title">Service /<br>Wartung</span>
 									</a>
 								</li>
-								<li data-watch data-watch-once class="main-contacts__item ">
-
-									<a href="tel:+49017664745764" target="_blank" class="main-contacts__wrapper _icon-phone">
-										<div class="main-contacts__text">
-											+49(0)176 64745764
-										</div>
+								<li class="header-template-navigation__item">
+									<a href="contacts.html" class="header-template-navigation__link">
+										<div class="header-template-navigation__icon"><svg>
+												<use xlink:href="img/icons/icons.svg#table"></use>
+											</svg></div>
+										<span class="header-template-navigation__title">Unsere <br>Kontakte</span>
 									</a>
-
 								</li>
 							</ul>
-						</div>
-						<form action="files/sendmail/sendmail.php" enctype="multipart/form-data" data-ajax data-dev data-popup-message="#popup-message" method="POST" class="contacts__column form-contact">
-							<div class="form-contact__wrapper">
-								<div data-watch data-watch-once class="form-contact__item">
-									<input autocomplete="off" type="text" data-required name="name" data-error="Fehler" placeholder="Name" class="input">
-								</div>
-								<div data-watch data-watch-once class="form-contact__item">
-									<input autocomplete="off" type="text" name="email" data-required data-required="email" data-error="Fehler" placeholder="E-Mail-Adresse" class="input">
-								</div>
-								<div data-watch data-watch-once class="form-contact__item">
-									<textarea class="textarea" name="textarea" aria-label="text-area" autocomplete="off"></textarea>
-								</div>
-								<div data-watch data-watch-once class="form-contact__item">
-									<div class="checkbox">
-										<input checked id="checkbox" data-error="Fehler" class="checkbox__input" type="checkbox" value="Yes" name="checkbox">
-										<label for="checkbox" class="checkbox__label"><span class="checkbox__text">Ich habe die</span> <a href="#" class="checkbox__link">Datenschutzbestimmungen </a> <span class="checkbox__text">gelesen.
-												*</span></label>
-									</div>
-								</div>
-								<button data-watch data-watch-once type="submit" class="form-contact__button button button--form">Send</button>
+						</nav>
+					</div>
+				</section>
+				<div class="page__body-template body-template">
+					<div class=" body-template__container">
+						<div class="body-template__content body-template-content">
+							<div class="body-template-content__text text">
+								<p>Die Fachabteilung Projektierung der HBS Automation GmbH bietet fachgerechte Planung, Zeichnung und
+									Dokumentation für
+									Schaltanlagen jeder Art.</p>
+								<p>HBS Automation plant und konstruiert Schaltanlagen mittels <span>EPlan Electric P8 und WS-CAD</span>.
+									Von einfachen Installationsverteilern über Bedientableaus und -pulte bis zu hochkomplexen
+									Automatisierungsanlagen ist
+									alles möglich. </p>
 							</div>
-						</form>
+							<button data-goto=".contacts" data-goto-header class="body-template-content__button button">Termin
+								vereinbaren</button>
+
+						</div>
+						<div class="body-template__image-ibg"><picture><source data-srcset="img/main/planning.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/main/planning.jpg" alt="planning"></picture></div>
 					</div>
 				</div>
-			</section>
+				<section class="page__footer-template footer-template">
+					<div class="footer-template__container">
+						<div class="footer-template__desription footer-template-desription">
+							<h2 data-watch data-watch-once class="footer-template-desription__title title">Wodurch heben sich unsere
+								Methoden ab?</h2>
+							<div class="footer-template-desription__text text">
+								<p data-watch data-watch-once>Als herstellerunabhängiger Anwender von
+									Geräten für den Einbau in
+									Schaltanlagen sind wir in
+									der Lage
+									auf persönliche
+									Wünsche unserer Kunden einzugehen und unter Einhaltung aktueller Normen und Richtlinien individuelle
+									Lösungen für ihre
+									Anlage zu finden. </p>
+							</div>
+						</div>
+						<div class="footer-template__advantages footer-template-advantages">
+							<ul class="footer-template-advantages__list">
+								<li data-watch data-watch-once class="footer-template-advantages__item _icon-checked">Wir betreuen Ihr
+									Projekt von der
+									Planung über
+									die Inbetriebnahme bis hin zu Wartung und Service</li>
+								<li data-watch data-watch-once class="footer-template-advantages__item _icon-checked">HBS Automation
+									bietet Ihnen
+									europaweit die
+									Planung und Fertigung Ihrer Schaltanlage, sowie die Realisierung Ihres
+									Projektes, Wartung und Service</li>
+								<!-- <li    data-watch data-watch-once    class="footer-template-advantages__item _icon-checked"></li> -->
+							</ul>
+						</div>
+					</div>
+				</section>
 
-			<a class="scroll-top hide" data-goto=".page" data-goto-header href="#" id="js-top">
-			</a>
+				<section class="page__social social">
+					<div data-watch data-watch-once class="social__container">
+						<h3 class="social__title">Teilen:</h3>
+						<div class="social__items">
+							<a class="social__link _icon-message" aria-label="message" href="#"></a>
+							<a class=" social__link  _icon-facebook" aria-label="facebook" href="#"></a>
+							<a class=" social__link  _icon-tweeter" aria-label="tweeter" href="#"></a>
+						</div>
+
+					</div>
+				</section>
+				<section class="page__products products">
+					<div class="products__container">
+						<h2 data-watch data-watch-once class="products__title">Bilder unserer Bauvorhaben</h2>
+						<div data-watch data-watch-once class="products__body">
+							<div class="products__swiper products-swiper">
+								<div data-gallery class="products-swiper__wrapper swiper-wrapper">
+									<a href="img/production/big/production_img1.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg ">
+										<div class="swiper-lazy-preloader "></div>
+
+										<picture><source srcset="img/production/production_img1.webp" type="image/webp"><img src="img/production/production_img1.jpg" loading="lazy" alt="products slide"></picture>
+									</a>
+									<a href="img/production/big/production_img2.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg">
+										<div class="swiper-lazy-preloader "></div>
+
+										<picture><source srcset="img/production/production_img2.webp" type="image/webp"><img src="img/production/production_img2.jpg" loading="lazy" alt="products slide"></picture>
+									</a>
+									<a href="img/production/big/production_img3.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg">
+										<div class="swiper-lazy-preloader "></div>
+
+										<picture><source srcset="img/production/production_img3.webp" type="image/webp"><img src="img/production/production_img3.jpg" loading="lazy" alt="products slide"></picture>
+									</a>
+									<a href="img/production/big/production_img4.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg">
+										<div class="swiper-lazy-preloader "></div>
+
+										<picture><source srcset="img/production/production_img4.webp" type="image/webp"><img src="img/production/production_img4.jpg" loading="lazy" alt="products slide"></picture>
+									</a>
+									<a href="img/production/big/production_img5.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg">
+										<div class="swiper-lazy-preloader "></div>
+
+										<picture><source srcset="img/production/production_img5.webp" type="image/webp"><img src="img/production/production_img5.jpg" loading="lazy" alt="products slide"></picture>
+									</a>
+									<a href="img/production/big/production_img6.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg">
+										<div class="swiper-lazy-preloader "></div>
+
+										<picture><source data-srcset="img/production/production_img6.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/production/production_img6.jpg" loading="lazy" alt="products slide"></picture>
+									</a>
+									<a href="img/production/big/production_img7.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg">
+										<div class="swiper-lazy-preloader "></div>
+
+										<picture><source srcset="img/production/production_img7.webp" type="image/webp"><img src="img/production/production_img7.jpg" loading="lazy" alt="products slide"></picture>
+									</a>
+									<a href="img/production/big/production_img8.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg">
+										<div class="swiper-lazy-preloader "></div>
+
+										<picture><source srcset="img/production/production_img8.webp" type="image/webp"><img src="img/production/production_img8.jpg" loading="lazy" alt="products slide"></picture>
+									</a>
+									<a href="img/production/big/production_img9.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg">
+										<div class="swiper-lazy-preloader "></div>
+
+										<picture><source srcset="img/production/production_img9.webp" type="image/webp"><img src="img/production/production_img9.jpg" loading="lazy" alt="products slide"></picture>
+									</a>
+									<a href="img/production/big/production_img10.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg">
+										<div class="swiper-lazy-preloader "></div>
+										<picture><source srcset="img/production/production_img10.webp" type="image/webp"><img src="img/production/production_img10.jpg" loading="lazy" alt="products slide"></picture>
+									</a>
+									<a href="img/production/big/production_img11.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg">
+										<div class="swiper-lazy-preloader "></div>
+										<picture><source srcset="img/production/production_img11.webp" type="image/webp"><img src="img/production/production_img11.jpg" loading="lazy" alt="products slide"></picture>
+									</a>
+									<a href="img/production/big/production_img12.jpg" class="products-swiper__slide swiper-slide swiper-slide-ibg">
+										<div class="swiper-lazy-preloader "></div>
+										<picture><source srcset="img/production/production_img12.webp" type="image/webp"><img src="img/production/production_img12.jpg" loading="lazy" alt="products slide"></picture>
+									</a>
+								</div>
+							</div>
+							<div class="products__nawigation slider-navigation">
+								<button aria-label="arrow-left" type="button" class="slider-navigation__button slider-navigation__button_prev _icon-arrow"></button>
+								<button aria-label="arrow-right" type="button" class="slider-navigation__button slider-navigation__button_next _icon-arrow"></button>
+							</div>
+						</div>
+						<div data-watch data-watch-once class="products__image-ibg--contain"><picture><source data-srcset="img/production/production_bg3.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/production/production_bg3.png" alt="products background"></picture>
+						</div>
+					</div>
+					<div class="products__bg-ibg"><picture><source data-srcset="img/production/production_bg.webp" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/webp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="  data-src="img/production/production_bg.jpg" alt="products background"></picture></div>
+				</section>
+
+				<div class="page__map map">
+					<div data-watch data-watch-once class="map-body">
+						<div id="map"></div>
+
+						<div class="location-body">
+							<input id="pac-input" type="text" placeholder="Geben Sie einen Standort an">
+							<button id="build" class="button button_inverse">Erstellen Sie eine Route</button>
+
+						</div>
+						<button id="showRouteButton" onclick="showRouteOnGoogleMaps()">Route auf Google
+							anzeigen
+							Karten</button>
+
+					</div>
+					<div id="infowindow-content" class="infowindow-content">
+						<span id="place-name" class="place-name"></span><br>
+						<span id="place-address" class="place-address"></span>
+					</div>
+				</div>
+
+
+
+				<section class="page__contacts contacts">
+					<div class="contacts__container">
+						<h2 data-watch data-watch-once class="contacts__title title title--center">Kontaktieren Sie uns</h2>
+						<div class="contacts__body">
+							<div class="contacts__column main-contacts">
+								<ul class="main-contacts__list">
+									<li data-watch data-watch-once class="main-contacts__item ">
+										<a href="https://goo.gl/maps/bQfzYLQPMKGhEdBKA" target="_blank" class="main-contacts__wrapper _icon-location">
+											<div class="main-contacts__text">
+												Alpha Automation GmbH, <br>
+												Friedbergstrasse 64, <br>
+												45147, Essen
+											</div>
+										</a>
+									</li>
+									<li data-watch data-watch-once class="main-contacts__item ">
+										<a href="mailto:alpha.automation.gmbh@gmail.com" target="_blank" class="main-contacts__wrapper _icon-message">
+											<div class="main-contacts__text">
+												alpha.automation.gmbh@gmail.com
+											</div>
+										</a>
+									</li>
+									<li data-watch data-watch-once class="main-contacts__item ">
+										<a href="tel:+49015221474639" target="_blank" class="main-contacts__wrapper _icon-phone">
+											<div class="main-contacts__text">
+												+49(0)15221474639
+											</div>
+										</a>
+									</li>
+									<li data-watch data-watch-once class="main-contacts__item ">
+
+										<a href="tel:+49017664745764" target="_blank" class="main-contacts__wrapper _icon-phone">
+											<div class="main-contacts__text">
+												+49(0)176 64745764
+											</div>
+										</a>
+
+									</li>
+								</ul>
+							</div>
+							<form action="files/sendmail/sendmail.php" enctype="multipart/form-data" data-ajax data-dev data-popup-message="#popup-message" method="POST" class="contacts__column form-contact">
+								<div class="form-contact__wrapper">
+									<div data-watch data-watch-once class="form-contact__item">
+										<input autocomplete="off" type="text" data-required name="name" data-error="Fehler" placeholder="Name" class="input">
+									</div>
+									<div data-watch data-watch-once class="form-contact__item">
+										<input autocomplete="off" type="text" name="email" data-required="email" data-error="Fehler" placeholder="E-Mail-Adresse" class="input">
+									</div>
+									<div data-watch data-watch-once class="form-contact__item">
+										<textarea class="textarea" name="textarea" aria-label="text-area" autocomplete="off"></textarea>
+									</div>
+									<div data-watch data-watch-once class="form-contact__item">
+										<div class="checkbox">
+											<input checked id="checkbox" data-error="Fehler" class="checkbox__input" type="checkbox" value="Yes" name="checkbox">
+											<label for="checkbox" class="checkbox__label"><span class="checkbox__text">Ich habe die</span> <a href="#" class="checkbox__link">Datenschutzbestimmungen </a> <span class="checkbox__text">gelesen.
+													*</span></label>
+										</div>
+									</div>
+									<button data-watch data-watch-once type="submit" class="form-contact__button button button--form">Send</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</section>
+
+				<a class="scroll-top hide" data-goto=".page" data-goto-header href="#" id="js-top">
+				</a>
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
@@ -430,118 +541,11 @@ downloads
 		</div>
 	</div>
 	<!-- Стилі для body -->
-	<style>
-		.lock body {
-			/* overflow: hidden; */
-			touch-action: none;
-			/* overscroll-behavior: none; */
-		}
 
-		.loading body {
-			opacity: 0;
-			visibility: hidden;
-			/* overflow: hidden; */
-			background: linear-gradient(150deg, rgba(0, 153, 153, 0.5027546174719888) 0%, rgba(255, 255, 255, 0) 50%, rgba(0, 153, 153, 0.4971523765756303) 100%);
-
-		}
-
-		.loaded body {
-			transition: opacity 0.5s ease 0s;
-			opacity: 1;
-			visibility: visible;
-		}
-	</style>
 	<div id="fls-preloader">
 		<!-- Документація: https://template.fls.guru/template-docs/modul-preloader.html -->
 		<!-- Стилі для прелоадера -->
-		<style>
-			* {
-				padding: 0px;
-				margin: 0px;
-				border: 0px;
-			}
 
-			*,
-			*:before,
-			*:after {
-				box-sizing: border-box;
-			}
-
-			html {
-				overflow: auto;
-				touch-action: none;
-				overscroll-behavior: none;
-			}
-
-
-			/* Головний блок */
-			.fls-preloader {
-				pointer-events: none;
-				z-index: -1;
-				position: fixed;
-				width: 100%;
-				height: 100%;
-				top: 0;
-				left: 0;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-
-			/* Блок з елементами */
-			.fls-preloader__body {
-				padding: 0.93rem;
-				/* max-width: 31.25rem; */
-				display: flex;
-				flex-direction: column;
-				/* align-items: center; */
-				gap: 12px;
-				/* text-align: center; */
-			}
-
-			.fls-preloader__image {
-				width: 200px;
-				align-self: center;
-				text-align: center;
-
-			}
-
-			.fls-preloader__image img {
-				max-width: 100%;
-			}
-
-			/* Блок з лічильником */
-			.fls-preloader__counter {
-				font-size: 6rem;
-				text-align: center;
-			}
-
-			@media (max-width: 30em) {
-				.fls-preloader__counter {
-					font-size: 3rem;
-				}
-			}
-
-
-
-			/* Прогресбар */
-			.fls-preloader__line {
-				/* width: 100%;
-			
-			border: 1px solid #28bebe; */
-			}
-
-			/* Лінія прогресбару */
-			.fls-preloader__line span {
-				text-align: start;
-				display: inline-block;
-				border-radius: 20px;
-
-				transition: width 0.2s ease;
-				height: 0.8rem;
-				background-color: #28bebe;
-			}
-		</style>
 		<!-- Скріпт прелоадера -->
 		<script>
 			function preloader() {
@@ -1119,8 +1123,8 @@ downloads
 
 		window.initMap = initMap;
 	</script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFD8IC2zBit0K14Ek0Pr4NsRaDBqfg3qw&callback=initMap&libraries=places&v=weekly&_v=20230825123923" defer></script>
-	<script src="js/app.min.js?_v=20230825123923"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFD8IC2zBit0K14Ek0Pr4NsRaDBqfg3qw&callback=initMap&libraries=places&v=weekly&_v=20230825175522" defer></script>
+	<script src="js/app.min.js?_v=20230825175522"></script>
 </body>
 
 </html>
