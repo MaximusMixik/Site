@@ -12,8 +12,8 @@
 	<meta name="description" content="HBS Automation GmbH bietet europaweit Projektierung, Service und Wartung für Schaltanlagen, Gebäudeautomation und Prozesstechnik. Spezialisiert auf Automatisierung von Gebäuden, industriellen Anlagen und mehr.">
 	<meta name="keywords" content="HBS Automation, Schaltanlagen, Gebäudeautomation, Prozesstechnik, Automatisierung, Projektierung, Service, Wartung">
 	<meta name="author" content="HBS Automation GmbH">
-	<script src="https://polyfill.io/v3/polyfill.min.js?features=default&_v=20230826154450"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20230826154450">
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=default&_v=20230830115805"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20230830115805">
 </head>
 
 <body>
@@ -87,6 +87,8 @@
 									<summary class="spollers-menu__title _icon-arrow "><span>Leistungen</span></summary>
 									<div class="spollers-menu__body">
 										<ul class="spollers-menu__list">
+											<li class="spollers-menu__item"><a href="hausinstallationen.html" class="spollers-menu__link ">Hausinstallationen</a>
+											</li>
 											<li class="spollers-menu__item"><a href="automation.html" class="spollers-menu__link ">Gebäudeautomation</a></li>
 											<li class="spollers-menu__item"><a href="process.html" class="spollers-menu__link ">Prozesstechnik</a>
 											</li>
@@ -365,186 +367,6 @@ downloads
 				<div class="popup__text">Ihre Nachricht wurde erfolgreich gesendet!</div>
 			</div>
 		</div>
-	</div>
-	<!-- Стилі для body -->
-	<style>
-		.lock body {
-			/* overflow: hidden; */
-			touch-action: none;
-			/* overscroll-behavior: none; */
-		}
-
-		.loading body {
-			opacity: 0;
-			visibility: hidden;
-			/* overflow: hidden; */
-			background: linear-gradient(150deg, rgba(0, 153, 153, 0.5027546174719888) 0%, rgba(255, 255, 255, 0) 50%, rgba(0, 153, 153, 0.4971523765756303) 100%);
-
-		}
-
-		.loaded body {
-			transition: opacity 0.5s ease 0s;
-			opacity: 1;
-			visibility: visible;
-		}
-	</style>
-	<div id="fls-preloader">
-		<!-- Документація: https://template.fls.guru/template-docs/modul-preloader.html -->
-		<!-- Стилі для прелоадера -->
-		<style>
-			* {
-				padding: 0px;
-				margin: 0px;
-				border: 0px;
-			}
-
-			*,
-			*:before,
-			*:after {
-				box-sizing: border-box;
-			}
-
-			html {
-				overflow: auto;
-				touch-action: none;
-				overscroll-behavior: none;
-			}
-
-
-			/* Головний блок */
-			.fls-preloader {
-				pointer-events: none;
-				z-index: -1;
-				position: fixed;
-				width: 100%;
-				height: 100%;
-				top: 0;
-				left: 0;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-
-			/* Блок з елементами */
-			.fls-preloader__body {
-				padding: 0.93rem;
-				/* max-width: 31.25rem; */
-				display: flex;
-				flex-direction: column;
-				/* align-items: center; */
-				gap: 12px;
-				/* text-align: center; */
-			}
-
-			.fls-preloader__image {
-				width: 200px;
-				align-self: center;
-				text-align: center;
-
-			}
-
-			.fls-preloader__image img {
-				max-width: 100%;
-			}
-
-			/* Блок з лічильником */
-			.fls-preloader__counter {
-				font-size: 6rem;
-				text-align: center;
-			}
-
-			@media (max-width: 30em) {
-				.fls-preloader__counter {
-					font-size: 3rem;
-				}
-			}
-
-
-
-			/* Прогресбар */
-			.fls-preloader__line {
-				/* width: 100%;
-			
-			border: 1px solid #28bebe; */
-			}
-
-			/* Лінія прогресбару */
-			.fls-preloader__line span {
-				text-align: start;
-				display: inline-block;
-				border-radius: 20px;
-
-				transition: width 0.2s ease;
-				height: 0.8rem;
-				background-color: #28bebe;
-			}
-		</style>
-		<!-- Скріпт прелоадера -->
-		<script>
-			function preloader() {
-				const preloaderImages = document.querySelector('[data-preloader]') ? document.querySelectorAll('[data-preloader] img') : document.querySelectorAll('img');
-				const preloaderContainer = document.querySelector('#fls-preloader');
-				if (preloaderImages.length) {
-					const preloaderTemplate = `
-					<div class="fls-preloader">
-						<div class="fls-preloader__body">
-							<div class="fls-preloader__image"><img src="img/logo.svg" alt="logo"></div>
-							<div class="fls-preloader__counter">0%</div>
-							<div class="fls-preloader__line"><span></span></div>
-						</div>
-					</div>`;
-					document.querySelector('html').insertAdjacentHTML("beforeend", preloaderTemplate);
-
-					const
-						preloader = document.querySelector('.fls-preloader'),
-						showPecentLoad = document.querySelector('.fls-preloader__counter'),
-						showLineLoad = document.querySelector('.fls-preloader__line span'),
-						htmlDocument = document.documentElement;
-
-					let imagesLoadedCount = counter = progress = 0;
-
-					htmlDocument.classList.add('loading');
-					htmlDocument.classList.add('lock');
-
-					preloaderImages.forEach(preloaderImage => {
-						const imgClone = document.createElement('img');
-						if (imgClone) {
-							imgClone.onload = imageLoaded;
-							imgClone.onerror = imageLoaded;
-							preloaderImage.dataset.src ? imgClone.src = preloaderImage.dataset.src : imgClone.src = preloaderImage.src;
-						}
-					});
-
-					function setValueProgress(progress) {
-						showPecentLoad ? showPecentLoad.innerText = `${progress}%` : null;
-						showLineLoad ? showLineLoad.style.width = `${progress}%` : null;
-					}
-					showPecentLoad ? setValueProgress(progress) : null;
-
-					function imageLoaded() {
-						imagesLoadedCount++;
-						progress = Math.round((100 / preloaderImages.length) * imagesLoadedCount);
-						const intervalId = setInterval(() => {
-							counter >= progress ? clearInterval(intervalId) : setValueProgress(++counter);
-							counter >= 100 ? addLoadedClass() : null;
-						}, 10);
-					}
-
-					function addLoadedClass() {
-						htmlDocument.classList.add('loaded');
-						htmlDocument.classList.remove('lock');
-						htmlDocument.classList.remove('loading');
-						setInterval(() => {
-							preloader.remove();
-							preloaderContainer.remove();
-						}, 500);
-					}
-				} else {
-					preloaderContainer.remove();
-				}
-			}
-			preloader();
-		</script>
 	</div>
 	<script>
 		let map;
@@ -1056,8 +878,8 @@ downloads
 
 		window.initMap = initMap;
 	</script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFD8IC2zBit0K14Ek0Pr4NsRaDBqfg3qw&callback=initMap&libraries=places&v=weekly&_v=20230826154450" defer></script>
-	<script src="js/app.min.js?_v=20230826154450"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFD8IC2zBit0K14Ek0Pr4NsRaDBqfg3qw&callback=initMap&libraries=places&v=weekly&_v=20230830115805" defer></script>
+	<script src="js/app.min.js?_v=20230830115805"></script>
 </body>
 
 </html>
