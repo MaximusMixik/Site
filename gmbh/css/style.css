@@ -2093,6 +2093,7 @@ body::after {
 }
 
 .slider-small__link {
+  pointer-events: all;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6834,6 +6835,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     -webkit-transition: margin 0.3s ease;
     transition: margin 0.3s ease;
     overflow: hidden;
+    pointer-events: none;
   }
 
   .slider-small__slide.swiper-slide-thumb-active {
@@ -6844,8 +6846,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 
 @media (min-width: 75em) and (any-hover: hover) {
   .slider-small__slide:hover {
-    margin-bottom: 1.875rem;
-    margin-top: -1.875rem;
+    margin-bottom: 1.25rem;
+    margin-top: -1.25rem;
   }
 }
 
