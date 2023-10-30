@@ -1,0 +1,102 @@
+{
+  "doctors":[
+    {
+      "id":1,
+      "isActive": true,
+      "name":"Mark Hill",
+      "position":"<p>Lorem ipsum dolor sit amet, conse ctetur.</p>",
+      "media":{
+        "avatar":"doctors/doctor1.jpg",
+        "main":"doctors/big/doctor_photo1.png",
+        "gallery":
+        {
+          "big": ["gallery/gallery_image5.jpeg", "gallery/gallery_image7.jpg", "gallery/gallery_image1.jpeg","gallery/gallery_image8.jpg"],
+          "small": ["gallery/gallery_image5.jpeg", "gallery/gallery_image7.jpg", "gallery/gallery_image1.jpeg","gallery/gallery_image8.jpg"]
+        }
+      },
+      "skills":{
+        "Liposuction": "80",
+        "Breast Augmentation": "90"
+      },
+      "statistics":{
+        "staf": "23",
+        "doctors": "56",
+        "visits": "86"
+      }
+    },
+     {
+      "id":4,
+      "isActive": false,
+      "name":"Jane Cullen",
+      "position":"<p>Lorem ipsum dolor sit amet, conse ctetur.</p>",
+      "media":{
+        "avatar":"doctors/doctor4.jpg",
+        "main":"doctors/big/doctor_photo4.png",
+                  "gallery": {
+          "big": ["gallery/gallery_image2.jpeg", "gallery/gallery_image1.jpeg", "gallery/gallery_image3.jpeg","gallery/gallery_image6.jpeg"],
+          "small":["gallery/gallery_image2.jpeg", "gallery/gallery_image1.jpeg", "gallery/gallery_image3.jpeg","gallery/gallery_image6.jpeg"]
+        }
+
+      },
+      "skills":{
+        "Liposuction": "100",
+        "Big Titst": "90",
+        "Breast Augmentation": "80"
+      },
+      "statistics":{
+        "staf": "123",
+        "doctors": "125",
+        "other": "200",
+        "visits": "210"
+      }
+    },
+    {
+      "id":2,
+      "isActive": false,
+      "name":"Damian Waves",
+      "position":"<p>Lorem ipsum dolor sit amet, conse ctetur.</p>",
+      "media":{
+        "avatar":"doctors/doctor2.jpg",
+        "main":"doctors/big/doctor_photo2.png",
+                  "gallery": {
+          "big":  ["gallery/gallery_image3.jpeg", "gallery/gallery_image6.jpeg", "gallery/gallery_image2.jpeg","gallery/gallery_image1.jpeg"],
+          "small": ["gallery/gallery_image3.jpeg", "gallery/gallery_image6.jpeg", "gallery/gallery_image2.jpeg","gallery/gallery_image1.jpeg"]
+        }
+       
+      },
+      "skills":{
+        "Liposuction": "20",
+        "Breast Augmentation": "20"
+      },
+      "statistics":{
+        "staf": "12",
+        "doctors": "25",
+        "visits": "40"
+      }
+    },
+    {
+      "id":3,
+      "isActive": false,
+      "name":"Annah Gaiver",
+      "position":"<p>Lorem ipsum dolor sit amet, conse ctetur.</p>",
+      "media":{
+        "avatar":"doctors/doctor3.jpg",
+        "main":"doctors/big/doctor_photo3.png",
+              "gallery": {
+          "big": ["gallery/gallery_image1.jpeg", "gallery/gallery_image6.jpeg", "gallery/gallery_image5.jpeg","gallery/gallery_image3.jpeg"],
+          "small":["gallery/gallery_image1.jpeg", "gallery/gallery_image6.jpeg", "gallery/gallery_image5.jpeg","gallery/gallery_image3.jpeg"]
+        }
+      },
+      "skills":{
+        "Liposuction": "60"
+
+      },
+      "statistics":{
+        "staf": "12",
+        "visits": "40"
+      }
+    }
+   
+
+  ]
+}    
