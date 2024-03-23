@@ -94,12 +94,14 @@ textarea {
 button,
 option,
 select {
-  cursor: pointer
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent
 }
 a {
   display: inline-block;
   color: inherit;
-  text-decoration: none
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent
 }
 ul li {
   list-style: none
@@ -397,8 +399,11 @@ select {
   justify-content: center;
   align-items: center;
   background-color: var(--bg-accent);
-  scale: 1.001;
-  transition: background-color .3s ease,color .3s ease,scale .3s ease
+  -webkit-transform: scale(1.001);
+  transform: scale(1.001);
+  transition: background-color .3s ease,color .3s ease,-webkit-transform .3s ease;
+  transition: background-color .3s ease,color .3s ease,transform .3s ease;
+  transition: background-color .3s ease,color .3s ease,transform .3s ease,-webkit-transform .3s ease
 }
 .lang {
   display: flex;
@@ -455,7 +460,7 @@ select {
 .spollers__title {
   font-weight: 600;
   font-size: 1.5rem;
-  text-wrap: nowrap;
+  white-space: nowrap;
   color: var(--text-purple);
   width: 100%;
   cursor: default;
@@ -473,15 +478,15 @@ select {
 ._spoller-init .spollers__title::before {
   content: "";
   position: absolute;
-  right: 5px;
+  right: .3125rem;
   top: 50%;
   background-color: var(--bg-dark);
-  height: 3px;
-  width: 10px;
+  height: .1875rem;
+  width: .625rem;
   transition: -webkit-transform .5s ease 0s;
   transition: transform .5s ease 0s;
   transition: transform .5s ease 0s,-webkit-transform .5s ease 0s;
-  border-radius: 3px
+  border-radius: .1875rem
 }
 ._spoller-init .spollers__title::before {
   -webkit-transform: translate(-60%,-50%) rotate(40deg);
@@ -506,7 +511,7 @@ select {
   margin-bottom: 1rem
 }
 .spollers__link {
-  text-wrap: nowrap;
+  white-space: nowrap;
   font-size: 1rem;
   color: var(--text-dark)
 }
@@ -1106,8 +1111,8 @@ select {
   height: 5rem
 }
 .benefits__icon img {
-  width: inherit;
-  height: inherit;
+  width: 100%;
+  height: 100%;
   -o-object-fit: contain;
   object-fit: contain
 }
@@ -1167,13 +1172,6 @@ select {
 }
 .partners__icon img {
   max-width: 100%
-}
-.best__title {
-  max-width: 24.375rem;
-  margin: 0 auto
-}
-.best__title span {
-  color: var(--text-accent)
 }
 .advantages__list {
   display: flex;
@@ -1443,12 +1441,6 @@ select {
   z-index: 2;
   padding-bottom: 2.25rem
 }
-.body-exchange__row:has(.body-exchange__alert) .body-exchange__row--alert {
-  padding: 0
-}
-.body-exchange__row:has(.body-exchange__alert) .form-row__input {
-  border-radius: .25rem .25rem 0 0
-}
 .body-exchange__column {
   position: relative;
   flex: 1 1 auto;
@@ -1581,9 +1573,10 @@ select {
   transition: transform .3s ease,-webkit-transform .3s ease
 }
 .rate-exchange__safe img {
-  width: inherit;
-  height: inherit;
-  max-width: 100%
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain
 }
 .rotate .rate-exchange__safe {
   -webkit-transform: rotateY(180deg);
@@ -1601,8 +1594,8 @@ select {
   place-items: center
 }
 .rate-exchange__arrow img {
-  width: inherit;
-  height: inherit;
+  width: 100%;
+  height: 100%;
   max-width: 65%
 }
 .form-row {
@@ -1706,7 +1699,7 @@ select {
 .spollers-exchange__title {
   font-weight: 700;
   font-size: 1.25rem;
-  text-wrap: nowrap;
+  white-space: nowrap;
   width: 100%;
   cursor: default;
   position: relative;
@@ -1775,8 +1768,8 @@ select {
   height: 2.5rem
 }
 .actions__button img {
-  width: inherit;
-  height: inherit;
+  width: 100%;
+  height: 100%;
   max-width: 100%;
   -o-object-fit: contain;
   object-fit: contain
@@ -1879,8 +1872,8 @@ select {
   height: 2rem
 }
 .indification-change__button img {
-  width: inherit;
-  height: inherit;
+  width: 100%;
+  height: 100%;
   max-width: 100%;
   -o-object-fit: contain;
   object-fit: contain
@@ -1906,8 +1899,8 @@ select {
   height: 12.5rem
 }
 .awaiting-change__qrcode img {
-  width: inherit;
-  height: inherit;
+  width: 100%;
+  height: 100%;
   -o-object-fit: contain;
   object-fit: contain
 }
@@ -1946,8 +1939,8 @@ select {
   color: var(--text-dark)
 }
 .finish__icon svg {
-  width: inherit;
-  height: inherit
+  width: 100%;
+  height: 100%
 }
 .check-animate__border {
   fill: transparent;
@@ -2358,9 +2351,6 @@ select {
   .header-exchange__button:last-child span {
     -webkit-transform: skew(-20deg);
     transform: skew(-20deg)
-  }
-  .body-exchange__column:has(.form__error) .body-exchange__alert {
-    display: none
   }
   .body-exchange__input {
     padding: 1.1875rem 1rem;
@@ -3169,6 +3159,7 @@ select {
     min-height: 3.5rem;
     background-color: var(--bg-dark);
     width: 100%;
+    max-width: 100%;
     display: grid;
     place-items: center;
     text-align: center
@@ -3355,11 +3346,6 @@ select {
   }
   .benefits__item:nth-child(even) {
     align-self: flex-end
-  }
-  .best__title {
-    font-weight: 600;
-    font-size: 24px;
-    max-width: 14.375rem
   }
   .how__button {
     min-width: 6.375rem;
@@ -3878,7 +3864,8 @@ select {
   .menu__button:hover {
     background-color: var(--bg-accent-hover);
     color: var(--text-secondary);
-    scale: .97
+    -webkit-transform: scale(.97);
+    transform: scale(.97)
   }
   .lang:hover .lang__wrapper {
     opacity: 1;

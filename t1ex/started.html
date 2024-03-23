@@ -6,9 +6,10 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240323141318">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240323151514">
 	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="description" content="Author: Max.S.O, 	Limitless, custody-free cryptocurrency exchange">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -29,7 +30,7 @@
 							<li class="menu__item"><a href="#" class="menu__link">Blog</a></li>
 						</ul>
 						<div class="menu__actions">
-							<a href="change.html" class="menu__button" type="button">My exchanges</a>
+							<a href="change.html" class="menu__button">My exchanges</a>
 							<div class="menu__lang lang">
 								<div class="lang__icon">
 									<img src="img/header/lang.svg" alt="lang">
@@ -51,7 +52,7 @@
 
 					</nav>
 				</div>
-				<button type="button" class="menu__icon icon-menu"><span></span></button>
+				<button type="button" aria-label="burger menu" class="menu__icon icon-menu"><span></span></button>
 			</div>
 		</header>
 		<main class="page ">
@@ -175,8 +176,8 @@
 									</div>
 
 									<div class="body-exchange__row">
-										<label class="body-exchange__label" for="get-coins-buy">You get</label>
-										<input autocomplete="off" type="number" id="get-buy-value" name="get-coins-buy" placeholder="≈0.00129786" class="body-exchange__input">
+										<label class="body-exchange__label" for="get-buy-value">You get</label>
+										<input autocomplete="off" type="number" id="get-buy-value" name="get-buy-value" placeholder="≈0.00129786" class="body-exchange__input">
 										<select class="body-exchange__select  select " name="get-buy-value" data-class-modif="form">
 											<option data-asset="img/change/ETH.svg" value="ETH" selected>ETH</option>
 											<option data-asset="img/change/BTC.svg" value="BTC">BTC</option>
@@ -243,7 +244,7 @@
 						<ul class="advantages__list">
 							<li class="advantages__item ">
 								<div class="advantages__icon">
-									<img src="img/started/advantages/limitless.svg" alt="limitless">
+									<img src="img/started/advantages/limitless.svg" alt="infinity symbol ">
 								</div>
 								<h2 class="advantages__description">
 									Limitless, custody-free cryptocurrency exchange
@@ -251,7 +252,7 @@
 							</li>
 							<li class="advantages__item ">
 								<div class="advantages__icon">
-									<img src="img/started/advantages/registration.svg" alt="registration">
+									<img src="img/started/advantages/registration.svg" alt="registration symbol">
 								</div>
 								<h2 class="advantages__description">
 									No registration or account needed
@@ -259,7 +260,7 @@
 							</li>
 							<li class="advantages__item ">
 								<div class="advantages__icon">
-									<img src="img/started/advantages/private.svg" alt="private">
+									<img src="img/started/advantages/private.svg" alt="private symbol">
 								</div>
 								<h2 class="advantages__description">
 									Your privacy is our top concern
@@ -543,13 +544,13 @@
 
 					</div>
 					<div class="media__navigation">
-						<button type="button" class="media__button media__button--prev">
+						<button type="button" class="media__button media__button--prev" aria-label="button prev">
 							<svg viewBox="0 0 16 28" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M14 26L2 14L14 2" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
 							</svg>
 						</button>
 						<a href="#" class="media__link">Explore more</a>
-						<button type="button" class="media__button media__button--next">
+						<button type="button" class="media__button media__button--next" aria-label="button next">
 							<svg viewBox="0 0 16 28" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M2 2L14 14L2 26" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
 							</svg>
@@ -918,7 +919,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240323141318"></script>
+	<script src="js/app.min.js?_v=20240323151514"></script>
 </body>
 
 </html>
