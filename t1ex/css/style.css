@@ -354,13 +354,6 @@ select {
   -o-object-fit: contain;
   object-fit: contain
 }
-.exchange .select--show-top .select__options {
-  top: auto;
-  bottom: calc(100% - .0625rem);
-  border-bottom: 0;
-  border-radius: 4px 4px 0 0;
-  padding: .3125rem 0 .625rem 0
-}
 .exchange .select._select-open .select__value::after {
   -webkit-transform: rotateX(180deg);
   transform: rotateX(180deg)
@@ -3158,9 +3151,8 @@ select {
     padding: .625rem 1.25rem;
     min-height: 3.5rem;
     background-color: var(--bg-dark);
-    width: 100%;
-    max-width: 100%;
     display: grid;
+    width: 100%!important;
     place-items: center;
     text-align: center
   }

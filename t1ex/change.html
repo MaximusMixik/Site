@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240323151514">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240323153421">
 	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="description" content="Author: Max.S.O, 	Limitless, custody-free cryptocurrency exchange">
@@ -88,7 +88,7 @@
 								<div class="exchange__body body-exchange">
 									<div class="body-exchange__row ">
 										<label class="body-exchange__label" for="send-coins-value"> You send</label>
-										<input autocomplete="off" type="number" id="send-coins-value" name="send-coins-value" placeholder="0.1" data-required class="body-exchange__input ">
+										<input autocomplete="off" type="number" id="send-coins-value" name="send-coins-value" placeholder="0.1" required class="body-exchange__input ">
 										<!--  required max="2000.000" min="30.16" -->
 										<!-- data-validate data-error="Address is invalid" -->
 										<select class="body-exchange__select  select " name="send-coins-option" data-class-modif="form">
@@ -153,7 +153,8 @@
 								<div class="exchange__body body-exchange">
 									<div class="body-exchange__row ">
 										<label class="body-exchange__label" for="send-money-value"> You send</label>
-										<input autocomplete="off" type="number" id="send-money-value" name="send-money-value" placeholder="100" required max="2000.000" min="10" data-required class="body-exchange__input ">
+										<input autocomplete="off" type="number" id="send-money-value" name="send-money-value" placeholder="100" required data-required class="body-exchange__input ">
+										<!-- max="2000.000" min="10"  -->
 										<!-- data-validate data-error="Address is invalid" -->
 										<select class="body-exchange__select  select" name="send-money-option" data-class-modif="form">
 											<option data-asset="img/change/USD.svg" value="USD" selected>USD</option>
@@ -488,7 +489,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240323151514"></script>
+	<script src="js/app.min.js?_v=20240323153421"></script>
 </body>
 
 </html>
