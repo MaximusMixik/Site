@@ -14,6 +14,13 @@
             document.documentElement.classList.add(className);
         }));
     }
+    function addLoadedClass() {
+        if (!document.documentElement.classList.contains("loading")) window.addEventListener("load", (function() {
+            setTimeout((function() {
+                document.documentElement.classList.add("loaded");
+            }), 0);
+        }));
+    }
     function functions_getHash() {
         if (location.hash) return location.hash.replace("#", "");
     }
@@ -4125,6 +4132,32 @@
         initSliders();
     }));
     let addWindowScrollEvent = false;
+    function headerScroll() {
+        addWindowScrollEvent = true;
+        const header = document.querySelector("header.header");
+        const headerShow = header.hasAttribute("data-scroll-show");
+        const headerShowTimer = header.dataset.scrollShow ? header.dataset.scrollShow : 500;
+        const startPoint = header.dataset.scroll ? header.dataset.scroll : 1;
+        let scrollDirection = 0;
+        let timer;
+        document.addEventListener("windowScroll", (function(e) {
+            const scrollTop = window.scrollY;
+            clearTimeout(timer);
+            if (scrollTop >= startPoint) {
+                !header.classList.contains("_header-scroll") ? header.classList.add("_header-scroll") : null;
+                if (headerShow) {
+                    if (scrollTop > scrollDirection) header.classList.contains("_header-show") ? header.classList.remove("_header-show") : null; else !header.classList.contains("_header-show") ? header.classList.add("_header-show") : null;
+                    timer = setTimeout((() => {
+                        !header.classList.contains("_header-show") ? header.classList.add("_header-show") : null;
+                    }), headerShowTimer);
+                }
+            } else {
+                header.classList.contains("_header-scroll") ? header.classList.remove("_header-scroll") : null;
+                if (headerShow) header.classList.contains("_header-show") ? header.classList.remove("_header-show") : null;
+            }
+            scrollDirection = scrollTop <= 0 ? 0 : scrollTop;
+        }));
+    }
     setTimeout((() => {
         if (addWindowScrollEvent) {
             let windowScroll = new Event("windowScroll");
@@ -4154,9 +4187,18 @@
             rateImage.src = isLocked ? "./img/change/unlock.svg" : "./img/change/locked.svg";
             rateDescription.textContent = isLocked ? "Floating rate" : "Fixed rate";
         }
+        const form = document.querySelector("form");
+        const nextPage = form.getAttribute("data-page-address");
+        if (form) form.addEventListener("submit", (function(event) {
+            event.preventDefault();
+            setTimeout((function() {
+                window.location.href = nextPage;
+            }), 1e3);
+        }));
     }));
     window["FLS"] = false;
     isWebp();
+    addLoadedClass();
     menuInit();
     spollers();
     tabs();
@@ -4165,4 +4207,5 @@
         autoHeight: false
     });
     formSubmit();
+    headerScroll();
 })();

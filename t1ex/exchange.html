@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240322200607">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240323141318">
 	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +21,7 @@
 					<nav class="menu__body">
 						<ul class="menu__list">
 							<!-- active  or menu__item--current -->
-							<li class="menu__item"><a href="#" class="menu__link">About</a></li>
+							<li class="menu__item"><a href="about.html" class="menu__link">About</a></li>
 							<li class="menu__item "><a href="#" class="menu__link">Currencies</a></li>
 							<li class="menu__item"><a href="#" class="menu__link">FAQ</a></li>
 							<li class="menu__item"><a href="#" class="menu__link">Support</a></li>
@@ -29,16 +29,19 @@
 							<li class="menu__item"><a href="#" class="menu__link">Blog</a></li>
 						</ul>
 						<div class="menu__actions">
-							<button class="menu__button" type="button">My exchanges</button>
+							<a href="change.html" class="menu__button" type="button">My exchanges</a>
 							<div class="menu__lang lang">
+								<div class="lang__icon">
+									<img src="img/header/lang.svg" alt="lang">
+								</div>
 								<div class="lang__current">EN</div>
 								<div class="lang__wrapper">
 									<ul class="lang__list">
 										<li class="lang__item">
-											<a href="main.html" class="lang__link">UA</a>
+											<a href="started.html" class="lang__link">UA</a>
 										</li>
 										<li class="lang__item">
-											<a href="main.html" class="lang__link">GM</a>
+											<a href="started.html" class="lang__link">GM</a>
 										</li>
 									</ul>
 								</div>
@@ -53,7 +56,7 @@
 		</header>
 		<main class="page">
 
-			<section class="page__template template">
+			<div class="page__template template">
 				<div class="template__container">
 					<div class="template__steps  steps-exchange">
 						<ul class="steps-exchange__list	">
@@ -71,7 +74,7 @@
 							</li>
 						</ul>
 					</div>
-					<form action="#" method="POST" data-dev class="template__confirmation change">
+					<form action="#" method="POST" data-dev class="template__body change">
 						<section class="change__indification indification-change ">
 							<h2 class="indification-change__title template-title">
 								Exchange ID:
@@ -86,27 +89,25 @@
 							</div>
 						</section>
 
-
-
 						<section class="change__awaiting awaiting-change">
 							<div class="awaiting-change__column">
 								<h2 class="awaiting-change__title template-value">
-									To address
+									Awaiting deposit
 								</h2>
-								<div class="awaiting-change__row">
+								<div class="awaiting-change__item">
 									<h3 class="awaiting-change__subtitle template-subtitle ">
-										To address
+										You send
 									</h3>
 									<div class="awaiting-change__value  template-value">
 										60.5237914 USDTTRC20
 									</div>
 								</div>
-								<div class="awaiting-change__row">
+								<div class="awaiting-change__item">
 									<h3 class="awaiting-change__subtitle template-subtitle ">
 										To address
 									</h3>
 									<div class="awaiting-change__row">
-										<div class="awaiting-change__value  template-value">
+										<div class="awaiting-change__value  template-value template-value--small">
 											TAMAsT6xVks3TwCviX5VwoTrtwKUwa4fi7
 										</div>
 										<div class="awaiting-change__actions actions">
@@ -126,27 +127,39 @@
 							</div>
 
 						</section>
+						<section class="change__get get-change">
+							<div class="get-change__column">
+								<h3 class="get-change__subtitle template-subtitle ">
+									You get
+								</h3>
+								<div class="get-change__value  template-value">
+									≈ 441.21505376 TRX
+								</div>
 
-						<!-- 
-
-						<div class="confirmation__navigation navigation-confirmation">
-							<div class="navigation-confirmation__checkbox">
-								<input id="checkbox" data-error="Помилка" class="navigation-confirmation__input" type="checkbox"
-									value="1" name="checkbox">
-								<label for="checkbox" class="navigation-confirmation__label"><span
-										class="navigation-confirmation__text">I've read and agree to the
-										T1EX <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span></label>
+								<h3 class="get-change__subtitle template-subtitle ">
+									Recipient's address:
+								</h3>
+								<div class="get-change__row">
+									<div class="get-change__value  template-value template-value--small">
+										TAMAsT6xVks3TwCviX5VwoTrtwKUwa4fi7
+									</div>
+									<div class="get-change__actions actions">
+										<button class="actions__button actions__button--copy" aria-label="copy address ">
+											<img src="img/template/copy.svg" alt="copy">
+										</button>
+										<button class="actions__button actions__button--send" aria-label="send address ">
+											<img src="img/template/send.svg" alt="send">
+										</button>
+									</div>
+								</div>
 							</div>
-							<button class="navigation-confirmation__button navigation-confirmation__button--back"
-								aria-label="back">BACK</button>
-							<button class="navigation-confirmation__button navigation-confirmation__button--next"
-								aria-label="next ">NEXT</button>
-						</div> -->
+							<button class="get-change__button" aria-label="Support ">Support</button>
+						</section>
 					</form>
 
 
 				</div>
-			</section>
+			</div>
 
 		</main>
 		<footer class="footer">
@@ -397,7 +410,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240322200607"></script>
+	<script src="js/app.min.js?_v=20240323141318"></script>
 </body>
 
 </html>

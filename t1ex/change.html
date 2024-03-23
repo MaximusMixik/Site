@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Confirmation</title>
+	<title>Home Page</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -55,82 +55,189 @@
 			</div>
 		</header>
 		<main class="page">
-			<div class="page__template template">
-				<div class="template__container">
-					<div class="template__steps  steps-exchange">
-						<ul class="steps-exchange__list	">
-							<li class="steps-exchange__item ">
-								<div class="steps-exchange__text ">Send to</div>
-							</li>
-							<li class="steps-exchange__item active">
-								<div class="steps-exchange__text">Confirmation</div>
-							</li>
-							<li class="steps-exchange__item">
-								<div class="steps-exchange__text">Exchange</div>
-							</li>
-							<li class="steps-exchange__item">
-								<div class="steps-exchange__text">Finish</div>
-							</li>
-						</ul>
+			<section class="page__exchange exchange">
+				<div class="exchange__container">
+					<h1 class="exchange__title  title title--center">
+						<span>Best crypto</span> exchange for you
+					</h1>
+					<div data-tabs class="exchange__wrapper">
+						<div data-tabs-titles class="exchange__header header-exchange">
+							<button class="header-exchange__button _tab-active"><span>Crypto Exchange</span></button>
+							<button class="header-exchange__button"><span>Buy Crypto</span></button>
+						</div>
+						<div class="exchange__steps steps-exchange">
+							<ul class="steps-exchange__list	">
+								<li class="steps-exchange__item active">
+									<div class="steps-exchange__text ">Send to</div>
+								</li>
+								<li class="steps-exchange__item">
+									<div class="steps-exchange__text">Confirmation</div>
+								</li>
+								<li class="steps-exchange__item">
+									<div class="steps-exchange__text">Exchange</div>
+								</li>
+								<li class="steps-exchange__item">
+									<div class="steps-exchange__text">Finish</div>
+								</li>
+							</ul>
+						</div>
+						<div data-tabs-body class="exchange__tabs">
+							<!-- Crypto Exchange -->
+							<form action="#" method="POST" data-page-address="confirmation.html" class="exchange__main  exchange__main--change">
+								<div class="exchange__body body-exchange">
+									<div class="body-exchange__row ">
+										<label class="body-exchange__label" for="send-coins-value"> You send</label>
+										<input autocomplete="off" type="number" id="send-coins-value" name="send-coins-value" placeholder="0.1" data-required class="body-exchange__input ">
+										<!--  required max="2000.000" min="30.16" -->
+										<!-- data-validate data-error="Address is invalid" -->
+										<select class="body-exchange__select  select " name="send-coins-option" data-class-modif="form">
+											<option data-asset="img/change/BTC.svg" value="BTC" selected>BTC</option>
+											<option data-asset="img/change/ETH.svg" value="ETH">ETH</option>
+											<option data-asset="img/change/TRX.svg" value="TRX">TRX</option>
+											<option data-asset="img/change/LTC.svg" value="LTC">LTC</option>
+										</select>
+									</div>
+
+									<div class="body-exchange__rate  rate-exchange">
+										<input class="rate-exchange__input" hidden type="text">
+										<div class="rate-exchange__safe">
+											<img src="img/change/unlock.svg" alt="unlock">
+										</div>
+										<div class="rate-exchange__description">
+											Floating rate
+										</div>
+										<div class="rate-exchange__arrow">
+											<img src="img/change/exchange.svg" alt="change">
+										</div>
+									</div>
+
+									<div class="body-exchange__row">
+										<label class="body-exchange__label" for="get-coins-value">You get</label>
+										<input autocomplete="off" type="number" id="get-coins-value" name="get-coins-value" placeholder="≈1.81059138" class="body-exchange__input">
+										<select class="body-exchange__select  select" name="get-coins-option" data-class-modif="form">
+											<option data-asset="img/change/ETH.svg" value="ETH" selected>ETH</option>
+											<option data-asset="img/change/BTC.svg" value="BTC">BTC</option>
+											<option data-asset="img/change/TRX.svg" value="TRX">TRX</option>
+											<option data-asset="img/change/LTC.svg" value="LTC">LTC</option>
+										</select>
+									</div>
+									<div class="body-exchange__row body-exchange__row--alert">
+										<div class="body-exchange__column form-row ">
+											<input autocomplete="off" type="number" id="payout-exchange" name="payout-exchange" placeholder="Enter the recipient’s ETH address" class=" form-row__input" data-validate required data-required data-error="Address is invalid">
+											<label class=" form-row__label" for="payout-exchange">Enter the recipient’s ETH
+												address</label>
+											<div class="body-exchange__alert">Do not provide a smart contract as your ETH payout address</div>
+										</div>
+										<button class="body-exchange__button" type="submit">NEXT</button>
+									</div>
+									<div data-spollers class="body-exchange__spollers spollers-exchange">
+										<details class="spollers-exchange__item">
+											<summary class="spollers-exchange__title">Refund address</summary>
+											<div class="spollers-exchange__body">
+												<div class="spollers-exchange__row form-row">
+													<input autocomplete="off" type="number" id="refund-exchange" name="refund-exchange" placeholder="Enter BTC refund address (optional)" class=" form-row__input">
+													<label class="form-row__label" for="refund-exchange">
+														Enter BTC refund address(optional)
+													</label>
+												</div>
+											</div>
+										</details>
+									</div>
+									<!-- <button class="body-exchange__button" type="submit">START EXCHANGE</button> -->
+								</div>
+							</form>
+							<!-- Buy Crypto -->
+							<form action="#" method="POST" data-page-address="confirmation.html" class="exchange__main  exchange__main--buy">
+
+								<div class="exchange__body body-exchange">
+									<div class="body-exchange__row ">
+										<label class="body-exchange__label" for="send-money-value"> You send</label>
+										<input autocomplete="off" type="number" id="send-money-value" name="send-money-value" placeholder="100" required max="2000.000" min="10" data-required class="body-exchange__input ">
+										<!-- data-validate data-error="Address is invalid" -->
+										<select class="body-exchange__select  select" name="send-money-option" data-class-modif="form">
+											<option data-asset="img/change/USD.svg" value="USD" selected>USD</option>
+											<option data-asset="img/change/EUR.svg" value="EUR">EUR</option>
+											<option data-asset="img/change/GBP.svg" value="GBP">GBP</option>
+											<option data-asset="img/change/ITL.svg" value="ITL">ITL</option>
+										</select>
+									</div>
+
+									<div class="body-exchange__rate  rate-exchange">
+										<input class="rate-exchange__input" hidden type="text">
+										<div class="rate-exchange__safe">
+											<img src="img/change/unlock.svg" alt="unlock">
+										</div>
+										<div class="rate-exchange__description">
+											Floating rate
+										</div>
+										<div class="rate-exchange__arrow">
+											<img src="img/change/exchange.svg" alt="change">
+										</div>
+									</div>
+
+									<div class="body-exchange__row">
+										<label class="body-exchange__label" for="get-coins-buy">You get</label>
+										<input autocomplete="off" type="number" id="get-buy-value" name="get-coins-buy" placeholder="≈0.00129786" class="body-exchange__input">
+										<select class="body-exchange__select  select " name="get-buy-value" data-class-modif="form">
+											<option data-asset="img/change/ETH.svg" value="ETH" selected>ETH</option>
+											<option data-asset="img/change/BTC.svg" value="BTC">BTC</option>
+											<option data-asset="img/change/TRX.svg" value="TRX">TRX</option>
+											<option data-asset="img/change/LTC.svg" value="LTC">LTC</option>
+										</select>
+									</div>
+									<div class="body-exchange__title">
+										Avaible offers
+									</div>
+
+									<div class="body-exchange__row body-exchange__row--alert">
+										<div class="body-exchange__column form-row">
+											<input autocomplete="off" type="number" id="payout-buy" name="payout-buy" placeholder="Enter the recipient’s ETH address" class=" form-row__input" data-validate required data-required data-error="Address is invalid">
+											<label class=" form-row__label" for="payout-buy">Enter the recipient’s ETH
+												address</label>
+											<div class="body-exchange__alert">Do not provide a smart contract as your ETH payout address</div>
+										</div>
+										<button class="body-exchange__button" type="submit">NEXT</button>
+									</div>
+
+									<div class="body-exchange__options  options">
+										<div class="options__item">
+											<input id="mercuryo" class="options__input" checked type="radio" value="mercuryo" name="payment">
+											<label for="mercuryo" class="options__label"><picture><source srcset="img/change/mercuryo.webp" type="image/webp"><img src="img/change/mercuryo.png" alt="mercuryo"></picture></label>
+											<div class="options__content">
+												<div class="options__value">
+													≈0.00129786 BTC
+												</div>
+												<div class="options__row">
+													<img src="img/change/visa.svg" alt="visa">
+													<img src="img/change/mastercard.svg" alt="mastercard">
+												</div>
+											</div>
+										</div>
+										<div class="options__item">
+											<input id="simplex" class="options__input" type="radio" value="simplex" name="payment">
+											<label for="simplex" class="options__label"><picture><source srcset="img/change/simplex.webp" type="image/webp"><img src="img/change/simplex.png" alt="simplex"></picture></label>
+											<div class="options__content">
+												<div class="options__value">
+													≈0.00123582BTC
+												</div>
+												<div class="options__row">
+													<img src="img/change/visa.svg" alt="visa">
+													<img src="img/change/mastercard.svg" alt="mastercard">
+													<picture><source srcset="img/change/sepa.webp" type="image/webp"><img src="img/change/sepa.png" alt="sepa"></picture>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<button class="body-exchange__button body-exchange__button--blue" type="submit">START
+										EXCHANGE</button>
+
+								</div>
+							</form>
+						</div>
 					</div>
-					<form action="#" method="POST" data-page-address="exchange.html" class="template__body confirmation">
-						<div class="confirmation__values values-confirmation">
-
-							<!-- SEND -->
-							<section class="values-confirmation__column">
-								<h2 class="values-confirmation__title template-title">
-									You send
-								</h2>
-								<div class="values-confirmation__value template-value ">
-									60.5237914 USDTTRC20
-								</div>
-							</section>
-
-							<div class="values-confirmation__icon">
-								<img src="img/template/arrow.svg" alt="arrow">
-							</div>
-							<!-- GET -->
-							<section class="values-confirmation__column">
-								<h2 class="values-confirmation__title template-title">
-									You get
-								</h2>
-								<div class="values-confirmation__value template-value ">
-									≈441.95135135 TRX
-								</div>
-							</section>
-						</div>
-						<section class="confirmation__address address-confirmation">
-							<h2 class="address-confirmation__title template-title">
-								To address
-							</h2>
-							<div class="address-confirmation__row">
-								<div class="address-confirmation__value template-value template-value--small">
-									TAMAsT6xVks3TwCviX5VwoTrtwKUwa4fi7
-								</div>
-								<div class="address-confirmation__actions actions">
-									<button class="actions__button actions__button--copy" aria-label="copy address ">
-										<img src="img/template/copy.svg" alt="copy">
-									</button>
-									<button class="actions__button actions__button--send" aria-label="send address ">
-										<img src="img/template/send.svg" alt="send">
-									</button>
-								</div>
-							</div>
-						</section>
-
-						<div class="confirmation__navigation navigation-confirmation">
-							<div class="navigation-confirmation__checkbox">
-								<input id="checkbox" data-error="Помилка" class="navigation-confirmation__input" type="checkbox" value="1" name="checkbox">
-								<label for="checkbox" class="navigation-confirmation__label"><span class="navigation-confirmation__text">I've read and agree to the
-										T1EX <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span></label>
-							</div>
-							<button class="navigation-confirmation__button navigation-confirmation__button--back" aria-label="back">BACK</button>
-							<button class="navigation-confirmation__button navigation-confirmation__button--next" aria-label="next ">NEXT</button>
-						</div>
-					</form>
 				</div>
-			</div>
-
+			</section>
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
