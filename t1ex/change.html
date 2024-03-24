@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-	<title>Home Page</title>
+	<title>Change</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240324120011">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240324141450">
 	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="description" content="Author: Max.S.O, 	Limitless, custody-free cryptocurrency exchange">
@@ -80,10 +80,10 @@
 								<div class="lang__wrapper">
 									<ul class="lang__list">
 										<li class="lang__item">
-											<a href="started.html" class="lang__link">UA</a>
+											<a href="#" class="lang__link">UA</a>
 										</li>
 										<li class="lang__item">
-											<a href="started.html" class="lang__link">GM</a>
+											<a href="#" class="lang__link">GM</a>
 										</li>
 									</ul>
 								</div>
@@ -93,7 +93,9 @@
 
 					</nav>
 				</div>
-				<button type="button" aria-label="burger menu" class="menu__icon icon-menu"><span></span></button>
+				<button type="button" aria-label="burger menu" class="menu__icon icon-menu">
+					<span></span>
+				</button>
 			</div>
 		</header>
 		<main class="page">
@@ -130,14 +132,115 @@
 									<div class="body-exchange__row ">
 										<label class="body-exchange__label" for="send-coins-value"> You send</label>
 										<input autocomplete="off" type="number" id="send-coins-value" name="send-coins-value" placeholder="0.1" required class="body-exchange__input ">
-										<!--  required max="2000.000" min="30.16" -->
-										<!-- data-validate data-error="Address is invalid" -->
-										<select class="body-exchange__select  select " name="send-coins-option" data-class-modif="form">
-											<option data-asset="img/change/BTC.svg" value="BTC" selected>BTC</option>
-											<option data-asset="img/change/ETH.svg" value="ETH">ETH</option>
-											<option data-asset="img/change/TRX.svg" value="TRX">TRX</option>
-											<option data-asset="img/change/LTC.svg" value="LTC">LTC</option>
-										</select>
+										<div class=" body-exchange__select select">
+											<div class="select__button" aria-label="select button">
+												<div class="select__icon">
+													<img src="img/change/BTC.svg" alt="BTC">
+												</div>
+												<input class="select__value" value="BTC" placeholder="BTC" type="text" name="send-coins-option">
+											</div>
+											<div class="select__wrapper">
+												<div class="select__search">
+													<button type="button" class="select__search-icon" aria-label="search button">
+														<img src="img/change/search.svg" alt="search">
+													</button>
+													<input class="select__input" spellcheck="false" type="text" placeholder="Type a currency or ticker">
+													<button type="button" class="select__search-close" aria-label="close search button">
+														<img src="img/change/cross.svg" alt="cross">
+													</button>
+												</div>
+												<div class="select__body">
+													<div class="select__title">
+														Popular currencies
+													</div>
+													<ul class="select__options option">
+														<li class="option__item">
+															<div class="option__caption">
+																Bitcoin
+															</div>
+															<div class="option__position">
+																<div class="option__icon">
+																	<img src="img/change/BTC.svg" alt="BTC">
+																</div>
+																<div class="option__label">
+																	BTC
+																</div>
+															</div>
+														</li>
+														<li class="option__item">
+															<div class="option__caption">
+																Ethereum
+															</div>
+															<div class="option__position">
+																<div class="option__icon">
+																	<img src="img/change/ETH.svg" alt="ETH">
+																</div>
+																<div class="option__label">
+																	ETH
+																</div>
+															</div>
+														</li>
+														<li class="option__item">
+															<div class="option__caption">
+																TRON
+															</div>
+															<div class="option__position">
+																<div class="option__icon">
+																	<img src="img/change/TRX.svg" alt="TRX">
+																</div>
+																<div class="option__label">
+																	TRX
+																</div>
+															</div>
+														</li>
+														<li class="option__item">
+															<div class="option__caption">
+																Litecoin
+															</div>
+															<div class="option__position">
+																<div class="option__icon">
+																	<img src="img/change/LTC.svg" alt="LTC">
+																</div>
+																<div class="option__label">
+																	LTC
+																</div>
+															</div>
+														</li>
+													</ul>
+													<div class="select__title">
+														Other currencies
+													</div>
+													<ul class="select__options option">
+														<li class="option__item">
+															<div class="option__caption option__caption--new ">
+																BabyDoge
+															</div>
+															<div class="option__position">
+																<div class="option__icon">
+																	<img src="img/change/BABYDOGE.svg" alt="BABYDOGE">
+																</div>
+																<div class="option__label">
+																	BDG
+																</div>
+															</div>
+														</li>
+														<li class="option__item">
+															<div class="option__caption">
+																Algorand
+															</div>
+															<div class="option__position">
+																<div class="option__icon">
+																	<img src="img/change/ALGO.svg" alt="ALGO">
+																</div>
+																<div class="option__label">
+																	ALG
+																</div>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
 									</div>
 
 									<div class="body-exchange__rate  rate-exchange">
@@ -156,12 +259,115 @@
 									<div class="body-exchange__row">
 										<label class="body-exchange__label" for="get-coins-value">You get</label>
 										<input autocomplete="off" type="number" id="get-coins-value" name="get-coins-value" placeholder="≈1.81059138" class="body-exchange__input">
-										<select class="body-exchange__select  select" name="get-coins-option" data-class-modif="form">
-											<option data-asset="img/change/ETH.svg" value="ETH" selected>ETH</option>
-											<option data-asset="img/change/BTC.svg" value="BTC">BTC</option>
-											<option data-asset="img/change/TRX.svg" value="TRX">TRX</option>
-											<option data-asset="img/change/LTC.svg" value="LTC">LTC</option>
-										</select>
+										<div class=" body-exchange__select select">
+											<div class="select__button" aria-label="select button">
+												<div class="select__icon">
+													<img src="img/change/ETH.svg" alt="ETH">
+												</div>
+												<input class="select__value" value="ETH" placeholder="ETH" type="text" name="get-coins-option">
+											</div>
+											<div class="select__wrapper">
+												<div class="select__search">
+													<button type="button" class="select__search-icon" aria-label="search button">
+														<img src="img/change/search.svg" alt="search">
+													</button>
+													<input class="select__input" spellcheck="false" type="text" placeholder="Type a currency or ticker">
+													<button type="button" class="select__search-close" aria-label="close search button">
+														<img src="img/change/cross.svg" alt="cross">
+													</button>
+												</div>
+												<div class="select__body">
+													<div class="select__title">
+														Popular currencies
+													</div>
+													<ul class="select__options option">
+														<li class="option__item">
+															<div class="option__caption">
+																Bitcoin
+															</div>
+															<div class="option__position">
+																<div class="option__icon">
+																	<img src="img/change/BTC.svg" alt="BTC">
+																</div>
+																<div class="option__label">
+																	BTC
+																</div>
+															</div>
+														</li>
+														<li class="option__item">
+															<div class="option__caption">
+																Ethereum
+															</div>
+															<div class="option__position">
+																<div class="option__icon">
+																	<img src="img/change/ETH.svg" alt="ETH">
+																</div>
+																<div class="option__label">
+																	ETH
+																</div>
+															</div>
+														</li>
+														<li class="option__item">
+															<div class="option__caption">
+																TRON
+															</div>
+															<div class="option__position">
+																<div class="option__icon">
+																	<img src="img/change/TRX.svg" alt="TRX">
+																</div>
+																<div class="option__label">
+																	TRX
+																</div>
+															</div>
+														</li>
+														<li class="option__item">
+															<div class="option__caption">
+																Litecoin
+															</div>
+															<div class="option__position">
+																<div class="option__icon">
+																	<img src="img/change/LTC.svg" alt="LTC">
+																</div>
+																<div class="option__label">
+																	LTC
+																</div>
+															</div>
+														</li>
+													</ul>
+													<div class="select__title">
+														Other currencies
+													</div>
+													<ul class="select__options option">
+														<li class="option__item">
+															<div class="option__caption option__caption--new ">
+																BabyDoge
+															</div>
+															<div class="option__position">
+																<div class="option__icon">
+																	<img src="img/change/BABYDOGE.svg" alt="BABYDOGE">
+																</div>
+																<div class="option__label">
+																	BDG
+																</div>
+															</div>
+														</li>
+														<li class="option__item">
+															<div class="option__caption">
+																Algorand
+															</div>
+															<div class="option__position">
+																<div class="option__icon">
+																	<img src="img/change/ALGO.svg" alt="ALGO">
+																</div>
+																<div class="option__label">
+																	ALG
+																</div>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
 									</div>
 									<div class="body-exchange__row body-exchange__row--alert">
 										<div class="body-exchange__column form-row ">
@@ -185,7 +391,6 @@
 											</div>
 										</details>
 									</div>
-									<!-- <button class="body-exchange__button" type="submit">START EXCHANGE</button> -->
 								</div>
 							</form>
 							<!-- Buy Crypto -->
@@ -195,14 +400,85 @@
 									<div class="body-exchange__row ">
 										<label class="body-exchange__label" for="send-money-value"> You send</label>
 										<input autocomplete="off" type="number" id="send-money-value" name="send-money-value" placeholder="100" required data-required class="body-exchange__input ">
-										<!-- max="2000.000" min="10"  -->
-										<!-- data-validate data-error="Address is invalid" -->
-										<select class="body-exchange__select  select" name="send-money-option" data-class-modif="form">
-											<option data-asset="img/change/USD.svg" value="USD" selected>USD</option>
-											<option data-asset="img/change/EUR.svg" value="EUR">EUR</option>
-											<option data-asset="img/change/GBP.svg" value="GBP">GBP</option>
-											<option data-asset="img/change/ITL.svg" value="ITL">ITL</option>
-										</select>
+										<div class=" body-exchange__select select">
+											<div class="select__button" aria-label="select button">
+												<div class="select__icon">
+													<img src="img/change/USD.svg" alt="USD">
+												</div>
+
+												<input class="select__value" value="USD" placeholder="USD" type="text" name="send-money-option">
+											</div>
+											<div class="select__wrapper">
+												<div class="select__search">
+													<button type="button" class="select__search-icon" aria-label="search button">
+														<img src="img/change/search.svg" alt="search">
+													</button>
+													<input class="select__input" spellcheck="false" type="text" placeholder="Type a currency or ticker">
+													<button type="button" class="select__search-close" aria-label="close search button">
+														<img src="img/change/cross.svg" alt="cross">
+													</button>
+												</div>
+												<div class="select__body">
+													<div class="select__title">
+														Fiat currencies
+													</div>
+													<ul class="select__options option">
+														<li class="option__item">
+															<div class="option__caption">
+																US Dollar
+															</div>
+															<div class="option__position">
+																<div class="option__icon">
+																	<img src="img/change/USD.svg" alt="USD">
+																</div>
+																<div class="option__label">
+																	USD
+																</div>
+															</div>
+														</li>
+														<li class="option__item">
+															<div class="option__caption">
+																Euro
+															</div>
+															<div class="option__position">
+																<div class="option__icon">
+																	<img src="img/change/EUR.svg" alt="EUR">
+																</div>
+																<div class="option__label">
+																	EUR
+																</div>
+															</div>
+														</li>
+														<li class="option__item">
+															<div class="option__caption">
+																Pound Sterling
+															</div>
+															<div class="option__position">
+																<div class="option__icon">
+																	<img src="img/change/GPB.svg" alt="GPB">
+																</div>
+																<div class="option__label">
+																	GPB
+																</div>
+															</div>
+														</li>
+														<li class="option__item">
+															<div class="option__caption">
+																Mexican Peso
+															</div>
+															<div class="option__position">
+																<div class="option__icon">
+																	<img src="img/change/MXN.svg" alt="MXN">
+																</div>
+																<div class="option__label">
+																	MXN
+																</div>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
 									</div>
 
 									<div class="body-exchange__rate  rate-exchange">
@@ -221,12 +497,116 @@
 									<div class="body-exchange__row">
 										<label class="body-exchange__label" for="get-buy-value">You get</label>
 										<input autocomplete="off" type="number" id="get-buy-value" name="get-buy-value" placeholder="≈0.00129786" class="body-exchange__input">
-										<select class="body-exchange__select  select " name="get-buy-value" data-class-modif="form">
-											<option data-asset="img/change/ETH.svg" value="ETH" selected>ETH</option>
-											<option data-asset="img/change/BTC.svg" value="BTC">BTC</option>
-											<option data-asset="img/change/TRX.svg" value="TRX">TRX</option>
-											<option data-asset="img/change/LTC.svg" value="LTC">LTC</option>
-										</select>
+										<div class=" body-exchange__select select">
+											<div class="select__button" aria-label="select button">
+												<div class="select__icon">
+													<img src="img/change/BTC.svg" alt="BTC">
+												</div>
+												<input class="select__value" value="BTC" placeholder="BTC" type="text" name="get-buy-option">
+											</div>
+											<div class="select__wrapper">
+												<div class="select__search">
+													<button type="button" class="select__search-icon" aria-label="search button">
+														<img src="img/change/search.svg" alt="search">
+													</button>
+													<input class="select__input" spellcheck="false" type="text" placeholder="Type a currency or ticker">
+													<button type="button" class="select__search-close" aria-label="close search button">
+														<img src="img/change/cross.svg" alt="cross">
+													</button>
+												</div>
+												<div class="select__body">
+													<div class="select__title">
+														Popular currencies
+													</div>
+													<ul class="select__options option">
+														<li class="option__item">
+															<div class="option__caption">
+																Bitcoin
+															</div>
+															<div class="option__position">
+																<div class="option__icon">
+																	<img src="img/change/BTC.svg" alt="BTC">
+																</div>
+																<div class="option__label">
+																	BTC
+																</div>
+															</div>
+														</li>
+														<li class="option__item">
+															<div class="option__caption">
+																Ethereum
+															</div>
+															<div class="option__position">
+																<div class="option__icon">
+																	<img src="img/change/ETH.svg" alt="ETH">
+																</div>
+																<div class="option__label">
+																	ETH
+																</div>
+															</div>
+														</li>
+														<li class="option__item">
+															<div class="option__caption">
+																TRON
+															</div>
+															<div class="option__position">
+																<div class="option__icon">
+																	<img src="img/change/TRX.svg" alt="TRX">
+																</div>
+																<div class="option__label">
+																	TRX
+																</div>
+															</div>
+														</li>
+														<li class="option__item">
+															<div class="option__caption">
+																Litecoin
+															</div>
+															<div class="option__position">
+																<div class="option__icon">
+																	<img src="img/change/LTC.svg" alt="LTC">
+																</div>
+																<div class="option__label">
+																	LTC
+																</div>
+															</div>
+														</li>
+													</ul>
+													<div class="select__title">
+														Other currencies
+													</div>
+													<ul class="select__options option">
+														<li class="option__item">
+															<div class="option__caption option__caption--new ">
+																BabyDoge
+															</div>
+															<div class="option__position">
+																<div class="option__icon">
+																	<img src="img/change/BABYDOGE.svg" alt="BABYDOGE">
+																</div>
+																<div class="option__label">
+																	BDG
+																</div>
+															</div>
+														</li>
+														<li class="option__item">
+															<div class="option__caption">
+																Algorand
+															</div>
+															<div class="option__position">
+																<div class="option__icon">
+																	<img src="img/change/ALGO.svg" alt="ALGO">
+																</div>
+																<div class="option__label">
+																	ALG
+																</div>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+
 									</div>
 									<div class="body-exchange__title">
 										Avaible offers
@@ -551,7 +931,7 @@
 			</section>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20240324120011"></script>
+	<script src="js/app.min.js?_v=20240324141450"></script>
 </body>
 
 </html>

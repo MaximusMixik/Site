@@ -4094,7 +4094,8 @@
             rateImage.src = isLocked ? "./img/change/unlock.svg" : "./img/change/locked.svg";
             rateDescription.textContent = isLocked ? "Floating rate" : "Fixed rate";
         }
-        const form = document.querySelector("form");
+        //! form pages test
+                const form = document.querySelector("form");
         if (form) {
             const nextPage = form.getAttribute("data-page-address");
             form.addEventListener("submit", (function(event) {
@@ -4104,7 +4105,8 @@
                 }), 1e3);
             }));
         }
-        const selectDropdown = document.querySelectorAll(".select");
+        //!custom select
+                const selectDropdown = document.querySelectorAll(".select");
         if (selectDropdown.length) selectDropdown.forEach((el => {
             class DynamicSearch {
                 constructor() {
@@ -4146,8 +4148,11 @@
                     }));
                 }
                 updateSelectLabel(item) {
-                    const optionPositionHTML = item.querySelector(".option__position").innerHTML;
-                    this.selectLabel.innerHTML = optionPositionHTML;
+                    const optionLabel = item.querySelector(".option__label").textContent.trim();
+                    const optionIconSrc = item.querySelector(".option__icon img").getAttribute("src");
+                    const optionIconAlt = item.querySelector(".option__icon img").getAttribute("alt");
+                    this.selectLabel.innerHTML = `\n          <div class="select__icon">\n            <img src="${optionIconSrc}" alt="${optionIconAlt}">\n          </div>\n          <input class="select__value" value="${optionLabel}" placeholder="${optionLabel}" type="text" name="select">\n        `;
+                    this.select.querySelector(".select__value").value = optionLabel;
                 }
             }
             const selectBtn = el.querySelector(".select__button"), closeBtn = el.querySelector(".select__search-close");
