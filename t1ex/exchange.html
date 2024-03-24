@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240323153421">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240324120011">
 	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="description" content="Author: Max.S.O, 	Limitless, custody-free cryptocurrency exchange">
@@ -15,7 +15,7 @@
 
 <body>
 	<div class="wrapper">
-		<header class="header">
+		<header data-lp class="header">
 			<div class="header__container">
 				<div class="header__logo"><img src="img/logo.svg" alt="logo"></div>
 				<div class="header__menu menu">
@@ -23,15 +23,56 @@
 						<ul class="menu__list">
 							<!-- active  or menu__item--current -->
 							<li class="menu__item"><a href="about.html" class="menu__link">About</a></li>
-							<li class="menu__item "><a href="#" class="menu__link">Currencies</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">FAQ</a></li>
+							<li class="menu__item currencies dropdown">
+								<button type="button" aria-labe="open currencies" class="menu__link">Currencies</button>
+								<div class="currencies__wrapper">
+									<ul class="currencies__list">
+										<li class="currencies__item"><a href="#" class="currencies__link">
+												<div class="currencies__icon"><img src="img/change/BTC.svg" alt="BTC"></div> Bitcoin (BTC)
+											</a></li>
+										<li class="currencies__item"><a href="#" class="currencies__link">
+												<div class="currencies__icon"><img src="img/change/ETH.svg" alt="ETH"></div> Ethereum (ETH)
+											</a></li>
+										<li class="currencies__item"><a href="#" class="currencies__link">
+												<div class="currencies__icon"><img src="img/change/LTC.svg" alt="LTC"></div> Litecoin (LTC)
+											</a></li>
+										<li class="currencies__item"><a href="#" class="currencies__link">
+												<div class="currencies__icon"><img src="img/change/TRX.svg" alt="TRX"></div> Thron (TRX)
+											</a></li>
+										<li class="currencies__item"><a href="#" class="currencies__link">More coins</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="menu__item faq dropdown">
+								<button type="button" aria-labe="open FAQ" class="menu__link">FAQ</button>
+								<div class="faq__wrapper">
+									<ul class="faq__list">
+										<li class="faq__item">
+											<a href="#" class="faq__link">
+												How it works
+											</a>
+										</li>
+										<li class="faq__item">
+											<a href="#" class="faq__link">
+												FAQ
+											</a>
+										</li>
+										<li class="faq__item">
+											<a href="#" class="faq__link">
+												Contacts
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
 							<li class="menu__item"><a href="#" class="menu__link">Support</a></li>
 							<li class="menu__item"><a href="#" class="menu__link">For partners</a></li>
 							<li class="menu__item"><a href="#" class="menu__link">Blog</a></li>
 						</ul>
 						<div class="menu__actions">
-							<a href="change.html" class="menu__button">My exchanges</a>
-							<div class="menu__lang lang">
+							<button type="button" data-popup="#popup" aria-labe="open exchanges" class="menu__button">My
+								exchanges</button>
+							<div class="menu__lang lang dropdown">
 								<div class="lang__icon">
 									<img src="img/header/lang.svg" alt="lang">
 								</div>
@@ -411,7 +452,28 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240323153421"></script>
+	<div id="popup" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<section class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<h2 class="popup__title">
+					Here are all your exchanges
+				</h2>
+				<form class="popup__search" action="#" method="POST">
+					<input type="text" name="search-id" class="popup__search-input" aria-label="search input" placeholder="Enter exchange ID">
+					<button type="submit" aria-label="search button" class="popup__search-button"><img src="img/change/search.svg" alt="search"></button>
+				</form>
+				<article class="popup__description">
+					<h3 class="popup__caption">
+						No exchanges yet
+					</h3>
+					<div class="popup__text">
+						If you would like to add a swap, please enter the exchange ID</div>
+				</article>
+			</section>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20240324120011"></script>
 </body>
 
 </html>
