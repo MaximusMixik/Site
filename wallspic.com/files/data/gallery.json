@@ -1,0 +1,151 @@
+{
+  "gallery": [
+    [
+      { "filter": "phone", "imageUrl": "@img/main/gallery/gallery_image1.jpg" },
+      {
+        "filter": "desktop",
+        "imageUrl": "@img/main/gallery/gallery_image2.jpg"
+      },
+      {
+        "filter": "popular",
+        "imageUrl": "@img/main/gallery/gallery_image3.jpg"
+      },
+      { "filter": "new", "imageUrl": "@img/main/gallery/gallery_image4.jpg" },
+      {
+        "filter": "3840x2160",
+        "imageUrl": "@img/main/gallery/gallery_image5.jpg"
+      },
+      {
+        "filter": "7680x4320",
+        "imageUrl": "@img/main/gallery/gallery_image6.jpg"
+      },
+      {
+        "filter": "1242x2688",
+        "imageUrl": "@img/main/gallery/gallery_image7.jpg"
+      },
+      {
+        "filter": "1125x2436",
+        "imageUrl": "@img/main/gallery/gallery_image8.jpg"
+      },
+      {
+        "filter": "1080x1920",
+        "imageUrl": "@img/main/gallery/gallery_image9.jpg"
+      },
+      {
+        "filter": "1440x2960",
+        "imageUrl": "@img/main/gallery/gallery_image10.jpg"
+      },
+      {
+        "filter": "1080x1920",
+        "imageUrl": "@img/main/gallery/gallery_image11.jpg"
+      },
+      {
+        "filter": "2560x1440",
+        "imageUrl": "@img/main/gallery/gallery_image12.jpg"
+      },
+      {
+        "filter": "1920x1080",
+        "imageUrl": "@img/main/gallery/gallery_image13.jpg"
+      },
+      {
+        "filter": "phone",
+        "imageUrl": "@img/main/gallery/gallery_image14.jpg"
+      },
+      {
+        "filter": "desktop",
+        "imageUrl": "@img/main/gallery/gallery_image15.jpg"
+      },
+      {
+        "filter": "popular",
+        "imageUrl": "@img/main/gallery/gallery_image16.jpg"
+      },
+      { "filter": "new", "imageUrl": "@img/main/gallery/gallery_image17.jpg" },
+      {
+        "filter": "3840x2160",
+        "imageUrl": "@img/main/gallery/gallery_image18.jpg"
+      },
+      {
+        "filter": "7680x4320",
+        "imageUrl": "@img/main/gallery/gallery_image19.jpg"
+      },
+      {
+        "filter": "1242x2688",
+        "imageUrl": "@img/main/gallery/gallery_image20.jpg"
+      },
+      {
+        "filter": "1125x2436",
+        "imageUrl": "@img/main/gallery/gallery_image21.jpg"
+      },
+      {
+        "filter": "1080x1920",
+        "imageUrl": "@img/main/gallery/gallery_image22.jpg"
+      },
+      {
+        "filter": "1440x2960",
+        "imageUrl": "@img/main/gallery/gallery_image23.jpg"
+      },
+      {
+        "filter": "1080x1920",
+        "imageUrl": "@img/main/gallery/gallery_image24.jpg"
+      },
+      {
+        "filter": "2560x1440",
+        "imageUrl": "@img/main/gallery/gallery_image25.jpg"
+      },
+      {
+        "filter": "1920x1080",
+        "imageUrl": "@img/main/gallery/gallery_image26.jpg"
+      },
+      {
+        "filter": "phone",
+        "imageUrl": "@img/main/gallery/gallery_image27.jpg"
+      },
+      {
+        "filter": "desktop",
+        "imageUrl": "@img/main/gallery/gallery_image28.jpg"
+      },
+      {
+        "filter": "popular",
+        "imageUrl": "@img/main/gallery/gallery_image29.jpg"
+      },
+      { "filter": "new", "imageUrl": "@img/main/gallery/gallery_image30.jpg" },
+      {
+        "filter": "3840x2160",
+        "imageUrl": "@img/main/gallery/gallery_image31.jpg"
+      },
+      {
+        "filter": "7680x4320",
+        "imageUrl": "@img/main/gallery/gallery_image32.jpg"
+      },
+      {
+        "filter": "1242x2688",
+        "imageUrl": "@img/main/gallery/gallery_image33.jpg"
+      },
+      {
+        "filter": "1125x2436",
+        "imageUrl": "@img/main/gallery/gallery_image34.jpg"
+      },
+      {
+        "filter": "1080x1920",
+        "imageUrl": "@img/main/gallery/gallery_image35.jpg"
+      },
+      {
+        "filter": "1440x2960",
+        "imageUrl": "@img/main/gallery/gallery_image36.jpg"
+      },
+      {
+        "filter": "1080x1920",
+        "imageUrl": "@img/main/gallery/gallery_image37.jpg"
+      },
+      {
+        "filter": "2560x1440",
+        "imageUrl": "@img/main/gallery/gallery_image38.jpg"
+      },
+      {
+        "filter": "1920x1080",
+        "imageUrl": "@img/main/gallery/gallery_image39.jpg"
+      },
+      { "filter": "phone", "imageUrl": "@img/main/gallery/gallery_image40.jpg" }
+    ]
+  ]
+}
