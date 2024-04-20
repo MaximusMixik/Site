@@ -5176,19 +5176,50 @@
         }), 0);
         var isotope = __webpack_require__(334);
         const items = document.querySelector("[data-iso-items]");
-        const filterItems = document.querySelectorAll(".filter__item");
+        const filterItems = document.querySelectorAll(".filter__item[data-filter]");
+        const sortButtons = document.querySelectorAll(".filter__sort[data-sort-by]");
+        const filterCaption = document.querySelector(".filter--sort .filter__caption");
+        const filterStatusIndication = document.querySelector(".filters");
         if (items) {
             const itemsGrid = new isotope(items, {
                 itemSelector: "[data-iso-item]",
                 percentPosition: true,
                 getSortData: {
-                    sorting: "[data-sorting]"
-                },
-                masonry: {
-                    gutter: 20
+                    time: "[data-time]",
+                    popular: "[data-popular]"
                 },
                 layoutMode: "masonry"
             });
+            sortButtons.forEach((button => {
+                button.addEventListener("click", (() => {
+                    const sortBy = button.dataset.sortBy;
+                    const label = button.textContent;
+                    const isActive = button.classList.contains("active");
+                    sortButtons.forEach((btn => {
+                        btn.classList.remove("active");
+                    }));
+                    if (!isActive) {
+                        button.classList.add("active");
+                        filterCaption.textContent = `Sort by ${label}`;
+                        filterStatusIndication.classList.add("indication");
+                        itemsGrid.arrange({
+                            sortBy
+                        });
+                    } else {
+                        filterCaption.textContent = "Sort by";
+                        filterStatusIndication.classList.remove("indication");
+                        itemsGrid.arrange({
+                            sortBy: ""
+                        });
+                    }
+                }));
+            }));
+            function updateGutter() {
+                if (window.innerWidth < 480) itemsGrid.options.masonry.gutter = 8; else if (window.innerWidth < 768) itemsGrid.options.masonry.gutter = 16; else itemsGrid.options.masonry.gutter = 20;
+                itemsGrid.layout();
+            }
+            window.addEventListener("load", updateGutter);
+            window.addEventListener("resize", updateGutter);
             document.addEventListener("click", documentAction);
             function documentAction(e) {
                 const targetElement = e.target;
@@ -5212,6 +5243,7 @@
                             allFilterItem.classList.remove("active");
                         }
                         const activeFilters = Array.from(document.querySelectorAll(".filter__item.active")).map((item => `[data-filter="${item.dataset.filter}"]`));
+                        if (filterStatusIndication) filterStatusIndication.classList.toggle("indication", activeFilters.length > 0);
                         itemsGrid.arrange({
                             filter: activeFilters.join(", ")
                         });
@@ -5222,17 +5254,17 @@
                     filterItems.forEach((item => {
                         item.classList.remove("active");
                     }));
+                    filterStatusIndication.classList.remove("indication");
+                    filterCaption.textContent = "Sort by";
+                    sortButtons.forEach((btn => {
+                        btn.classList.remove("active");
+                    }));
                     itemsGrid.arrange({
-                        filter: "*"
+                        filter: "*",
+                        sortBy: ""
                     });
                 }
             }
-            filterItems.forEach((item => {
-                if (item.dataset.filter === "*") item.classList.add("active");
-            }));
-            itemsGrid.arrange({
-                filter: "*"
-            });
         }
         class DynamicAdapt {
             constructor(type) {
