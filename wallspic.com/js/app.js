@@ -5406,8 +5406,22 @@
                 if (e.target.closest(".item-gallery__button")) e.target.classList.toggle("active");
             }));
         }
+        function hearerSearchAction() {
+            const parentSearchBlock = document.querySelector(".header-search");
+            if (parentSearchBlock) {
+                document.querySelector(".header-search__button");
+                document.querySelector(".header-search__close");
+                document.addEventListener("click", documentAction);
+                function documentAction(e) {
+                    const targetElement = e.target;
+                    if (targetElement.closest(".header-search__button")) parentSearchBlock.classList.toggle("search-open");
+                    if (targetElement.closest(".header-search__close") || targetElement.closest(".header-search__send")) parentSearchBlock.classList.remove("search-open");
+                }
+            }
+        }
         window.addEventListener("load", windowLoad);
         function windowLoad() {
+            hearerSearchAction();
             filterOpen();
             initDropdowns();
             galleryItemAction();
