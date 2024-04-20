@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240420140425">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240420152157">
 	<meta name="description" content="Author: Max.S.O, Wallpapers for everyone. Find the best wallpapers for your phone, tablet or PC">
 	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
@@ -174,7 +174,10 @@
 					<!-- <img class="poster__image" src="img/main/poster/poster-tablet.webp" alt="poster"> -->
 					<!-- <img class="poster__image" src="img/main/poster/poster-mob.webp" alt="poster"> -->
 					<!-- <img class="poster__image" src="img/main/poster/poster.webp" alt="poster"> -->
-					<img class="poster__image" src="img/main/poster/poster.webp" alt="poster" loading="lazy" srcset="img/main/poster/poster.webp 1200w, img/main/poster/poster-tablet.webp 800w, img/main/poster/poster-mob.webp 500w">
+					<!-- <img class="poster__image" src="img/main/poster/poster.webp" alt="poster" loading="lazy"
+            srcset="img/main/poster/poster.webp 1200w, img/main/poster/poster-tablet.webp 800w, img/main/poster/poster-mob.webp 500w"> -->
+					<img class="poster__image" src="img/main/poster/poster.webp" alt="poster" srcset="img/main/poster/poster.webp 1200w, img/main/poster/poster-tablet.webp 900w, img/main/poster/poster-mob.webp 700w">
+
 				</div>
 			</div>
 			<section class="page__tag tag">
@@ -384,7 +387,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="page__gallery gallery">
+			<div class="page__gallery gallery">
 				<div class="gallery__container">
 					<div class="gallery__header">
 						<div class="gallery__count">
@@ -402,9 +405,9 @@
 								<div class="filters__body">
 									<div class="filter filter--resolution dropdown ">
 										<button type="button" class="filter__button _icon-chevron">
-											<div class="filter__caption">
+											<span class="filter__caption">
 												Resolution
-											</div>
+											</span>
 										</button>
 										<div class="filter__wrapper">
 											<div class="filter__body">
@@ -455,9 +458,9 @@
 									</div>
 									<div class="filter filter--sort dropdown ">
 										<button type="button" class="filter__button _icon-chevron">
-											<div class="filter__caption ">
+											<span class="filter__caption ">
 												Sort by:
-											</div>
+											</span>
 										</button>
 										<div class="filter__wrapper">
 											<div class="filter__body">
@@ -477,18 +480,18 @@
 					<div class="gallery__body gallery__body--pagging">
 						<!-- data-time="YYYY-MM-DDTHH:MM:SS" -->
 						<ul class="gallery__items" data-iso-items>
-							<li data-filter="3840x2160" data-time="2024-04-20T12:30:00" data-time="2023-01-29T12:30:00" data-popular="12" class="gallery__item item-gallery" data-iso-item>
+							<li data-filter="3840x2160" data-time="2024-04-20T12:30:00" data-time="2021-01-29T12:20:00" data-popular="12" class="gallery__item item-gallery" data-iso-item>
 								<a href="#" class="item-item-gallery__image">
 									<img src="img/main/gallery/gallery_image1.webp" alt="image">
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -498,12 +501,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -513,12 +516,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -528,12 +531,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -543,12 +546,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -558,12 +561,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -573,12 +576,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -588,12 +591,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -603,12 +606,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -618,12 +621,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -633,12 +636,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -649,12 +652,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -664,12 +667,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -679,12 +682,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -694,12 +697,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -709,12 +712,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -724,12 +727,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -739,12 +742,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -754,12 +757,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -769,12 +772,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -784,12 +787,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -799,12 +802,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -815,12 +818,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -830,12 +833,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -845,12 +848,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -860,12 +863,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -875,12 +878,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -890,12 +893,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -905,12 +908,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -920,12 +923,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -935,12 +938,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -950,12 +953,12 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
@@ -965,38 +968,37 @@
 								</a>
 								<div class="item-gallery__wrapper ">
 									<div class="item-gallery__left">
-										<button class="item-gallery__button _icon-fire " type="button"></button>
+										<button class="item-gallery__button _icon-fire " type="button" aria-label="reaction fire"></button>
 									</div>
 									<div class="item-gallery__right">
-										<button class="item-gallery__button _icon-menu_favorite " type="button"></button>
-										<button class="item-gallery__button _icon-menu_collection " type="button"></button>
-										<button class="item-gallery__button _icon-social_pinterest active" type="button"></button>
+										<button class="item-gallery__button _icon-menu_favorite " type="button" aria-label="add to favorite"></button>
+										<button class="item-gallery__button _icon-menu_collection " type="button" aria-label="add to collection"></button>
+										<button class="item-gallery__button _icon-social_pinterest active" type="button" aria-label="pinterest"></button>
 									</div>
 								</div>
 							</li>
 						</ul>
 
 						<div class="gallery__action">
+
+
 							<a href="#" class="gallery__next button _icon-arrow_right">Next page</a>
+							<!-- disabled -->
 							<div class="gallery__pagination pagination">
-								<a href="#" class="pagination__item pagination__item--first  _icon-chevron_double">
-								</a>
-								<a href="#" class="pagination__item pagination__item--prev _icon-chevron_right">
-								</a>
+								<a href="#" class="pagination__item pagination__item--first _icon-chevron_double" aria-label="first page"></a>
+								<a href="#" class="pagination__item pagination__item--prev _icon-chevron_right" aria-label="previous page"></a>
 								<div class="pagination__current">
-									<input type="number" min="1" max="265" placeholder="2">
+									<input type="number" min="1" max="265" placeholder="2" aria-label=" page number ">
 									<button type="button">GO</button>
 								</div>
-
-								<a href="#" class="pagination__item pagination__item--next _icon-chevron_right">
-								</a>
+								<a href="#" class="pagination__item pagination__item--next _icon-chevron_right" aria-label="next page "></a>
 								<span class="pagination__total">of 265</span>
 							</div>
 
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
@@ -1086,7 +1088,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240420140425"></script>
+	<script src="js/app.min.js?_v=20240420152157"></script>
 </body>
 
 </html>
