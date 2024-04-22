@@ -5176,7 +5176,6 @@
         }), 0);
         var isotope = __webpack_require__(334);
         const items = document.querySelector("[data-iso-items]");
-        const filterItems = document.querySelectorAll(".filter__item[data-filter]");
         const sortButtons = document.querySelectorAll(".filter__sort[data-sort-by]");
         const filterCaption = document.querySelector(".filter--sort .filter__caption");
         const filterStatusIndication = document.querySelector(".filters");
@@ -5219,39 +5218,11 @@
                 itemsGrid.layout();
             }
             window.addEventListener("load", updateGutter);
-            window.addEventListener("resize", updateGutter);
             document.addEventListener("click", documentAction);
             function documentAction(e) {
                 const targetElement = e.target;
-                if (targetElement.closest(".filter__item")) {
-                    const filterItem = targetElement.closest(".filter__item");
-                    const filterValue = filterItem.dataset.filter;
-                    if (filterValue === "*") {
-                        filterItems.forEach((item => {
-                            item.classList.remove("active");
-                        }));
-                        filterItem.classList.add("active");
-                        itemsGrid.arrange({
-                            filter: "*"
-                        });
-                    } else {
-                        filterItem.classList.toggle("active");
-                        if (filterValue === "*") filterItems.forEach((item => {
-                            if (item !== filterItem) item.classList.remove("active");
-                        })); else {
-                            const allFilterItem = document.querySelector('[data-filter="*"]');
-                            allFilterItem.classList.remove("active");
-                        }
-                        const activeFilters = Array.from(document.querySelectorAll(".filter__item.active")).map((item => `[data-filter="${item.dataset.filter}"]`));
-                        if (filterStatusIndication) filterStatusIndication.classList.toggle("indication", activeFilters.length > 0);
-                        itemsGrid.arrange({
-                            filter: activeFilters.join(", ")
-                        });
-                    }
-                    e.preventDefault();
-                }
                 if (targetElement.closest(".filters__button--clear")) {
-                    filterItems.forEach((item => {
+                    sortButtons.forEach((item => {
                         item.classList.remove("active");
                     }));
                     filterStatusIndication.classList.remove("indication");
@@ -5419,13 +5390,32 @@
                 }
             }
         }
-        window.addEventListener("load", windowLoad);
+        //! isMobile
+                function isMobileDevice() {
+            return typeof window.orientation !== "undefined" || navigator.userAgent.indexOf("IEMobile") !== -1;
+        }
+        //! show app block
+                function openAppLink() {
+            const body = document.querySelector(".app");
+            if (body && isMobileDevice()) {
+                setTimeout((() => {
+                    body.classList.add("app-open");
+                }), 5e3);
+                const closeButton = document.querySelector(".app__close");
+                closeButton.addEventListener("click", (e => {
+                    body.classList.remove("app-open");
+                }));
+            }
+        }
+        //! init main function
+                window.addEventListener("load", windowLoad);
         function windowLoad() {
             hearerSearchAction();
             filterOpen();
             initDropdowns();
             galleryItemAction();
             imagesInit();
+            openAppLink();
         }
         window["FLS"] = true;
         isWebp();
