@@ -5622,8 +5622,7 @@
                         popular: "[data-popular]"
                     },
                     masonry: {
-                        gutter: 20,
-                        columnWidth: 20
+                        gutter: 20
                     },
                     layoutMode: "masonry"
                 });

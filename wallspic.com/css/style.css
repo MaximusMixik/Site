@@ -1015,16 +1015,12 @@ h6 {
   width: 100%
 }
 .slide-popular__image {
-  padding-bottom: 40%;
-  overflow: hidden;
-  position: relative
+  width: 12.5rem;
+  height: 5rem
 }
 .slide-popular__image img {
-  position: absolute;
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
   -o-object-fit: cover;
   object-fit: cover
 }
@@ -2358,9 +2354,6 @@ h6 {
   }
   .gallery__filters {
     flex: 0 0 max-content
-  }
-  .gallery__items {
-    margin-right: -3.125rem
   }
   .gallery__action {
     margin-top: 1.5rem
