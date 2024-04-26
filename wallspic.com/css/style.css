@@ -280,6 +280,13 @@ h6 {
   margin: 0 auto;
   padding: 0 .9375rem
 }
+input[type=email],
+input[type=tel],
+input[type=text],
+textarea {
+  -webkit-appearance: none;
+  appearance: none
+}
 .select {
   min-width: 0;
   position: relative
@@ -1246,7 +1253,9 @@ h6 {
   width: 100%
 }
 .hero__title {
-  font-weight: 600
+  font-weight: 600;
+  max-width: -webkit-max-content;
+  max-width: max-content
 }
 .hero__title:not(:last-child) {
   margin-bottom: .625rem
@@ -2958,6 +2967,9 @@ h6 {
   }
   .search-open .header-search__wrapper {
     right: 0
+  }
+  .app-open .header-search__wrapper {
+    top: 5rem
   }
   .header-search__close::before {
     -webkit-transform: rotate(180deg);

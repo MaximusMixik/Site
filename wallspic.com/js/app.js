@@ -5869,6 +5869,18 @@
                 }));
             }
         }
+        //! iphone upscaling test
+                function inputScale() {
+            let inputList = document.querySelectorAll("[data-outscale]");
+            inputList.forEach((input => {
+                input.addEventListener("focus", (() => {
+                    document.body.style.zoom = "100%";
+                }));
+                input.addEventListener("blur", (() => {
+                    document.body.style.zoom = "100%";
+                }));
+            }));
+        }
         //! init main function
                 window.addEventListener("load", windowLoad);
         function windowLoad() {
@@ -5879,6 +5891,7 @@
             galleryItemAction();
             imagesInit();
             copyLink();
+            inputScale();
             initInput();
         }
         //! TEST
@@ -6054,7 +6067,7 @@
                 }
             }));
         }
-        window["FLS"] = true;
+        window["FLS"] = false;
         isWebp();
         menuInit();
         spollers();
