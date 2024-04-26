@@ -6,12 +6,12 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240425171348">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240426084339">
 	<meta name="description" content="Author: Max.S.O, Wallpapers for everyone. Find the best wallpapers for your phone, tablet or PC">
 	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> -->
 </head>
 
 <body>
@@ -209,7 +209,7 @@
 							<div class="dropzone__title _icon-download">
 								Select a file or drag and drop here
 							</div>
-							<input class="dropzone__input file" type="file" multiple="multiple" accept="image.webp, image.webp, image.webp, image/webp, image/avif">
+							<input class="dropzone__input file" type="file" multiple="multiple" accept="image.webp,image.webp,image.webp,image/webp,image/avif">
 						</div>
 
 					</div>
@@ -218,7 +218,7 @@
 						<div class="form-upload__wrapper">
 
 							<div class="form-upload__item upload-item ">
-								<button type="button" aria-label="delete image" data-clear="0" class="upload-item__close _icon-cross"></button>
+								<button type="button" aria-label="delete image" class="upload-item__close _icon-cross"></button>
 
 								<div class="upload-item__image">
 									<img src="img/upload/image1.webp" alt="image">
@@ -234,7 +234,10 @@
 												Tags
 											</h2>
 											<div class="upload-item__tags ">
-												<input class="tags-item" type="text">
+												<span class="input-tag">cars<a>×</a></span>
+												<span class="input-tag">wallpapers<a>×</a></span>
+												<span class="input-tag">sportcar<a>×</a></span>
+												<input aria-label="choice tag" class="tags-item" type="text">
 											</div>
 										</div>
 										<div class="upload-item__row ">
@@ -257,14 +260,12 @@
 												Author
 											</h2>
 											<input class="upload-item__input" type="text" name="Author" placeholder="Guillaume Mona">
-											</input>
 										</div>
 										<div class="upload-item__row ">
 											<h2 class="upload-item__caption">
 												Source
 											</h2>
 											<input class="upload-item__input" type="text" name="Source" placeholder="https://site.com/...">
-											</input>
 										</div>
 									</div>
 								</div>
@@ -291,7 +292,10 @@
 												Tags
 											</h2>
 											<div class="upload-item__tags ">
-												<input class="tags-item" type="text">
+												<span class="input-tag">mountains<a>×</a></span>
+												<span class="input-tag">wallpapers<a>×</a></span>
+												<span class="input-tag">landscape<a>×</a></span>
+												<input aria-label="choice tag" class="tags-item" type="text">
 											</div>
 										</div>
 										<div class="upload-item__row ">
@@ -315,19 +319,15 @@
 												Author
 											</h2>
 											<input class="upload-item__input" type="text" name="Author" placeholder="Guillaume Mona">
-											</input>
 										</div>
 										<div class="upload-item__row ">
 											<h2 class="upload-item__caption">
 												Source
 											</h2>
 											<input class="upload-item__input" type="text" name="Source" placeholder="https://site.com/...">
-											</input>
 										</div>
-
 									</div>
 								</div>
-
 							</div>
 
 						</div>
@@ -448,7 +448,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240425171348"></script>
+	<script src="js/app.min.js?_v=20240426084339"></script>
 
 </body>
 
