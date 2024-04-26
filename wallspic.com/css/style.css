@@ -943,6 +943,9 @@ h6 {
 .app-open .app {
   right: 0
 }
+.menu-open .app {
+  z-index: 41
+}
 .app__close {
   display: block;
   position: relative;
@@ -1015,14 +1018,23 @@ h6 {
   width: 100%
 }
 .slide-popular__image {
-  width: 12.5rem;
-  height: 5rem
+  padding-bottom: 40%;
+  overflow: hidden;
+  position: relative
 }
 .slide-popular__image img {
+  position: absolute;
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
   -o-object-fit: cover;
-  object-fit: cover
+  object-fit: cover;
+  -webkit-transform: scale(1.001);
+  transform: scale(1.001);
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease,-webkit-transform .3s ease
 }
 .slide-popular__title {
   line-height: 1.7;
@@ -1287,7 +1299,8 @@ h6 {
   display: none
 }
 .gallery__items {
-  position: relative
+  position: relative;
+  overflow: hidden
 }
 .gallery__items::before {
   content: "";
@@ -2355,6 +2368,9 @@ h6 {
   .gallery__filters {
     flex: 0 0 max-content
   }
+  .gallery__items {
+    margin-right: -3.125rem
+  }
   .gallery__action {
     margin-top: 1.5rem
   }
@@ -2730,11 +2746,14 @@ h6 {
     top: 0;
     overflow: auto;
     padding: 3.875rem .75rem 1.875rem;
-    transition: left .3s;
+    transition: left .3s,padding-top .4s ease;
     background-color: var(--bg-primary)
   }
   .menu-open .menu__body {
     left: 0
+  }
+  .app-open .menu__body {
+    padding-top: 8.75rem
   }
   .menu__list {
     flex-direction: column;

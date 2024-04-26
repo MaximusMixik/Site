@@ -5617,15 +5617,20 @@
                 const itemsGrid = new isotope(items, {
                     itemSelector: "[data-iso-item]",
                     percentPosition: true,
+                    layoutMode: "masonry",
                     getSortData: {
                         time: "[data-time]",
                         popular: "[data-popular]"
                     },
                     masonry: {
                         gutter: 20
-                    },
-                    layoutMode: "masonry"
+                    }
                 });
+                window.addEventListener("resize", (() => {
+                    itemsGrid.layout();
+                }));
+                window.addEventListener("load", updateGutter);
+                document.addEventListener("click", documentAction);
                 sortButtons.forEach((button => {
                     button.addEventListener("click", (() => {
                         const sortBy = button.dataset.sortBy;
@@ -5651,7 +5656,7 @@
                     }));
                 }));
                 function updateGutter() {
-                    if (window.innerWidth < 480) itemsGrid.options.masonry.gutter = 8; else if (window.innerWidth < 768) itemsGrid.options.masonry.gutter = 16;
+                    if (window.innerWidth < 480) itemsGrid.options.masonry.gutter = 8; else if (window.innerWidth < 768) itemsGrid.options.masonry.gutter = 16; else itemsGrid.options.masonry.gutter = 20;
                     itemsGrid.layout();
                 }
                 function documentAction(e) {
@@ -5671,8 +5676,6 @@
                         });
                     }
                 }
-                window.addEventListener("load", updateGutter);
-                document.addEventListener("click", documentAction);
             }
         }));
         class DynamicAdapt {
@@ -5878,7 +5881,6 @@
             copyLink();
             initInput();
         }
-        //! UPLOADING 2(рабочий)
         //! TEST
                 const queuedForm = document.querySelector(".form-upload");
         if (queuedForm) {
