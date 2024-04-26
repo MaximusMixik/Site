@@ -5608,68 +5608,74 @@
             }
         }), 0);
         var isotope = __webpack_require__(334);
-        const items = document.querySelector("[data-iso-items]");
-        const sortButtons = document.querySelectorAll(".filter__sort[data-sort-by]");
-        const filterCaption = document.querySelector(".filter--sort .filter__caption");
-        const filterStatusIndication = document.querySelector(".filters");
-        if (items) {
-            const itemsGrid = new isotope(items, {
-                itemSelector: "[data-iso-item]",
-                percentPosition: true,
-                getSortData: {
-                    time: "[data-time]",
-                    popular: "[data-popular]"
-                },
-                layoutMode: "masonry"
-            });
-            sortButtons.forEach((button => {
-                button.addEventListener("click", (() => {
-                    const sortBy = button.dataset.sortBy;
-                    const label = button.textContent;
-                    const isActive = button.classList.contains("active");
-                    sortButtons.forEach((btn => {
-                        btn.classList.remove("active");
+        document.addEventListener("DOMContentLoaded", (() => {
+            const items = document.querySelector("[data-iso-items]");
+            if (items) {
+                const sortButtons = document.querySelectorAll(".filter__sort[data-sort-by]");
+                const filterCaption = document.querySelector(".filter--sort .filter__caption");
+                const filterStatusIndication = document.querySelector(".filters");
+                const itemsGrid = new isotope(items, {
+                    itemSelector: "[data-iso-item]",
+                    percentPosition: true,
+                    getSortData: {
+                        time: "[data-time]",
+                        popular: "[data-popular]"
+                    },
+                    masonry: {
+                        gutter: 20,
+                        columnWidth: 20
+                    },
+                    layoutMode: "masonry"
+                });
+                sortButtons.forEach((button => {
+                    button.addEventListener("click", (() => {
+                        const sortBy = button.dataset.sortBy;
+                        const label = button.textContent;
+                        const isActive = button.classList.contains("active");
+                        sortButtons.forEach((btn => {
+                            btn.classList.remove("active");
+                        }));
+                        if (!isActive) {
+                            button.classList.add("active");
+                            filterCaption.textContent = `Sort by ${label}`;
+                            filterStatusIndication.classList.add("indication");
+                            itemsGrid.arrange({
+                                sortBy
+                            });
+                        } else {
+                            filterCaption.textContent = "Sort by";
+                            filterStatusIndication.classList.remove("indication");
+                            itemsGrid.arrange({
+                                sortBy: ""
+                            });
+                        }
                     }));
-                    if (!isActive) {
-                        button.classList.add("active");
-                        filterCaption.textContent = `Sort by ${label}`;
-                        filterStatusIndication.classList.add("indication");
-                        itemsGrid.arrange({
-                            sortBy
-                        });
-                    } else {
-                        filterCaption.textContent = "Sort by";
+                }));
+                function updateGutter() {
+                    if (window.innerWidth < 480) itemsGrid.options.masonry.gutter = 8; else if (window.innerWidth < 768) itemsGrid.options.masonry.gutter = 16;
+                    itemsGrid.layout();
+                }
+                function documentAction(e) {
+                    const targetElement = e.target;
+                    if (targetElement.closest(".filters__button--clear")) {
+                        sortButtons.forEach((item => {
+                            item.classList.remove("active");
+                        }));
                         filterStatusIndication.classList.remove("indication");
+                        filterCaption.textContent = "Sort by";
+                        sortButtons.forEach((btn => {
+                            btn.classList.remove("active");
+                        }));
                         itemsGrid.arrange({
+                            filter: "*",
                             sortBy: ""
                         });
                     }
-                }));
-            }));
-            function updateGutter() {
-                if (window.innerWidth < 480) itemsGrid.options.masonry.gutter = 8; else if (window.innerWidth < 768) itemsGrid.options.masonry.gutter = 16; else itemsGrid.options.masonry.gutter = 20;
-                itemsGrid.layout();
-            }
-            window.addEventListener("load", updateGutter);
-            document.addEventListener("click", documentAction);
-            function documentAction(e) {
-                const targetElement = e.target;
-                if (targetElement.closest(".filters__button--clear")) {
-                    sortButtons.forEach((item => {
-                        item.classList.remove("active");
-                    }));
-                    filterStatusIndication.classList.remove("indication");
-                    filterCaption.textContent = "Sort by";
-                    sortButtons.forEach((btn => {
-                        btn.classList.remove("active");
-                    }));
-                    itemsGrid.arrange({
-                        filter: "*",
-                        sortBy: ""
-                    });
                 }
+                window.addEventListener("load", updateGutter);
+                document.addEventListener("click", documentAction);
             }
-        }
+        }));
         class DynamicAdapt {
             constructor(type) {
                 this.type = type;
