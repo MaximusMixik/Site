@@ -5627,6 +5627,9 @@
             });
             document.addEventListener("DOMContentLoaded", loading);
             window.addEventListener("load", windowLoaded);
+            window.addEventListener("resize", (() => {
+                itemsGrid.layout();
+            }));
             function loading() {
                 updateGutter();
             }
@@ -5871,6 +5874,89 @@
                 }));
             }
         }
+        //! TAGS
+                class TagsInput {
+            constructor(options) {
+                this.defaults = {
+                    max: null,
+                    duplicate: false,
+                    wrapperClass: "tags-input-wrapper",
+                    tagClass: "input-tag"
+                };
+                this.options = Object.assign({}, this.defaults, options);
+                this.arr = [];
+                this.input = null;
+                this.wrapper = null;
+            }
+            initElements(wrapper) {
+                this.input = wrapper.querySelector("input");
+                this.wrapper = wrapper;
+            }
+            buildUI() {
+                this.wrapper.classList.add(this.options.wrapperClass);
+            }
+            addEvents() {
+                this.wrapper.addEventListener("click", (() => {
+                    this.input.focus();
+                }));
+                this.input.addEventListener("keydown", (event => {
+                    const str = this.input.value.trim();
+                    if ([ 9, 13, 188 ].includes(event.keyCode)) {
+                        event.preventDefault();
+                        if (str !== "") this.addTag(str);
+                    }
+                }));
+            }
+            addTag(string) {
+                if (this.anyErrors(string)) return;
+                this.arr.push(string);
+                const tag = document.createElement("span");
+                tag.className = this.options.tagClass;
+                tag.textContent = string;
+                const closeIcon = document.createElement("a");
+                closeIcon.innerHTML = "&times;";
+                closeIcon.addEventListener("click", (() => {
+                    closeIcon.parentNode.remove();
+                    this.arr.splice(this.arr.indexOf(string), 1);
+                    this.input.value = "";
+                }));
+                tag.appendChild(closeIcon);
+                this.wrapper.insertBefore(tag, this.input);
+                this.input.value = "";
+            }
+            anyErrors(string) {
+                if (this.options.max !== null && this.arr.length >= this.options.max) {
+                    console.log("Max tags limit reached");
+                    return true;
+                }
+                if (!this.options.duplicate && this.arr.includes(string)) {
+                    console.log(`Duplicate found "${string}"`);
+                    return true;
+                }
+                return false;
+            }
+            addData(array) {
+                array.forEach((string => {
+                    this.addTag(string);
+                }));
+            }
+        }
+        function initInput() {
+            const inputs = document.querySelectorAll(".tags-item");
+            inputs.forEach((input => {
+                const wrapper = input.closest(".upload-item__tags");
+                if (wrapper) {
+                    const tagsInput = new TagsInput({
+                        max: 8,
+                        wrapperClass: "tags-input-wrapper",
+                        tagClass: "input-tag"
+                    });
+                    tagsInput.initElements(wrapper);
+                    tagsInput.buildUI();
+                    tagsInput.addEvents();
+                }
+            }));
+        }
         //! iphone upscaling test
                 function inputScale() {
             let inputList = document.querySelectorAll("[data-outscale]");
@@ -5988,89 +6074,6 @@
                     serverMessages.classList.remove("open-message");
                 }), 4e3);
             }
-        }
-        //! TAGS
-                class TagsInput {
-            constructor(options) {
-                this.defaults = {
-                    max: null,
-                    duplicate: false,
-                    wrapperClass: "tags-input-wrapper",
-                    tagClass: "input-tag"
-                };
-                this.options = Object.assign({}, this.defaults, options);
-                this.arr = [];
-                this.input = null;
-                this.wrapper = null;
-            }
-            initElements(wrapper) {
-                this.input = wrapper.querySelector("input");
-                this.wrapper = wrapper;
-            }
-            buildUI() {
-                this.wrapper.classList.add(this.options.wrapperClass);
-            }
-            addEvents() {
-                this.wrapper.addEventListener("click", (() => {
-                    this.input.focus();
-                }));
-                this.input.addEventListener("keydown", (event => {
-                    const str = this.input.value.trim();
-                    if ([ 9, 13, 188 ].includes(event.keyCode)) {
-                        event.preventDefault();
-                        if (str !== "") this.addTag(str);
-                    }
-                }));
-            }
-            addTag(string) {
-                if (this.anyErrors(string)) return;
-                this.arr.push(string);
-                const tag = document.createElement("span");
-                tag.className = this.options.tagClass;
-                tag.textContent = string;
-                const closeIcon = document.createElement("a");
-                closeIcon.innerHTML = "&times;";
-                closeIcon.addEventListener("click", (() => {
-                    closeIcon.parentNode.remove();
-                    this.arr.splice(this.arr.indexOf(string), 1);
-                    this.input.value = "";
-                }));
-                tag.appendChild(closeIcon);
-                this.wrapper.insertBefore(tag, this.input);
-                this.input.value = "";
-            }
-            anyErrors(string) {
-                if (this.options.max !== null && this.arr.length >= this.options.max) {
-                    console.log("Max tags limit reached");
-                    return true;
-                }
-                if (!this.options.duplicate && this.arr.includes(string)) {
-                    console.log(`Duplicate found "${string}"`);
-                    return true;
-                }
-                return false;
-            }
-            addData(array) {
-                array.forEach((string => {
-                    this.addTag(string);
-                }));
-            }
-        }
-        function initInput() {
-            const inputs = document.querySelectorAll(".tags-item");
-            inputs.forEach((input => {
-                const wrapper = input.closest(".upload-item__tags");
-                if (wrapper) {
-                    const tagsInput = new TagsInput({
-                        max: 8,
-                        wrapperClass: "tags-input-wrapper",
-                        tagClass: "input-tag"
-                    });
-                    tagsInput.initElements(wrapper);
-                    tagsInput.buildUI();
-                    tagsInput.addEvents();
-                }
-            }));
         }
         window["FLS"] = false;
         isWebp();
