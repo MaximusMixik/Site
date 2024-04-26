@@ -5608,28 +5608,30 @@
             }
         }), 0);
         var isotope = __webpack_require__(334);
-        document.addEventListener("DOMContentLoaded", (() => {
-            const items = document.querySelector("[data-iso-items]");
-            if (items) {
-                const sortButtons = document.querySelectorAll(".filter__sort[data-sort-by]");
-                const filterCaption = document.querySelector(".filter--sort .filter__caption");
-                const filterStatusIndication = document.querySelector(".filters");
-                const itemsGrid = new isotope(items, {
-                    itemSelector: "[data-iso-item]",
-                    percentPosition: true,
-                    layoutMode: "masonry",
-                    getSortData: {
-                        time: "[data-time]",
-                        popular: "[data-popular]"
-                    },
-                    masonry: {
-                        gutter: 20
-                    }
-                });
-                window.addEventListener("resize", (() => {
-                    itemsGrid.layout();
-                }));
-                window.addEventListener("load", updateGutter);
+        const items = document.querySelector("[data-iso-items]");
+        if (items) {
+            const sortButtons = document.querySelectorAll(".filter__sort[data-sort-by]");
+            const filterCaption = document.querySelector(".filter--sort .filter__caption");
+            const filterStatusIndication = document.querySelector(".filters");
+            const itemsGrid = new isotope(items, {
+                itemSelector: "[data-iso-item]",
+                percentPosition: true,
+                layoutMode: "masonry",
+                getSortData: {
+                    time: "[data-time]",
+                    popular: "[data-popular]"
+                },
+                masonry: {
+                    gutter: 20
+                }
+            });
+            document.addEventListener("DOMContentLoaded", loading);
+            window.addEventListener("load", windowLoaded);
+            function loading() {
+                updateGutter();
+            }
+            function windowLoaded() {
+                updateGutter();
                 document.addEventListener("click", documentAction);
                 sortButtons.forEach((button => {
                     button.addEventListener("click", (() => {
@@ -5655,29 +5657,29 @@
                         }
                     }));
                 }));
-                function updateGutter() {
-                    if (window.innerWidth < 480) itemsGrid.options.masonry.gutter = 8; else if (window.innerWidth < 768) itemsGrid.options.masonry.gutter = 16; else itemsGrid.options.masonry.gutter = 20;
-                    itemsGrid.layout();
-                }
-                function documentAction(e) {
-                    const targetElement = e.target;
-                    if (targetElement.closest(".filters__button--clear")) {
-                        sortButtons.forEach((item => {
-                            item.classList.remove("active");
-                        }));
-                        filterStatusIndication.classList.remove("indication");
-                        filterCaption.textContent = "Sort by";
-                        sortButtons.forEach((btn => {
-                            btn.classList.remove("active");
-                        }));
-                        itemsGrid.arrange({
-                            filter: "*",
-                            sortBy: ""
-                        });
-                    }
+            }
+            function documentAction(e) {
+                const targetElement = e.target;
+                if (targetElement.closest(".filters__button--clear")) {
+                    sortButtons.forEach((item => {
+                        item.classList.remove("active");
+                    }));
+                    filterStatusIndication.classList.remove("indication");
+                    filterCaption.textContent = "Sort by";
+                    sortButtons.forEach((btn => {
+                        btn.classList.remove("active");
+                    }));
+                    itemsGrid.arrange({
+                        filter: "*",
+                        sortBy: ""
+                    });
                 }
             }
-        }));
+            function updateGutter() {
+                if (window.innerWidth < 480) itemsGrid.options.masonry.gutter = 8; else if (window.innerWidth < 768) itemsGrid.options.masonry.gutter = 16; else itemsGrid.options.masonry.gutter = 20;
+                itemsGrid.layout();
+            }
+        }
         class DynamicAdapt {
             constructor(type) {
                 this.type = type;
@@ -5882,14 +5884,17 @@
             }));
         }
         //! init main function
-                window.addEventListener("load", windowLoad);
-        function windowLoad() {
+                document.addEventListener("DOMContentLoaded", loading);
+        function loading() {
+            imagesInit();
+            initDropdowns();
             openAppLink();
+        }
+        window.addEventListener("load", windowLoaded);
+        function windowLoaded() {
             hearerSearchAction();
             filterOpen();
-            initDropdowns();
             galleryItemAction();
-            imagesInit();
             copyLink();
             inputScale();
             initInput();
