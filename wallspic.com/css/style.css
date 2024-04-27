@@ -6,8 +6,8 @@
   font-weight: 400;
   font-style: normal
 }
+.categories__button::after,
 .categories__link::before,
-.dropdown .menu__button::after,
 [class*=_icon-]::before {
   font-family: iconFont;
   font-style: normal;
@@ -142,6 +142,7 @@
   --box-shadow-light: 0 0 toRem(9) 0 rgba(0, 0, 0, 0.15);
   --bg-primary: #121418;
   --bg-gray: #2b2c32;
+  --bg-dark: #303339;
   --bg-hover: #383a40;
   --bg-open: #4f5359;
   --bg-secondary: #fff;
@@ -251,10 +252,6 @@ h6 {
   -ms-scroll-chaining: none;
   overscroll-behavior: none
 }
-.app-open body .wrapper {
-  padding-top: 5rem;
-  transition: padding-top .4s ease
-}
 .wrapper {
   min-height: 100%;
   display: flex;
@@ -304,7 +301,7 @@ textarea {
   display: flex;
   min-width: 0;
   align-items: center;
-  background-color: #303339;
+  background-color: var(--bg-dark);
   padding: .6875rem .9375rem;
   color: var(--text-light-gray);
   gap: .625rem
@@ -352,7 +349,7 @@ textarea {
   top: calc(100% - .0625rem);
   min-width: 100%;
   left: 0;
-  background-color: #303339;
+  background-color: var(--bg-dark);
   color: inherit;
   border-top: 0;
   border-top: 0
@@ -414,18 +411,22 @@ textarea {
 .menu__link.active {
   background-color: var(--bg-hover)
 }
-.menu__button,
 .menu__link {
   color: var(--text-primary)
 }
-.dropdown .menu__button {
+.categories {
+  position: relative;
+  z-index: 2
+}
+.categories__button {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
   gap: .9375rem;
-  position: relative
+  transition: background-color .3s ease;
+  color: var(--text-primary)
 }
-.dropdown .menu__button::before {
+.categories__button::before {
   flex: 0 0 .625rem;
   width: .625rem;
   height: .625rem;
@@ -434,7 +435,7 @@ textarea {
   transition: transform .3s ease;
   transition: transform .3s ease,-webkit-transform .3s ease
 }
-.dropdown .menu__button::after {
+.categories__button::after {
   flex: 0 0 1.875rem;
   width: 1.875rem;
   height: 1.875rem;
@@ -443,16 +444,12 @@ textarea {
   place-items: center;
   color: var(--text-gray)
 }
-.dropdown-open .menu__button {
+.dropdown-open .categories__button {
   background-color: rgba(255,255,255,.1)
 }
-.dropdown-open .menu__button::before {
+.dropdown-open .categories__button::before {
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg)
-}
-.categories {
-  position: relative;
-  z-index: 2
 }
 .categories__link {
   color: var(--text-light)
@@ -479,12 +476,22 @@ textarea {
   place-items: center;
   color: var(--text-gray)
 }
+.main-menu__lang {
+  transition: background-color .3s ease
+}
+.main-menu__lang.dropdown-open.lang {
+  background-color: rgba(255,255,255,.1)
+}
 .main-menu__lang,
 .main-menu__theme {
   padding: .5rem .75rem
 }
 .theme {
-  position: relative
+  position: relative;
+  transition: background-color .3s ease
+}
+.theme.dropdown-open {
+  background-color: rgba(255,255,255,.1)
 }
 .theme__button-open {
   width: 100%;
@@ -665,7 +672,7 @@ textarea {
   color: var(--text-primary);
   padding: .75rem 1rem;
   width: 100%;
-  background: #303339
+  background: var(--bg-dark)
 }
 .button--share::before {
   font-size: 1.125rem
@@ -728,7 +735,7 @@ textarea {
   position: relative
 }
 .search.start__search {
-  color: #bdbebf
+  color: var(--text-light-gray)
 }
 .search__input {
   touch-action: manipulation;
@@ -781,10 +788,10 @@ textarea {
   background-color: #222328
 }
 .start__search .search__input:focus {
-  background-color: #303339
+  background-color: var(--bg-dark)
 }
 .start__search .search__input:-webkit-autofill {
-  -webkit-box-shadow: inset 0 0 0 3.125rem #303339!important;
+  -webkit-box-shadow: inset 0 0 0 3.125rem var(--bg-dark)!important;
   -webkit-text-fill-color: var(--text-primary)!important;
   color: var(--text-primary)!important
 }
@@ -931,27 +938,15 @@ textarea {
   opacity: 0
 }
 .app {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: -webkit-max-content;
-  height: max-content;
-  box-shadow: 0 .0625rem 0 0 rgba(216,216,216,.05);
-  background: #303339;
-  z-index: 10;
-  padding: .5rem 1rem;
-  min-height: 5rem;
-  display: flex;
   align-items: center;
   gap: .5625rem;
-  right: -100%;
-  transition: right .4s ease
+  padding: .5rem 1rem;
+  background: var(--bg-dark);
+  box-shadow: 0 .0625rem 0 0 rgba(216,216,216,.05);
+  display: none
 }
 .app-open .app {
-  right: 0
-}
-.menu-open .app {
-  z-index: 41
+  display: flex
 }
 .app__close {
   display: block;
@@ -1060,7 +1055,12 @@ textarea {
   transition: top .4s ease
 }
 .app-open .header {
-  top: 5rem
+  top: 5rem;
+  transition: top 0s ease
+}
+.menu-open .header {
+  top: 0;
+  transition: top .4s ease
 }
 .header--search {
   border-bottom: .0625rem solid var(--border-dark)
@@ -1090,6 +1090,10 @@ textarea {
   left: 0;
   z-index: -1;
   transition: all .3s ease
+}
+.header._header-scroll {
+  top: 0;
+  transition: top .4s ease
 }
 .header._header-scroll::after {
   background-color: rgba(0,0,0,.6);
@@ -1255,7 +1259,8 @@ textarea {
 .hero__title {
   font-weight: 600;
   max-width: -webkit-max-content;
-  max-width: max-content
+  max-width: max-content;
+  margin: 0 auto
 }
 .hero__title:not(:last-child) {
   margin-bottom: .625rem
@@ -1383,11 +1388,23 @@ textarea {
   margin-bottom: .625rem
 }
 .item-gallery__image {
-  overflow: hidden
+  overflow: hidden;
+  position: relative
 }
-.item-gallery img {
+.item-gallery__image img {
   width: 100%;
   height: auto
+}
+.item-gallery__image.init img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: contain;
+  object-fit: contain;
+  -o-object-position: center;
+  object-position: center
 }
 .item-gallery__wrapper {
   position: absolute;
@@ -1543,7 +1560,7 @@ textarea {
 .tag__link {
   width: -webkit-max-content;
   width: max-content;
-  background-color: #303339;
+  background-color: var(--bg-dark);
   transition: background-color .3s ease;
   width: 100%;
   display: block;
@@ -1566,17 +1583,11 @@ textarea {
   flex-direction: row-reverse
 }
 .page-preview__image {
-  min-height: 37.5rem;
-  position: relative
+  position: relative;
+  text-align: center
 }
 .page-preview__image img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  -o-object-fit: contain;
-  object-fit: contain
+  max-width: 100%
 }
 .page-preview__gallery {
   padding-top: 1.25rem
@@ -1855,7 +1866,7 @@ textarea {
 .upload-item__input {
   min-height: 2.75rem;
   width: 100%;
-  background-color: #303339;
+  background-color: var(--bg-dark);
   border: .0625rem solid transparent;
   transition: border-color .3s ease;
   padding: .6875rem 1rem;
@@ -1894,7 +1905,7 @@ textarea {
   margin: 0
 }
 .tags-input-wrapper {
-  background-color: #303339;
+  background-color: var(--bg-dark);
   padding: .5rem 1rem;
   display: flex;
   flex-wrap: wrap;
@@ -2003,6 +2014,91 @@ textarea {
 }
 .page-popular__item {
   width: 100%
+}
+.page {
+  display: flex;
+  flex-direction: column
+}
+.page__contacts {
+  padding-bottom: 5rem;
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto
+}
+.contacts__container {
+  max-width: 40rem;
+  width: 100%
+}
+.contacts__title {
+  text-align: center
+}
+.contacts__form {
+  display: grid;
+  gap: 1.875rem
+}
+.contacts__label {
+  display: block;
+  color: var(--text-light)
+}
+.contacts__label:not(:last-child) {
+  margin-bottom: .25rem
+}
+.contacts__input,
+.contacts__textarea {
+  width: 100%;
+  display: block;
+  border-radius: 0!important;
+  caret-color: inherit;
+  background-color: var(--bg-dark);
+  padding: .6875rem 1rem;
+  min-height: 2.75rem;
+  color: var(--text-light-gray)
+}
+.contacts__input::-webkit-input-placeholder,
+.contacts__textarea::-webkit-input-placeholder {
+  color: inherit;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s
+}
+.contacts__input:-ms-input-placeholder,
+.contacts__textarea:-ms-input-placeholder {
+  color: inherit;
+  -ms-transition: opacity .3s;
+  transition: opacity .3s
+}
+.contacts__input::-ms-input-placeholder,
+.contacts__textarea::-ms-input-placeholder {
+  color: inherit;
+  -ms-transition: opacity .3s;
+  transition: opacity .3s
+}
+.contacts__input::placeholder,
+.contacts__textarea::placeholder {
+  color: inherit;
+  transition: opacity .3s
+}
+.contacts__input:focus::-webkit-input-placeholder,
+.contacts__textarea:focus::-webkit-input-placeholder {
+  opacity: 0
+}
+.contacts__input:focus:-ms-input-placeholder,
+.contacts__textarea:focus:-ms-input-placeholder {
+  opacity: 0
+}
+.contacts__input:focus::-ms-input-placeholder,
+.contacts__textarea:focus::-ms-input-placeholder {
+  opacity: 0
+}
+.contacts__input:focus::placeholder,
+.contacts__textarea:focus::placeholder {
+  opacity: 0
+}
+.contacts__textarea {
+  resize: vertical;
+  min-height: 11.875rem
+}
+.contacts__button {
+  justify-self: center
 }
 .swiper {
   overflow: hidden
@@ -2222,6 +2318,12 @@ textarea {
   .page-popular__header:not(:last-child) {
     margin-bottom: 1.875rem
   }
+  .page__contacts {
+    padding-top: 6.125rem
+  }
+  .contacts__title {
+    margin-bottom: 3rem
+  }
 }
 @media (min-width:62.56125em) {
   .menu__list {
@@ -2232,12 +2334,16 @@ textarea {
   .menu__link::before {
     display: none
   }
-  .menu__button,
   .menu__link {
     padding: 1.125rem 1.25rem
   }
-  .header--search .menu__button,
   .header--search .menu__link {
+    color: var(--text-light-gray)
+  }
+  .categories__button {
+    padding: 1.125rem 1.25rem
+  }
+  .header--search .categories__button {
     color: var(--text-light-gray)
   }
   .categories__wrapper {
@@ -2761,35 +2867,31 @@ textarea {
   .menu-open .menu__body {
     left: 0
   }
-  .app-open .menu__body {
-    padding-top: 8.75rem
-  }
   .menu__list {
     flex-direction: column;
     padding-bottom: 1.5rem;
     border-bottom: .0625rem solid var(--border-dark)
   }
-  .menu__button,
   .menu__link {
     padding: .75rem
   }
-  .menu__button,
   .menu__link {
     display: flex;
     align-items: center;
     gap: .75rem
   }
-  .dropdown .menu__button::before {
+  .categories__button {
+    width: 100%;
+    padding: .75rem;
+    gap: .75rem
+  }
+  .categories__button::after {
+    content: "\e914"
+  }
+  .categories__button::before {
     color: var(--text-light);
     height: .5rem;
-    margin-left: auto
-  }
-  .dropdown .menu__button {
-    width: 100%;
-    justify-content: left
-  }
-  .dropdown .menu__button::after {
-    content: "\e914"
+    margin: 0 auto 0 0
   }
   .categories__wrapper {
     height: 0;
@@ -2981,7 +3083,7 @@ textarea {
     align-items: center;
     padding: .375rem .8125rem;
     position: relative;
-    background-color: #303339
+    background-color: var(--bg-dark)
   }
   .header-search__input {
     position: absolute;
@@ -2998,7 +3100,7 @@ textarea {
     background-color: transparent
   }
   .header-search__send::before {
-    color: #bdbebf
+    color: var(--text-light-gray)
   }
   .header-search__button,
   .header-search__close,
@@ -3138,7 +3240,7 @@ textarea {
   .filters__button {
     flex: 1 1 10rem;
     max-width: 12.5rem;
-    background: #303339;
+    background: var(--bg-dark);
     border: .0625rem solid var(--border-dark);
     padding: .5rem 1.25rem;
     min-height: 2.5rem
@@ -3208,6 +3310,9 @@ textarea {
     flex-grow: 1;
     flex-shrink: 1
   }
+  .header-search__input {
+    font-size: 1rem
+  }
 }
 @media (max-width:48.06125em) {
   .filters-open body {
@@ -3219,9 +3324,8 @@ textarea {
   .menu__body {
     width: 100%
   }
-  .dropdown .menu__button {
-    max-width: -webkit-max-content;
-    max-width: max-content
+  .search__input {
+    font-size: 1rem
   }
   .title {
     line-height: 1.22
@@ -3279,6 +3383,12 @@ textarea {
     margin: 0 auto
   }
   .page-popular__header:not(:last-child) {
+    margin-bottom: 1.5rem
+  }
+  .page__contacts {
+    padding-top: 4.25rem
+  }
+  .contacts__title {
     margin-bottom: 1.5rem
   }
 }
@@ -3822,12 +3932,16 @@ textarea {
   .select__option:hover {
     background-color: #292b2f
   }
-  .menu__button,
   .menu__link {
     transition: background-color .3s ease,color .3s ease
   }
-  .menu__button:hover,
   .menu__link:hover {
+    background-color: rgba(255,255,255,.1)
+  }
+  .categories__button {
+    transition: background-color .3s ease,color .3s ease
+  }
+  .categories__button:hover {
     background-color: rgba(255,255,255,.1)
   }
   .categories__link {
@@ -3886,7 +4000,7 @@ textarea {
     background-color: #dfdfdf
   }
   .start__search .search__input:hover {
-    background-color: #303339
+    background-color: var(--bg-dark)
   }
   .lang:hover {
     background-color: var(--bg-hover)

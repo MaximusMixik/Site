@@ -294,7 +294,7 @@
  * https://isotope.metafizzy.co
  * Copyright 2010-2018 Metafizzy
  */            (function(window, factory) {
-                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(212), __webpack_require__(485), __webpack_require__(786), __webpack_require__(977), __webpack_require__(530), __webpack_require__(763), __webpack_require__(330), __webpack_require__(534), __webpack_require__(987) ], 
+                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(831), __webpack_require__(485), __webpack_require__(786), __webpack_require__(977), __webpack_require__(530), __webpack_require__(763), __webpack_require__(330), __webpack_require__(534), __webpack_require__(987) ], 
                 __WEBPACK_AMD_DEFINE_RESULT__ = function(Outlayer, getSize, matchesSelector, utils, Item, LayoutMode) {
                     return factory(window, Outlayer, getSize, matchesSelector, utils, Item, LayoutMode);
                 }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== void 0 && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -611,7 +611,7 @@
         530: (module, exports, __webpack_require__) => {
             var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
             (function(window, factory) {
-                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(212) ], __WEBPACK_AMD_DEFINE_FACTORY__ = factory, 
+                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(831) ], __WEBPACK_AMD_DEFINE_FACTORY__ = factory, 
                 __WEBPACK_AMD_DEFINE_RESULT__ = typeof __WEBPACK_AMD_DEFINE_FACTORY__ === "function" ? __WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__) : __WEBPACK_AMD_DEFINE_FACTORY__, 
                 __WEBPACK_AMD_DEFINE_RESULT__ !== void 0 && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
             })(window, (function factory(Outlayer) {
@@ -651,7 +651,7 @@
         763: (module, exports, __webpack_require__) => {
             var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
             (function(window, factory) {
-                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(485), __webpack_require__(212) ], 
+                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(485), __webpack_require__(831) ], 
                 __WEBPACK_AMD_DEFINE_FACTORY__ = factory, __WEBPACK_AMD_DEFINE_RESULT__ = typeof __WEBPACK_AMD_DEFINE_FACTORY__ === "function" ? __WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__) : __WEBPACK_AMD_DEFINE_FACTORY__, 
                 __WEBPACK_AMD_DEFINE_RESULT__ !== void 0 && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
             })(window, (function factory(getSize, Outlayer) {
@@ -835,7 +835,7 @@
  * MIT License
  * by David DeSandro
  */            (function(window, factory) {
-                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(212), __webpack_require__(485) ], 
+                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(831), __webpack_require__(485) ], 
                 __WEBPACK_AMD_DEFINE_FACTORY__ = factory, __WEBPACK_AMD_DEFINE_RESULT__ = typeof __WEBPACK_AMD_DEFINE_FACTORY__ === "function" ? __WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__) : __WEBPACK_AMD_DEFINE_FACTORY__, 
                 __WEBPACK_AMD_DEFINE_RESULT__ !== void 0 && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
             })(window, (function factory(Outlayer, getSize) {
@@ -1278,7 +1278,7 @@
                 return Item;
             }));
         },
-        212: (module, exports, __webpack_require__) => {
+        831: (module, exports, __webpack_require__) => {
             var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
             /*!
  * Outlayer v2.1.1
@@ -5569,9 +5569,7 @@
                 }
             });
         }
-        window.addEventListener("load", (function(e) {
-            initSliders();
-        }));
+        initSliders();
         let addWindowScrollEvent = false;
         function headerScroll() {
             addWindowScrollEvent = true;
@@ -5608,33 +5606,28 @@
             }
         }), 0);
         var isotope = __webpack_require__(334);
-        const items = document.querySelector("[data-iso-items]");
-        if (items) {
-            const sortButtons = document.querySelectorAll(".filter__sort[data-sort-by]");
-            const filterCaption = document.querySelector(".filter--sort .filter__caption");
-            const filterStatusIndication = document.querySelector(".filters");
-            const itemsGrid = new isotope(items, {
-                itemSelector: "[data-iso-item]",
-                percentPosition: true,
-                layoutMode: "masonry",
-                getSortData: {
-                    time: "[data-time]",
-                    popular: "[data-popular]"
-                },
-                masonry: {
-                    gutter: 20
-                }
-            });
-            document.addEventListener("DOMContentLoaded", loading);
-            window.addEventListener("load", windowLoaded);
-            window.addEventListener("resize", (() => {
-                itemsGrid.layout();
-            }));
-            function loading() {
-                updateGutter();
-            }
-            function windowLoaded() {
-                updateGutter();
+        document.addEventListener("DOMContentLoaded", (() => {
+            const items = document.querySelector("[data-iso-items]");
+            if (items) {
+                const sortButtons = document.querySelectorAll(".filter__sort[data-sort-by]");
+                const filterCaption = document.querySelector(".filter--sort .filter__caption");
+                const filterStatusIndication = document.querySelector(".filters");
+                const itemsGrid = new isotope(items, {
+                    itemSelector: "[data-iso-item]",
+                    percentPosition: true,
+                    layoutMode: "masonry",
+                    getSortData: {
+                        time: "[data-time]",
+                        popular: "[data-popular]"
+                    },
+                    masonry: {
+                        gutter: 20
+                    }
+                });
+                window.addEventListener("resize", (() => {
+                    itemsGrid.layout();
+                }));
+                window.addEventListener("load", updateGutter);
                 document.addEventListener("click", documentAction);
                 sortButtons.forEach((button => {
                     button.addEventListener("click", (() => {
@@ -5660,29 +5653,29 @@
                         }
                     }));
                 }));
-            }
-            function documentAction(e) {
-                const targetElement = e.target;
-                if (targetElement.closest(".filters__button--clear")) {
-                    sortButtons.forEach((item => {
-                        item.classList.remove("active");
-                    }));
-                    filterStatusIndication.classList.remove("indication");
-                    filterCaption.textContent = "Sort by";
-                    sortButtons.forEach((btn => {
-                        btn.classList.remove("active");
-                    }));
-                    itemsGrid.arrange({
-                        filter: "*",
-                        sortBy: ""
-                    });
+                function updateGutter() {
+                    if (window.innerWidth < 480) itemsGrid.options.masonry.gutter = 8; else if (window.innerWidth < 768) itemsGrid.options.masonry.gutter = 16; else itemsGrid.options.masonry.gutter = 20;
+                    itemsGrid.layout();
+                }
+                function documentAction(e) {
+                    const targetElement = e.target;
+                    if (targetElement.closest(".filters__button--clear")) {
+                        sortButtons.forEach((item => {
+                            item.classList.remove("active");
+                        }));
+                        filterStatusIndication.classList.remove("indication");
+                        filterCaption.textContent = "Sort by";
+                        sortButtons.forEach((btn => {
+                            btn.classList.remove("active");
+                        }));
+                        itemsGrid.arrange({
+                            filter: "*",
+                            sortBy: ""
+                        });
+                    }
                 }
             }
-            function updateGutter() {
-                if (window.innerWidth < 480) itemsGrid.options.masonry.gutter = 8; else if (window.innerWidth < 768) itemsGrid.options.masonry.gutter = 16; else itemsGrid.options.masonry.gutter = 20;
-                itemsGrid.layout();
-            }
-        }
+        }));
         class DynamicAdapt {
             constructor(type) {
                 this.type = type;
@@ -5792,16 +5785,6 @@
                 }));
             }
         }
-        //! adaptive images in isotope
-                function imagesInit() {
-            const images = document.querySelectorAll(".gallery__image");
-            if (images.length) images.forEach((image => {
-                const imageItem = image.querySelector("img");
-                const padding = imageItem.offsetHeight / imageItem.offsetWidth * 100;
-                image.style.paddingBottom = `${padding}%`;
-                imageItem.classList.add("init");
-            }));
-        }
         //! open filters
                 function filterOpen() {
             const filterButton = document.querySelector(".filters__icon");
@@ -5844,10 +5827,10 @@
                 function openAppLink() {
             const body = document.querySelector(".app");
             if (body && isMobileDevice()) {
-                document.documentElement.classList.add("app-open");
+                document.body.classList.add("app-open");
                 const closeButton = document.querySelector(".app__close");
                 closeButton.addEventListener("click", (e => {
-                    document.documentElement.classList.remove("app-open");
+                    document.body.classList.remove("app-open");
                 }));
             }
         }
@@ -5957,24 +5940,12 @@
                 }
             }));
         }
-        //! iphone upscaling test
-                function inputScale() {
-            let inputList = document.querySelectorAll("[data-outscale]");
-            inputList.forEach((input => {
-                input.addEventListener("focus", (() => {
-                    document.body.style.zoom = "100%";
-                }));
-                input.addEventListener("blur", (() => {
-                    document.body.style.zoom = "100%";
-                }));
-            }));
-        }
+        //! adaptive images in isotope
         //! init main function
                 document.addEventListener("DOMContentLoaded", loading);
         function loading() {
-            imagesInit();
-            initDropdowns();
             openAppLink();
+            initDropdowns();
         }
         window.addEventListener("load", windowLoaded);
         function windowLoaded() {
@@ -5982,97 +5953,97 @@
             filterOpen();
             galleryItemAction();
             copyLink();
-            inputScale();
             initInput();
+            imagesUploadAction();
         }
         //! TEST
-                const queuedForm = document.querySelector(".form-upload");
-        if (queuedForm) {
-            const queuedImagesArray = [], queuedFormBody = queuedForm.querySelector(".form-upload__wrapper"), queuedFormButton = queuedForm.querySelector(".form-upload__button"), inputDiv = document.querySelector(".dropzone__wrapper"), input = document.querySelector(".dropzone__input"), serverMessages = document.querySelector(".message-upload"), testElements = document.querySelectorAll(".upload-item");
-            document.addEventListener("DOMContentLoaded", (() => {
+                function imagesUploadAction() {
+            const queuedForm = document.querySelector(".form-upload");
+            if (queuedForm) {
+                const queuedImagesArray = [], queuedFormBody = queuedForm.querySelector(".form-upload__wrapper"), queuedFormButton = queuedForm.querySelector(".form-upload__button"), inputDiv = document.querySelector(".dropzone__wrapper"), input = document.querySelector(".dropzone__input"), serverMessages = document.querySelector(".message-upload"), testElements = document.querySelectorAll(".upload-item");
                 const messageSent = localStorage.getItem("messageSent");
                 if (messageSent === "true") {
                     showMessage();
                     localStorage.removeItem("messageSent");
                 }
-            }));
-            showForm();
-            input.addEventListener("change", handleFileSelection);
-            inputDiv.addEventListener("dragover", handleDragOver);
-            input.addEventListener("drop", handleDrop);
-            queuedFormButton.addEventListener("click", handleSubmit);
-            function handleFileSelection() {
-                const files = input.files;
-                for (const file of files) if (file.type.match("image") && !queuedImagesArray.some((image => image.name === file.name))) queuedImagesArray.push(file);
-                queuedForm.reset();
-                displayQueuedImages();
-            }
-            function handleDragOver(e) {
-                e.preventDefault();
-            }
-            function handleDrop(e) {
-                e.preventDefault();
-                const files = e.dataTransfer.files;
-                for (const file of files) if (file.type.match("image") && !queuedImagesArray.some((image => image.name === file.name))) queuedImagesArray.push(file);
-                displayQueuedImages();
-            }
-            function getImageDimensions(image) {
-                return new Promise(((resolve, reject) => {
-                    const img = new Image;
-                    img.onload = () => {
-                        resolve({
-                            width: img.width,
-                            height: img.height
-                        });
-                    };
-                    img.onerror = reject;
-                    img.src = URL.createObjectURL(image);
-                }));
-            }
-            async function displayQueuedImages() {
-                let images = "";
-                for (let index = 0; index < queuedImagesArray.length; index++) {
-                    const image = queuedImagesArray[index];
-                    const fileName = image.name;
-                    const fileSize = image.size;
-                    const sizeMB = fileSize / (1024 * 1024);
-                    const {width, height} = await getImageDimensions(image);
-                    images += `<div class="form-upload__item upload-item ">\n                  <button type="button" aria-label="delete image" data-clear='${index}' class="upload-item__close _icon-cross"></button>\n                  <div class="upload-item__image">\n                      <img src="${URL.createObjectURL(image)}" alt="image">\n                  </div>\n                  <div class="upload-item__info">\n                      <div class="upload-item__header">\n                          <span>${fileName}</span>\n                            <span>${width}x${height}</span>\n                          <span>${sizeMB.toFixed(2)} MB</span>\n                      </div>\n                      <div class="upload-item__body">\n                          <div class="upload-item__row ">\n                              <h2 class="upload-item__caption">Tags</h2>\n                              <div class="upload-item__tags ">\n                                  <input  aria-label="choice tag" class="tags-item" type="text" >\n                              </div>\n                          </div>\n                          <div class="upload-item__row ">\n                              <h2 class="upload-item__caption">Category</h2>\n                              <div class="upload-item__select select-item">\n                                  <select  class="select-item__body" name="category" data-class-modif="form">\n                                      <option selected disabled>Select a category</option>\n                                      <option>Природа</option>\n                                      <option>Цветы</option>\n                                      <option>Абстракция</option>\n                                      <option>Машины</option>\n                                    </select>\n                                  <div class="select-item__arrow"></div>\n                              </div>\n                          </div>\n                          <div class="upload-item__row ">\n                              <h2 class="upload-item__caption">Author</h2>\n                              <input class="upload-item__input" type="text" name="Author" placeholder="Guillaume Mona">\n                          </div>\n                          <div class="upload-item__row ">\n                              <h2 class="upload-item__caption">Source</h2>\n                              <input class="upload-item__input" type="text" name="Source" placeholder="https://site.com/...">\n                          </div>\n                      </div>\n                  </div>\n              </div>`;
-                }
-                queuedFormBody.innerHTML = images;
-                initInput();
-                modules_flsModules.select.selectsInit(document.querySelectorAll("select"));
-                deleteQueuedImage();
                 showForm();
-            }
-            function deleteQueuedImage() {
-                const clearButtons = document.querySelectorAll("[data-clear]");
-                clearButtons.forEach((buttonClear => {
-                    buttonClear.addEventListener("click", handleDelete);
-                }));
-            }
-            function handleDelete(e) {
-                const targetElement = e.target;
-                const index = parseInt(targetElement.getAttribute("data-clear"));
-                if (!isNaN(index)) {
-                    queuedImagesArray.splice(index, 1);
+                input.addEventListener("change", handleFileSelection);
+                inputDiv.addEventListener("dragover", handleDragOver);
+                input.addEventListener("drop", handleDrop);
+                queuedFormButton.addEventListener("click", handleSubmit);
+                function handleFileSelection() {
+                    const files = input.files;
+                    for (const file of files) if (file.type.match("image") && !queuedImagesArray.some((image => image.name === file.name))) queuedImagesArray.push(file);
+                    queuedForm.reset();
                     displayQueuedImages();
+                }
+                function handleDragOver(e) {
+                    e.preventDefault();
+                }
+                function handleDrop(e) {
+                    e.preventDefault();
+                    const files = e.dataTransfer.files;
+                    for (const file of files) if (file.type.match("image") && !queuedImagesArray.some((image => image.name === file.name))) queuedImagesArray.push(file);
+                    displayQueuedImages();
+                }
+                function getImageDimensions(image) {
+                    return new Promise(((resolve, reject) => {
+                        const img = new Image;
+                        img.onload = () => {
+                            resolve({
+                                width: img.width,
+                                height: img.height
+                            });
+                        };
+                        img.onerror = reject;
+                        img.src = URL.createObjectURL(image);
+                    }));
+                }
+                async function displayQueuedImages() {
+                    let images = "";
+                    for (let index = 0; index < queuedImagesArray.length; index++) {
+                        const image = queuedImagesArray[index];
+                        const fileName = image.name;
+                        const fileSize = image.size;
+                        const sizeMB = fileSize / (1024 * 1024);
+                        const {width, height} = await getImageDimensions(image);
+                        images += `<div class="form-upload__item upload-item ">\n                  <button type="button" aria-label="delete image" data-clear='${index}' class="upload-item__close _icon-cross"></button>\n                  <div class="upload-item__image">\n                      <img src="${URL.createObjectURL(image)}" alt="image">\n                  </div>\n                  <div class="upload-item__info">\n                      <div class="upload-item__header">\n                          <span>${fileName}</span>\n                            <span>${width}x${height}</span>\n                          <span>${sizeMB.toFixed(2)} MB</span>\n                      </div>\n                      <div class="upload-item__body">\n                          <div class="upload-item__row ">\n                              <h2 class="upload-item__caption">Tags</h2>\n                              <div class="upload-item__tags ">\n                                  <input  aria-label="choice tag" class="tags-item" type="text" >\n                              </div>\n                          </div>\n                          <div class="upload-item__row ">\n                              <h2 class="upload-item__caption">Category</h2>\n                              <div class="upload-item__select select-item">\n                                  <select  class="select-item__body" name="category" data-class-modif="form">\n                                      <option selected disabled>Select a category</option>\n                                      <option>Природа</option>\n                                      <option>Цветы</option>\n                                      <option>Абстракция</option>\n                                      <option>Машины</option>\n                                    </select>\n                                  <div class="select-item__arrow"></div>\n                              </div>\n                          </div>\n                          <div class="upload-item__row ">\n                              <h2 class="upload-item__caption">Author</h2>\n                              <input class="upload-item__input" type="text" name="Author" placeholder="Guillaume Mona">\n                          </div>\n                          <div class="upload-item__row ">\n                              <h2 class="upload-item__caption">Source</h2>\n                              <input class="upload-item__input" type="text" name="Source" placeholder="https://site.com/...">\n                          </div>\n                      </div>\n                  </div>\n              </div>`;
+                    }
+                    queuedFormBody.innerHTML = images;
+                    initInput();
+                    modules_flsModules.select.selectsInit(document.querySelectorAll("select"));
+                    deleteQueuedImage();
                     showForm();
                 }
-            }
-            function showForm() {
-                if (queuedImagesArray.length || testElements.length) queuedForm.classList.add("show-form"); else queuedForm.classList.remove("show-form");
-            }
-            function handleSubmit(e) {
-                e.preventDefault();
-                localStorage.setItem("messageSent", "true");
-                location.reload();
-            }
-            function showMessage() {
-                serverMessages.classList.add("open-message");
-                setTimeout((() => {
-                    serverMessages.classList.remove("open-message");
-                }), 4e3);
+                function deleteQueuedImage() {
+                    const clearButtons = document.querySelectorAll("[data-clear]");
+                    clearButtons.forEach((buttonClear => {
+                        buttonClear.addEventListener("click", handleDelete);
+                    }));
+                }
+                function handleDelete(e) {
+                    const targetElement = e.target;
+                    const index = parseInt(targetElement.getAttribute("data-clear"));
+                    if (!isNaN(index)) {
+                        queuedImagesArray.splice(index, 1);
+                        displayQueuedImages();
+                        showForm();
+                    }
+                }
+                function showForm() {
+                    if (queuedImagesArray.length || testElements.length) queuedForm.classList.add("show-form"); else queuedForm.classList.remove("show-form");
+                }
+                function handleSubmit(e) {
+                    e.preventDefault();
+                    localStorage.setItem("messageSent", "true");
+                    location.reload();
+                }
+                function showMessage() {
+                    serverMessages.classList.add("open-message");
+                    setTimeout((() => {
+                        serverMessages.classList.remove("open-message");
+                    }), 4e3);
+                }
             }
         }
         window["FLS"] = false;

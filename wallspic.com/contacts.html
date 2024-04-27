@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Upload</title>
+	<title>Contacts</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<link rel="stylesheet" href="css/style.min.css?_v=20240427124530">
@@ -193,37 +193,31 @@
 					View
 				</a>
 			</div>
-			<section class="page__upload upload">
-				<div class="upload__container">
-					<h1 class="upload__title ">
-						Upload Wallpapers
+			<section class="page__contacts contacts">
+				<div class="contacts__container">
+					<h1 class="contacts__title title">
+						Contact Us
 					</h1>
-					<div class="upload__dropzone dropzone">
-						<div class="dropzone__wrapper">
-							<div class="dropzone__title _icon-download">
-								Select a file or drag and drop here
-							</div>
-							<input class="dropzone__input  file" type="file" multiple="multiple" aria-label="drop your file" accept="image.webp,image.webp,image.webp,image/webp,image/avif">
+					<form class="contacts__form ">
+						<!-- data-error="incorrect" -->
+						<div class="contacts__item">
+							<label for="name" class="contacts__label">
+								Ваше имя
+							</label>
+							<input autocomplete="off" id="name" required type="text" name="name" placeholder="Ваше имя" class="contacts__input">
 						</div>
-					</div>
+						<div class="contacts__item">
+							<label for="name" class="contacts__label">E-mail*</label>
+							<input autocomplete="off" required id="email" type="email" name="email" placeholder="Ваш адрес электронной почты" class="contacts__input">
+						</div>
 
-					<form class="upload__form form-upload">
-						<div class="form-upload__wrapper">
+						<div class="contacts__item">
+							<label for="textarea" class="contacts__label"> Сообщение* </label>
+							<textarea class="contacts__textarea" minlength="30" required name="textarea" id="textarea" placeholder="Краткое описание"></textarea>
 						</div>
-						<button class="form-upload__button button" aria-label="submit button" type="submit"> Upload</button>
+
+						<button class="contacts__button button" aria-label="submit button" type="submit"> Send Message</button>
 					</form>
-
-					<div class="upload__message message-upload ">
-						<h2 class="message-upload__title">
-							Image Uploaded
-							<img src="img/upload/upload.webp" alt="congratulates">
-						</h2>
-						<div class="message-upload__text">
-							Our editors are already reviewing your image.
-						</div>
-					</div>
-
-
 				</div>
 			</section>
 
