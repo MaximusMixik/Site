@@ -1929,7 +1929,7 @@ textarea {
   display: flex;
   gap: .375rem
 }
-.input-tag a {
+.input-tag button {
   display: inline-block;
   cursor: pointer
 }

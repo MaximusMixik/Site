@@ -5896,7 +5896,9 @@
                 const tag = document.createElement("span");
                 tag.className = this.options.tagClass;
                 tag.textContent = string;
-                const closeIcon = document.createElement("a");
+                const closeIcon = document.createElement("button");
+                closeIcon.setAttribute("aria-label", "button remove tag");
+                closeIcon.setAttribute("type", "button");
                 closeIcon.innerHTML = "&times;";
                 closeIcon.addEventListener("click", (() => {
                     closeIcon.parentNode.remove();
