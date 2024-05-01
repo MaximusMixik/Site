@@ -2010,6 +2010,8 @@
         }
         var isotope = __webpack_require__(334);
         const items = document.querySelector("[data-iso-items]");
+        let gutterSize = 8;
+        if (window.innerWidth > 480) gutterSize = 16; else if (window.innerWidth > 768) gutterSize = 20;
         if (items) {
             const sortButtons = document.querySelectorAll(".filter__sort[data-sort-by]");
             const filterCaption = document.querySelector(".filter--sort .filter__caption");
@@ -2023,23 +2025,16 @@
                     popular: "[data-popular]"
                 },
                 masonry: {
-                    gutter: 8
+                    gutter: gutterSize
                 }
             });
             document.addEventListener("DOMContentLoaded", (() => {
-                updateGutter();
-            }));
-            window.addEventListener("resize", (() => {
                 itemsGrid.layout();
             }));
             window.addEventListener("load", (() => {
                 sortAction();
                 document.addEventListener("click", documentAction);
             }));
-            function updateGutter() {
-                if (window.innerWidth > 480) itemsGrid.options.masonry.gutter = 16; else if (window.innerWidth > 768) itemsGrid.options.masonry.gutter = 20;
-                itemsGrid.layout();
-            }
             function sortAction() {
                 if (sortButtons.length) sortButtons.forEach((button => {
                     button.addEventListener("click", (() => {
