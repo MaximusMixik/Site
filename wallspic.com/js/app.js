@@ -2008,6 +2008,82 @@
                 }
             }
         }
+        var isotope = __webpack_require__(334);
+        const items = document.querySelector("[data-iso-items]");
+        if (items) {
+            const sortButtons = document.querySelectorAll(".filter__sort[data-sort-by]");
+            const filterCaption = document.querySelector(".filter--sort .filter__caption");
+            const filterStatusIndication = document.querySelector(".filters");
+            const itemsGrid = new isotope(items, {
+                itemSelector: "[data-iso-item]",
+                percentPosition: true,
+                layoutMode: "masonry",
+                getSortData: {
+                    time: "[data-time]",
+                    popular: "[data-popular]"
+                },
+                masonry: {
+                    gutter: 8
+                }
+            });
+            document.addEventListener("DOMContentLoaded", (() => {
+                updateGutter();
+            }));
+            window.addEventListener("resize", (() => {
+                itemsGrid.layout();
+            }));
+            window.addEventListener("load", (() => {
+                sortAction();
+                document.addEventListener("click", documentAction);
+            }));
+            function updateGutter() {
+                if (window.innerWidth > 480) itemsGrid.options.masonry.gutter = 16; else if (window.innerWidth > 768) itemsGrid.options.masonry.gutter = 20;
+                itemsGrid.layout();
+            }
+            function sortAction() {
+                if (sortButtons.length) sortButtons.forEach((button => {
+                    button.addEventListener("click", (() => {
+                        const sortBy = button.dataset.sortBy;
+                        const label = button.textContent;
+                        const isActive = button.classList.contains("active");
+                        sortButtons.forEach((btn => {
+                            btn.classList.remove("active");
+                        }));
+                        if (!isActive) {
+                            button.classList.add("active");
+                            filterCaption.textContent = `Sort by ${label}`;
+                            filterStatusIndication.classList.add("indication");
+                            itemsGrid.arrange({
+                                sortBy
+                            });
+                        } else {
+                            filterCaption.textContent = "Sort by";
+                            filterStatusIndication.classList.remove("indication");
+                            itemsGrid.arrange({
+                                sortBy: ""
+                            });
+                        }
+                    }));
+                }));
+            }
+            function documentAction(e) {
+                const targetElement = e.target;
+                if (targetElement.closest(".filters__button--clear")) {
+                    sortButtons.forEach((item => {
+                        item.classList.remove("active");
+                    }));
+                    filterStatusIndication.classList.remove("indication");
+                    filterCaption.textContent = "Sort by";
+                    sortButtons.forEach((btn => {
+                        btn.classList.remove("active");
+                    }));
+                    itemsGrid.arrange({
+                        filter: "*",
+                        sortBy: ""
+                    });
+                }
+            }
+        }
         let formValidate = {
             getErrors(form) {
                 let error = 0;
@@ -5549,6 +5625,7 @@
                 spaceBetween: 10,
                 speed: 800,
                 slidesPerView: "auto",
+                mousewheel: true,
                 navigation: {
                     prevEl: ".popular__navigation .navigation__button--prev",
                     nextEl: ".popular__navigation .navigation__button--next"
@@ -5563,6 +5640,7 @@
                 slidesPerView: "auto",
                 spaceBetween: 8,
                 speed: 800,
+                mousewheel: true,
                 navigation: {
                     prevEl: ".tag__navigation .navigation__button--prev",
                     nextEl: ".tag__navigation .navigation__button--next"
@@ -5605,73 +5683,6 @@
                 }));
             }
         }), 0);
-        var isotope = __webpack_require__(334);
-        const items = document.querySelector("[data-iso-items]");
-        if (items) {
-            const sortButtons = document.querySelectorAll(".filter__sort[data-sort-by]");
-            const filterCaption = document.querySelector(".filter--sort .filter__caption");
-            const filterStatusIndication = document.querySelector(".filters");
-            const itemsGrid = new isotope(items, {
-                itemSelector: "[data-iso-item]",
-                percentPosition: true,
-                layoutMode: "masonry",
-                getSortData: {
-                    time: "[data-time]",
-                    popular: "[data-popular]"
-                },
-                masonry: {
-                    gutter: 8
-                }
-            });
-            document.addEventListener("DOMContentLoaded", (() => itemsGrid.layout()));
-            document.addEventListener("click", documentAction);
-            sortButtons.forEach((button => {
-                button.addEventListener("click", (() => {
-                    const sortBy = button.dataset.sortBy;
-                    const label = button.textContent;
-                    const isActive = button.classList.contains("active");
-                    sortButtons.forEach((btn => {
-                        btn.classList.remove("active");
-                    }));
-                    if (!isActive) {
-                        button.classList.add("active");
-                        filterCaption.textContent = `Sort by ${label}`;
-                        filterStatusIndication.classList.add("indication");
-                        itemsGrid.arrange({
-                            sortBy
-                        });
-                    } else {
-                        filterCaption.textContent = "Sort by";
-                        filterStatusIndication.classList.remove("indication");
-                        itemsGrid.arrange({
-                            sortBy: ""
-                        });
-                    }
-                }));
-            }));
-            updateGutter();
-            function updateGutter() {
-                if (window.innerWidth > 480) itemsGrid.options.masonry.gutter = 16; else if (window.innerWidth > 768) itemsGrid.options.masonry.gutter = 20;
-                itemsGrid.layout();
-            }
-            function documentAction(e) {
-                const targetElement = e.target;
-                if (targetElement.closest(".filters__button--clear")) {
-                    sortButtons.forEach((item => {
-                        item.classList.remove("active");
-                    }));
-                    filterStatusIndication.classList.remove("indication");
-                    filterCaption.textContent = "Sort by";
-                    sortButtons.forEach((btn => {
-                        btn.classList.remove("active");
-                    }));
-                    itemsGrid.arrange({
-                        filter: "*",
-                        sortBy: ""
-                    });
-                }
-            }
-        }
         class DynamicAdapt {
             constructor(type) {
                 this.type = type;
