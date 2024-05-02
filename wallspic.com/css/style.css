@@ -2124,9 +2124,6 @@ textarea {
     width: 10.125rem;
     height: 3.125rem
   }
-  .page-preview .item-gallery {
-    width: 31%
-  }
   .about-image {
     gap: 1.875rem
   }
@@ -2563,7 +2560,7 @@ textarea {
     background-color: var(--bg-hover)
   }
   .item-gallery:not(:last-child) {
-    margin-bottom: 1rem
+    margin-bottom: 1.25rem
   }
   .pagination {
     display: flex;
@@ -2815,7 +2812,6 @@ textarea {
     padding-bottom: 1.25rem
   }
   .page-preview__gallery {
-    padding-top: 1.25rem;
     padding-bottom: 3.75rem
   }
   .about-image {
@@ -2830,9 +2826,6 @@ textarea {
   .page-preview__tag {
     padding-top: 1.875rem;
     padding-bottom: .9375rem
-  }
-  .page-preview__gallery {
-    padding-top: .9375rem
   }
   .sidebar__image {
     display: none
@@ -3257,7 +3250,7 @@ textarea {
     padding-left: 0
   }
   .item-gallery:not(:last-child) {
-    margin-bottom: .75rem
+    margin-bottom: 1rem
   }
   .page__start {
     display: none
@@ -3361,9 +3354,6 @@ textarea {
   .filters-open .filters__footer {
     bottom: 0
   }
-  .item-gallery:not(:last-child) {
-    margin-bottom: .375rem
-  }
   .tag__navigation {
     display: none
   }
@@ -3372,7 +3362,6 @@ textarea {
     padding-bottom: .625rem
   }
   .page-preview__gallery {
-    padding-top: .625rem;
     padding-bottom: 2.5rem
   }
   .not-found__container {
@@ -3523,6 +3512,9 @@ textarea {
   .item-gallery {
     width: 48%
   }
+  .item-gallery:not(:last-child) {
+    margin-bottom: .375rem
+  }
   .about__title:not(:last-child) {
     margin-bottom: 1.25rem
   }
@@ -3554,9 +3546,6 @@ textarea {
   .page__poster {
     padding-top: 4.25rem;
     padding-bottom: .625rem
-  }
-  .page-preview .item-gallery {
-    width: 48%
   }
   .about-image {
     gap: 1.25rem
