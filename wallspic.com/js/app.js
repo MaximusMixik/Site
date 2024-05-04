@@ -294,7 +294,7 @@
  * https://isotope.metafizzy.co
  * Copyright 2010-2018 Metafizzy
  */            (function(window, factory) {
-                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(831), __webpack_require__(485), __webpack_require__(786), __webpack_require__(977), __webpack_require__(530), __webpack_require__(763), __webpack_require__(330), __webpack_require__(534), __webpack_require__(987) ], 
+                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(212), __webpack_require__(485), __webpack_require__(786), __webpack_require__(977), __webpack_require__(530), __webpack_require__(763), __webpack_require__(330), __webpack_require__(534), __webpack_require__(987) ], 
                 __WEBPACK_AMD_DEFINE_RESULT__ = function(Outlayer, getSize, matchesSelector, utils, Item, LayoutMode) {
                     return factory(window, Outlayer, getSize, matchesSelector, utils, Item, LayoutMode);
                 }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== void 0 && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -611,7 +611,7 @@
         530: (module, exports, __webpack_require__) => {
             var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
             (function(window, factory) {
-                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(831) ], __WEBPACK_AMD_DEFINE_FACTORY__ = factory, 
+                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(212) ], __WEBPACK_AMD_DEFINE_FACTORY__ = factory, 
                 __WEBPACK_AMD_DEFINE_RESULT__ = typeof __WEBPACK_AMD_DEFINE_FACTORY__ === "function" ? __WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__) : __WEBPACK_AMD_DEFINE_FACTORY__, 
                 __WEBPACK_AMD_DEFINE_RESULT__ !== void 0 && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
             })(window, (function factory(Outlayer) {
@@ -651,7 +651,7 @@
         763: (module, exports, __webpack_require__) => {
             var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
             (function(window, factory) {
-                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(485), __webpack_require__(831) ], 
+                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(485), __webpack_require__(212) ], 
                 __WEBPACK_AMD_DEFINE_FACTORY__ = factory, __WEBPACK_AMD_DEFINE_RESULT__ = typeof __WEBPACK_AMD_DEFINE_FACTORY__ === "function" ? __WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__) : __WEBPACK_AMD_DEFINE_FACTORY__, 
                 __WEBPACK_AMD_DEFINE_RESULT__ !== void 0 && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
             })(window, (function factory(getSize, Outlayer) {
@@ -835,7 +835,7 @@
  * MIT License
  * by David DeSandro
  */            (function(window, factory) {
-                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(831), __webpack_require__(485) ], 
+                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(212), __webpack_require__(485) ], 
                 __WEBPACK_AMD_DEFINE_FACTORY__ = factory, __WEBPACK_AMD_DEFINE_RESULT__ = typeof __WEBPACK_AMD_DEFINE_FACTORY__ === "function" ? __WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__) : __WEBPACK_AMD_DEFINE_FACTORY__, 
                 __WEBPACK_AMD_DEFINE_RESULT__ !== void 0 && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
             })(window, (function factory(Outlayer, getSize) {
@@ -1278,7 +1278,7 @@
                 return Item;
             }));
         },
-        831: (module, exports, __webpack_require__) => {
+        212: (module, exports, __webpack_require__) => {
             var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
             /*!
  * Outlayer v2.1.1
@@ -1895,7 +1895,7 @@
                 function setSpollerAction(e) {
                     const el = e.target;
                     if (el.closest("summary") && el.closest("[data-spollers]")) {
-                        e.preventDefault();
+                        if (el.tagName === "A") return; else e.preventDefault();
                         if (el.closest("[data-spollers]").classList.contains("_spoller-init")) {
                             const spollerTitle = el.closest("summary");
                             const spollerBlock = spollerTitle.closest("details");
