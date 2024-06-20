@@ -598,8 +598,8 @@ summary::marker {
 .item-recommerce__image {
   flex-shrink: 1;
   flex-grow: 0;
-  -webkit-transform: translate(1.001);
-  transform: translate(1.001);
+  -webkit-transform: scale(1.001);
+  transform: scale(1.001);
   transition: -webkit-transform .3s ease;
   transition: transform .3s ease;
   transition: transform .3s ease,-webkit-transform .3s ease
