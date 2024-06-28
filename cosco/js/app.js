@@ -3820,6 +3820,31 @@
     }
     const da = new DynamicAdapt("max");
     da.init();
+    function initDropdowns() {
+        const dropdownElements = document.querySelectorAll(".dropdown");
+        if (dropdownElements.length) {
+            dropdownElements.forEach((el => {
+                el.addEventListener("click", (event => {
+                    const targetElement = event.target;
+                    if (!targetElement.closest(".filter")) {
+                        event.stopPropagation();
+                        closeAllDropdowns(el);
+                        el.classList.add("dropdown-open");
+                    }
+                }));
+            }));
+            function closeAllDropdowns(excludeElement) {
+                dropdownElements.forEach((dropdown => {
+                    if (dropdown !== excludeElement && !dropdown.contains(excludeElement)) dropdown.classList.remove("dropdown-open");
+                }));
+            }
+            document.addEventListener("click", (event => {
+                dropdownElements.forEach((dropdown => {
+                    if (!dropdown.contains(event.target)) dropdown.classList.remove("dropdown-open");
+                }));
+            }));
+        }
+    }
     function script_removeClasses(columns) {
         columns.forEach((column => {
             column.classList.remove("column-about--active");
@@ -3837,9 +3862,11 @@
         const body = document.querySelector(".about__container");
         if (body) body.addEventListener("mousemove", mouseAction);
     }
-    window.onload = () => {
+    document.addEventListener("DOMContentLoaded", loading);
+    function loading() {
+        initDropdowns();
         columnHover();
-    };
+    }
     window["FLS"] = false;
     menuInit();
     spollers();

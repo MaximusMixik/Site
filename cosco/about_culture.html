@@ -6,8 +6,9 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240627142008">
-	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240628195512">
+	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
+	<meta name="description" content="Author: Max.S.O, 	COSCO SHIPPING Lines Finland Oy. Expert customer service team.	Special cargo and equipment">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -32,23 +33,66 @@
 							CIIE SERVICE
 						</a>
 
-						<div class="up-header__qr qr">
+						<div class="up-header__qr qr dropdown">
 							<svg class="up-header__icon">
 								<use xlink:href="img/icons/icons.svg#qr"></use>
 							</svg>
-							<!-- <div class="qr__menu">
-
-					</div> -->
+							<div class="qr__wrapper">
+								<figure class="qr__item">
+									<figcaption class="qr__caption">
+										COSCO SHIPPING Lines WeChat
+									</figcaption>
+									<img class="qr__image" src="img/header/qr1.webp" alt="qr code">
+								</figure>
+								<figure class="qr__item">
+									<figcaption class="qr__caption">
+										Cosco Shipping Group QR code
+									</figcaption>
+									<img class="qr__image" src="img/header/qr2.webp" alt="qr code">
+								</figure>
+								<figure class="qr__item">
+									<figcaption class="qr__caption">
+										Cosco Shipping Lines QR code
+									</figcaption>
+									<img class="qr__image" src="img/header/qr2.webp" alt="qr code">
+								</figure>
+							</div>
 
 						</div>
-
-						<div class="up-header__search search">
+						<div class="up-header__lang lang dropdown">
+							<div class="lang__current">UA</div>
+							<div class="lang__wrapper">
+								<ul class="lang__list">
+									<li class="lang__item">
+										<a href="#" class="lang__link">
+											ENG
+										</a>
+									</li>
+									<li class="lang__item">
+										<a href="#" class="lang__link">
+											FR
+										</a>
+									</li>
+									<li class="lang__item">
+										<a href="#" class="lang__link">
+											PL
+										</a>
+									</li>
+									<li class="lang__item">
+										<a href="#" class="lang__link">
+											DE
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="up-header__search search dropdown">
 							<svg class="up-header__icon">
 								<use xlink:href="img/icons/icons.svg#search"></use>
 							</svg>
-							<!-- <div class="search__menu">
-
-					</div> -->
+							<div class="search__wrapper">
+								<input type="text" placeholder="Search">
+							</div>
 						</div>
 
 
@@ -60,14 +104,113 @@
 			<div class="header__down down-header">
 				<div class="down-header__container">
 					<div data-da=".up-header__container, 768.98" class="down-header__menu menu">
-						<button type="button" class="menu__icon icon-menu"><span></span></button>
+						<button type="button" aria-label="burger menu" class="menu__icon icon-menu"><span></span></button>
 						<nav class="menu__body">
 							<ul class="menu__list">
-								<li class="menu__item"><a href="" class="menu__link">About Us</a></li>
-								<li class="menu__item"><a href="" class="menu__link">Contact</a></li>
-								<li class="menu__item"><a href="" class="menu__link">E-Business</a></li>
-								<li class="menu__item"><a href="" class="menu__link">Services</a></li>
-								<li class="menu__item"><a href="" class="menu__link">News</a></li>
+								<li class="menu__item submenu dropdown">
+									<span>About Us</span>
+									<!-- <a href="" class="menu__link">About Us</a> -->
+									<div class="submenu__wrapper">
+										<div class="submenu__body">
+											<ul class="submenu__list">
+												<li class="submenu__item">
+													<a href="#" class="submenu__link">
+														Company Profile
+													</a>
+												</li>
+												<li class="submenu__item">
+													<a href="#" class="submenu__link">
+														Culture
+													</a>
+												</li>
+												<li class="submenu__item">
+													<a href="#" class="submenu__link">
+														Principal
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+								</li>
+								<li class="menu__item submenu dropdown">
+									<!-- <a href="" class="menu__link">Contact</a> -->
+									<span>Contact</span>
+									<div class="submenu__wrapper">
+										<div class="submenu__body">
+											<ul class="submenu__list">
+												<li class="submenu__item">
+													<a href="#" class="submenu__link">
+														Contact Details
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								<li class="menu__item submenu dropdown">
+									<span>E-Business</span>
+									<!-- <a href="" class="menu__link">E-Business</a> -->
+									<div class="submenu__wrapper">
+										<div class="submenu__body">
+											<ul class="submenu__list">
+												<li class="submenu__item">
+													<a href="#" class="submenu__link">
+														Carrier Service
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+
+
+								</li>
+								<li class="menu__item submenu dropdown">
+									<!-- <a href="" class="menu__link">Services</a> -->
+									<span>Services</span>
+									<div class="submenu__wrapper">
+										<div class="submenu__body">
+											<ul class="submenu__list">
+												<li class="submenu__item">
+													<a href="#" class="submenu__link">
+														Business News
+													</a>
+												</li>
+												<li class="submenu__item">
+													<a href="#" class="submenu__link">
+														Company News
+													</a>
+												</li>
+												<li class="submenu__item">
+													<a href="#" class="submenu__link">
+														Newsletter
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								<li class="menu__item submenu dropdown">
+									<!-- <a href="" class="menu__link">News</a> -->
+									<span>News</span>
+									<div class="submenu__wrapper">
+										<div class="submenu__body">
+											<ul class="submenu__list">
+												<li class="submenu__item">
+													<a href="#" class="submenu__link">
+														Sailing Schedule
+													</a>
+												</li>
+												<li class="submenu__item">
+													<a href="#" class="submenu__link">
+														Special Equipment
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</li>
 							</ul>
 							<button type="button" class="menu__button button">Select local sites</button>
 						</nav>
@@ -300,7 +443,7 @@
 			</svg>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20240627142008"></script>
+	<script src="js/app.min.js?_v=20240628195512"></script>
 </body>
 
 </html>
