@@ -832,6 +832,7 @@ textarea {
 }
 .go-top {
   position: fixed;
+  z-index: 20;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   width: 2.75rem;
@@ -851,7 +852,6 @@ textarea {
 }
 .hero__container {
   display: flex;
-  gap: 1.625rem;
   position: relative;
   z-index: 3
 }
@@ -961,12 +961,14 @@ textarea {
   height: 100%;
   top: 0;
   left: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
   z-index: -1
 }
 .content-news {
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(11.25rem,1fr));
-  gap: 1.875rem
+  gap: 1.875rem;
+  grid-template-columns: repeat(auto-fill,minmax(11.25rem,1fr))
 }
 .content-news__item {
   background-color: var(--white);
@@ -985,6 +987,7 @@ textarea {
   transition: transform .6s,-webkit-transform .6s
 }
 .content-news__image {
+  text-align: center;
   position: relative;
   padding-bottom: 80%
 }
@@ -996,6 +999,10 @@ textarea {
   left: 0;
   -o-object-fit: contain;
   object-fit: contain
+}
+.content-news__image--cover img {
+  -o-object-fit: cover;
+  object-fit: cover
 }
 .content-news__image:not(:last-child) {
   margin-bottom: .875rem
@@ -1169,7 +1176,8 @@ textarea {
     right: 1.75rem
   }
   .hero__container {
-    justify-content: space-between
+    justify-content: space-between;
+    gap: 1.625rem
   }
   .hero__content {
     align-self: start
@@ -1893,9 +1901,14 @@ textarea {
   }
   .hero__container {
     flex-direction: column;
-    text-align: center
+    text-align: center;
+    gap: 4.375rem
   }
   .hero__text {
+    margin-inline: auto
+  }
+  .hero__image {
+    max-width: 70%;
     margin-inline: auto
   }
   .top-company {
@@ -1903,8 +1916,9 @@ textarea {
     flex-direction: column
   }
   .news__content {
-    display: flex;
-    justify-content: center
+    max-width: -webkit-max-content;
+    max-width: max-content;
+    margin-inline: auto
   }
   .column-about {
     flex: 1 1 100%
@@ -2549,5 +2563,14 @@ textarea {
   }
   .item-equipment__table td:hover {
     background-color: var(--bg-light-blue)
+  }
+}
+@media (any-hover:none) {
+  .content-news__item {
+    box-shadow: 0 0 .5625rem 0 rgba(33,80,136,.5)
+  }
+  .content-news__item .content-news__wrapper {
+    -webkit-transform: translateY(-11.25rem);
+    transform: translateY(-11.25rem)
   }
 }
