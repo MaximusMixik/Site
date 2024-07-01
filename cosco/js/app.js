@@ -3832,6 +3832,17 @@
                         el.classList.add("dropdown-open");
                     }
                 }));
+                el.addEventListener("mousemove", (event => {
+                    const targetElement = event.target;
+                    if (!targetElement.closest(".filter")) {
+                        event.stopPropagation();
+                        closeAllDropdowns(el);
+                        el.classList.add("dropdown-open");
+                    }
+                }));
+                el.addEventListener("mouseout", (() => {
+                    el.classList.remove("dropdown-open");
+                }));
             }));
             function closeAllDropdowns(excludeElement) {
                 dropdownElements.forEach((dropdown => {
