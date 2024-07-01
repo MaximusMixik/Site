@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-	<title>About</title>
+	<title>Contacts</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240629111628">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240701102228">
 	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 	<meta name="description" content="Author: Max.S.O, 	COSCO SHIPPING Lines Finland Oy. Expert customer service team.	Special cargo and equipment">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
@@ -345,27 +345,45 @@
 									</a>
 								</li>
 							</ul>
-
-
 						</section>
 
-
-
 					</div>
+
 					<section>
 						<h2 class="content-page__title">
 							Contact Us
 						</h2>
 						<form action="#" enctype="multipart/form-data" method="POST" class="content-page__form form-contact">
 							<div class="form-contact__wrapper">
+								<div class="form-contact__row">
+									<div class="form-contact__item">
+										<label class="form-contact__label">
+											First Name
+											<input autocomplete="off" type="text" required name="first-name" class="input">
+										</label>
+										<!-- placeholder="Name"-->
+									</div>
+									<div class="form-contact__item">
+										<label class="form-contact__label">
+											Last Name
+											<input autocomplete="off" type="text" required name="last-name" class="input">
+										</label>
+									</div>
+								</div>
+
 								<div class="form-contact__item">
-									<input autocomplete="off" type="text" required name="name" placeholder="Name" class="input">
+									<label class="form-contact__label">
+										Work Email
+										<input autocomplete="off" type="text" name="email" required class="input">
+									</label>
+									<!-- placeholder="E-Mail-Adresse" -->
 								</div>
 								<div class="form-contact__item">
-									<input autocomplete="off" type="text" name="email" required placeholder="E-Mail-Adresse" class="input">
-								</div>
-								<div class="form-contact__item">
-									<textarea class="textarea" name="textarea" aria-label="text-area" placeholder="Message" autocomplete="off"></textarea>
+									<label class="form-contact__label">
+										Message
+										<textarea class="textarea" name="textarea" aria-label="text-area" autocomplete="off"></textarea>
+										<!-- placeholder="Message" -->
+									</label>
 								</div>
 								<button type="submit" class="form-contact__button button ">
 									Send
@@ -538,7 +556,7 @@
 			</svg>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20240629111628"></script>
+	<script src="js/app.min.js?_v=20240701102228"></script>
 </body>
 
 </html>

@@ -132,7 +132,11 @@ body {
 }
 .form-contact__wrapper {
   display: grid;
-  gap: .75rem
+  gap: 1rem
+}
+.form-contact__label {
+  line-height: 2;
+  font-weight: 700
 }
 .form-contact__item {
   position: relative;
@@ -189,7 +193,7 @@ textarea {
 }
 .textarea {
   resize: vertical;
-  min-height: 3.75rem
+  min-height: 9.375rem
 }
 .input[placeholder]:not([data-placeholder-nohiden])::-webkit-input-placeholder {
   -webkit-transition: opacity .3s;
@@ -365,7 +369,6 @@ textarea {
   display: flex
 }
 .sidebar__link {
-  font-size: 1rem;
   background-color: transparent;
   transition: background-color .3s ease,color .3s ease
 }
@@ -968,12 +971,10 @@ textarea {
 .content-news {
   display: grid;
   gap: 1.875rem;
-  grid-template-columns: repeat(auto-fill,minmax(11.25rem,1fr))
+  grid-template-columns: repeat(auto-fill,minmax(11.875rem,1fr))
 }
 .content-news__item {
   background-color: var(--white);
-  max-width: 13.75rem;
-  height: 18.75rem;
   border-radius: 1.875rem 0;
   box-shadow: 0 0 .5625rem 0 rgba(201,212,227,.75);
   overflow: hidden;
@@ -1158,6 +1159,13 @@ textarea {
   display: none!important
 }
 @media (min-width:29.99875em) {
+  .form-contact__row {
+    display: flex;
+    gap: 1.25rem
+  }
+  .form-contact__row > * {
+    flex: 1 1 50%
+  }
   .form-contact__button {
     max-width: 9.375rem;
     width: 100%;
@@ -1195,6 +1203,10 @@ textarea {
   }
   .top-company__article:last-child {
     padding-left: 1.25rem
+  }
+  .content-news__item {
+    max-width: 13.75rem;
+    height: 18.75rem
   }
   .column-about {
     flex: 1 1 45%
@@ -1274,6 +1286,7 @@ textarea {
     flex-direction: column
   }
   .sidebar__link {
+    font-size: 1rem;
     width: 100%;
     padding: 1.125rem
   }
@@ -1882,6 +1895,9 @@ textarea {
   }
 }
 @media (max-width:29.99875em) {
+  .form-contact__row > :not(:last-child) {
+    margin-bottom: 1rem
+  }
   .up-footer__container {
     flex-direction: column;
     gap: 1.25rem
@@ -1918,6 +1934,13 @@ textarea {
   .news__content {
     max-width: -webkit-max-content;
     max-width: max-content;
+    margin-inline: auto
+  }
+  .content-news__item {
+    height: 21.875rem
+  }
+  .content-news__image {
+    padding-bottom: 45%;
     margin-inline: auto
   }
   .column-about {
@@ -2563,14 +2586,5 @@ textarea {
   }
   .item-equipment__table td:hover {
     background-color: var(--bg-light-blue)
-  }
-}
-@media (any-hover:none) {
-  .content-news__item {
-    box-shadow: 0 0 .5625rem 0 rgba(33,80,136,.5)
-  }
-  .content-news__item .content-news__wrapper {
-    -webkit-transform: translateY(-11.25rem);
-    transform: translateY(-11.25rem)
   }
 }
