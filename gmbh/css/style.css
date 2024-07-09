@@ -1036,10 +1036,6 @@ body::after {
   left: 0;
   background: linear-gradient(to bottom,#fff 0,rgba(255,255,255,0) 33%,rgba(255,255,255,0) 66%,#fff 100%)
 }
-.slider-big__slide-ibg img {
-  -o-object-position: 50% 0;
-  object-position: 50% 0
-}
 .slider-big__nawigation .slider-navigation__button {
   flex: 0 0 4.375rem;
   width: 4.375rem;
@@ -1427,6 +1423,10 @@ body::after {
   color: var(--text-secondary);
   transition: color .3s ease
 }
+.form-contact {
+  max-width: 23.75rem;
+  width: 100%
+}
 .form-contact__wrapper {
   display: grid;
   gap: .9375rem
@@ -1780,8 +1780,6 @@ body::after {
 }
 .body-template__image-ibg {
   top: 20%;
-  position: sticky;
-  max-height: 37.5rem;
   margin-right: -.9375rem;
   -webkit-filter: blur(20px);
   filter: blur(20px)
@@ -4762,6 +4760,13 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 1.875rem
+  }
+  .body-template__image-ibg,
+  .body-template__slider {
+    top: 10%;
+    position: sticky;
+    max-height: 100vh;
+    max-height: 100svh
   }
   .footer-template__container {
     align-items: end;
