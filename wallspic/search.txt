@@ -1,0 +1,34 @@
+class DynamicSearch {
+  constructor() {
+    this.input = document.querySelector(".input");
+    this.input.addEventListener("input", this.onInputChange.bind(this));
+  }
+  onInputChange() {
+    const searchInput = new CustomEvent("searchEmployee", {
+      detail: {
+        findText: this.input.value,
+      },
+    });
+    this.input.dispatchEvent(searchInput);
+  }
+}
+class CryptList {
+  sortList(findText) {
+    const crypt = document.querySelectorAll(".element");
+    crypt.forEach((crypt) => {
+      const name = crypt.textContent.toLowerCase();
+      if (name.startsWith(findText.toLowerCase()))
+		crypt.style.display = "block";
+      else crypt.style.display = "none";
+    });
+  }
+}
+
+window.onload = function () {
+  let search = new DynamicSearch();
+
+  let cryptocurrency = new CryptList();
+  search.input.addEventListener("searchEmployee", function (event) {
+    cryptocurrency.sortList(event.detail.findText);
+  });
+};
