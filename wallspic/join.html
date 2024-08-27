@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Join </title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<style>
+		body {
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s;
+		}
+
+		.loaded body {
+			opacity: 1;
+			visibility: visible;
+		}
+	</style>
+	<link rel="stylesheet" href="css/style.min.css?_v=20240827084039">
+	<meta name="description" content="Author: Max.S.O, Wallpapers for everyone. Find the best wallpapers for your phone, tablet or PC">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<main class="login">
+			<div class="login__container">
+				<div class="login__logo">
+					<img src="img/logo.svg" alt="logo">
+					<img src="img/logo-black.svg" alt="logo">
+				</div>
+				<div class="login__wrapper">
+					<h1 class="login__title">
+						Join Wallspic
+					</h1>
+					<div class="login__subtitle">
+						Have an account?
+						<a href="#" target="_blank">
+							Log In
+						</a>
+					</div>
+					<div class="login__actions social">
+						<a href="#" target="_blank" class="social__link">
+							<img src="img/login/facebook.svg" class="social__img" alt="facebook">
+							<div class="social__title">
+								Facebook
+							</div>
+						</a>
+						<a href="#" target="_blank" class="social__link">
+							<img src="img/login/google.svg" class="social__img" alt="Google">
+							<div class="social__title">
+								Google
+							</div>
+						</a>
+					</div>
+					<div class="login__divider">
+						Или
+					</div>
+					<form class="login__form login-form" action="#" method="POST">
+						<div class="login-form__item">
+							<label for="name" class="login-form__label">Username</label>
+							<input autocomplete="off" required id="email" type="email" name="email" placeholder="Enter your username" class="login-form__input">
+						</div>
+						<div class="login-form__item">
+							<label for="name" class="login-form__label">E-mail</label>
+							<input autocomplete="off" required id="email" type="email" name="email" placeholder="Enter your e-mail" class="login-form__input">
+						</div>
+
+						<div class="login-form__item">
+							<label for="password" class="login-form__label">Password</label>
+							<div class="login-form__input-action">
+								<input autocomplete="off" required id="password" type="password" name="password" placeholder="Password" class="login-form__input">
+								<button type="button" class="login-form__show-password" aria-label="show password">
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+										<path stroke="#646468" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.5799 11.9999c0 1.98-1.6 3.58-3.58 3.58s-3.57998-1.6-3.57998-3.58 1.59998-3.57998 3.57998-3.57998 3.58 1.59998 3.58 3.57998Z" />
+										<path stroke="#646468" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.9998 20.2697c3.53 0 6.82-2.08 9.11-5.68.9-1.41.9-3.78 0-5.18997-2.29-3.6-5.58-5.68-9.11-5.68-3.52996 0-6.81996 2.08-9.10996 5.68-.9 1.40997-.9 3.77997 0 5.18997 2.29 3.6 5.58 5.68 9.10996 5.68Z" />
+									</svg>
+								</button>
+							</div>
+
+						</div>
+
+						<button class="login-form__button button" aria-label="submit button" type="submit">Join</button>
+					</form>
+					<div class="login__text">
+						<p>By joining, you agree to our</p>
+						<a href="#" target="_blank"> Terms of Service </a>
+						and
+						<a href="#" target="_blank">Privacy Policy</a>
+					</div>
+				</div>
+			</div>
+			<img class="login__bg" src="img/login/bg.webp" alt="background">
+		</main>
+	</div>
+	<script src="js/app.min.js?_v=20240827084039"></script>
+</body>
+
+</html>
