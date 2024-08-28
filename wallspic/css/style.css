@@ -1726,10 +1726,6 @@ textarea {
 .poster + .popular {
   padding-top: .9375rem
 }
-.poster--small {
-  padding-top: 6.25rem;
-  padding-bottom: 1.5625rem
-}
 .poster__container {
   background-color: var(--bg-primary);
   position: relative
@@ -1879,21 +1875,21 @@ textarea {
 .light .image-actions__body {
   background-color: var(--bg-primary)
 }
-.image-actions__body * {
+.image-actions__body > * {
   scrollbar-width: thin;
   scrollbar-color: #e0e0e0
 }
-.image-actions__body * {
+.image-actions__body > * {
   -ms-overflow-style: none
 }
-.image-actions__body *::-ms-scrollbar {
+.image-actions__body::-ms-scrollbar {
   width: .5rem
 }
-.image-actions__body *::-ms-thumb {
+.image-actions__body::-ms-thumb {
   background-color: #e0e0e0;
   border-radius: .5rem
 }
-.image-actions__body *::-ms-track {
+.image-actions__body::-ms-track {
   background-color: #e0e0e0
 }
 .image-actions__body--share {
@@ -3773,9 +3769,13 @@ textarea {
     padding-top: 4.375rem;
     padding-bottom: .9375rem
   }
-  .page__poster {
+  .poster {
     padding-top: .9375rem;
     padding-bottom: .9375rem
+  }
+  .poster--small {
+    padding-top: 6.25rem;
+    padding-bottom: 1.5625rem
   }
   .poster__container {
     min-height: 16.625rem;
@@ -4526,12 +4526,12 @@ textarea {
   .page__start {
     display: none
   }
-  .page__poster {
-    padding-top: 5rem;
-    padding-bottom: .9375rem
-  }
   .start + .tag {
     padding-top: 4.375rem
+  }
+  .poster {
+    padding-top: 5rem;
+    padding-bottom: .9375rem
   }
   .poster__image {
     margin: auto;
@@ -4849,7 +4849,7 @@ textarea {
     width: 8.125rem;
     height: 2.5rem
   }
-  .page__poster {
+  .poster {
     padding-top: 4.25rem;
     padding-bottom: .625rem
   }
