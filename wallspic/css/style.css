@@ -3359,7 +3359,8 @@ textarea {
     display: grid;
     background-color: var(--bg-gray);
     box-shadow: var(--box-shadow-light);
-    grid-template-columns: repeat(auto-fit,minmax(11.25rem,1fr))
+    grid-template-columns: repeat(auto-fit,minmax(11.25rem,1fr));
+    border-radius: var(--border-radius-primary)
   }
   .light .categories__list {
     background-color: var(--bg-primary)
