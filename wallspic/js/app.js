@@ -2017,7 +2017,7 @@
         }
         var isotope = __webpack_require__(334);
         const items = document.querySelector("[data-iso-items]");
-        let gutterSize = 8;
+        let gutterSize = 6;
         if (window.innerWidth > 480) gutterSize = 16; else if (window.innerWidth > 768) gutterSize = 20;
         if (items) {
             const sortButtons = document.querySelectorAll(".filter__sort[data-sort-by]");
@@ -5623,11 +5623,12 @@
                 modules: [ Navigation ],
                 observer: true,
                 observeParents: true,
-                freeMode: true,
-                spaceBetween: 10,
+                grabCursor: true,
+                spaceBetween: 12,
                 speed: 800,
                 slidesPerView: "auto",
                 mousewheel: true,
+                freeMode: true,
                 navigation: {
                     prevEl: ".popular__navigation .navigation__button--prev",
                     nextEl: ".popular__navigation .navigation__button--next"
