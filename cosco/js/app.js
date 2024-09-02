@@ -3873,11 +3873,70 @@
         const body = document.querySelector(".about__container");
         if (body) body.addEventListener("mousemove", mouseAction);
     }
-    document.addEventListener("DOMContentLoaded", loading);
-    function loading() {
+    function removeAllActiveClasses() {
+        const itemsList = document.querySelectorAll(".column-destination__item");
+        itemsList.forEach((item => {
+            item.classList.remove("active");
+        }));
+        console.log("done");
+    }
+    function activateItem(item) {
+        removeAllActiveClasses();
+        if (item) item.classList.add("active");
+    }
+    function bodyAction(event) {
+        const targetElement = event.target;
+        if (targetElement.classList.contains("item-destination__country")) {
+            const item = targetElement.closest(".column-destination__item");
+            if (item) activateItem(item);
+        }
+    }
+    function destinationAction() {
+        const body = document.querySelector(".destination__body");
+        if (!body) return;
+        body.addEventListener("click", bodyAction);
+    }
+    function countCities() {
+        const countries = document.querySelectorAll(".item-destination__country");
+        countries.forEach((country => {
+            const item = country.closest(".column-destination__item");
+            const cities = item.querySelectorAll(".item-destination__city").length;
+            const existingCount = country.querySelector(".city-count");
+            if (existingCount) existingCount.remove();
+            const cityCount = document.createElement("span");
+            cityCount.classList.add("city-count");
+            cityCount.textContent = ` (${cities})`;
+            country.appendChild(cityCount);
+        }));
+    }
+    function hideAfterActivate() {
+        const elements = document.querySelectorAll(".item-destination__country, .column-destination__title");
+        elements.forEach((el => {
+            el.classList.remove(".show-content");
+        }));
+        console.log("done");
+    }
+    function initShowMore(selector) {
+        const showMoreTitleButton = document.querySelectorAll(selector);
+        console.log(showMoreTitleButton);
+        if (!showMoreTitleButton.length) return;
+        showMoreTitleButton.forEach((item => {
+            item.addEventListener("click", (() => {
+                hideAfterActivate();
+                item.classList.toggle("show-content");
+            }));
+        }));
+    }
+    window.onload = () => {
+        countCities();
+        const windowWidth = window.innerWidth;
+        if (windowWidth > 768) destinationAction(); else if (windowWidth < 480) {
+            initShowMore(".column-destination__title");
+            initShowMore(".item-destination__country");
+        } else initShowMore(".item-destination__country");
         initDropdowns();
         columnHover();
-    }
+    };
     window["FLS"] = false;
     menuInit();
     spollers();
