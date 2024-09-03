@@ -773,11 +773,12 @@ textarea {
   color: var(--text-primary);
   padding: .75rem 1rem;
   width: 100%;
-  background-color: transparent;
-  border: var(--primary-border);
-  border-radius: var(--border-radius-circle)
+  background-color: var(--bg-dark);
+  border: .0625rem solid transparent;
+  border-radius: var(--border-radius-primary)
 }
 .light .button--share {
+  border: var(--primary-border);
   background-color: transparent
 }
 .button--share::before {
@@ -835,11 +836,13 @@ textarea {
   color: var(--text-secondary)
 }
 .button--transparent {
-  background-color: transparent;
-  border: var(--primary-border);
-  color: var(--text-primary)
+  color: var(--text-primary);
+  background-color: var(--bg-dark);
+  border: .0625rem solid transparent
 }
 .light .button--transparent {
+  background-color: initial;
+  border: var(--primary-border);
   color: initial
 }
 .button--transparent:active {
@@ -1673,7 +1676,6 @@ textarea {
 .download__container {
   border-radius: 1.375rem;
   background-color: var(--bg-gray);
-  max-width: 81.25rem;
   overflow: hidden
 }
 .download__body {
@@ -1844,7 +1846,7 @@ textarea {
   gap: .875rem
 }
 .about-image__buttons > .image-actions__link {
-  border-radius: var(--border-radius-circle)
+  border-radius: var(--border-radius-primary)
 }
 .image-actions__wrapper {
   padding-top: .625rem
@@ -1858,7 +1860,7 @@ textarea {
 .image-actions__spoiler--multi {
   cursor: pointer;
   display: flex;
-  border-radius: var(--border-radius-circle);
+  border-radius: var(--border-radius-primary);
   background-color: var(--bg-yellow);
   min-height: 3rem;
   align-items: center;
@@ -1945,7 +1947,7 @@ textarea {
   flex: 1 1 auto
 }
 .image-actions__info {
-  border-radius: var(--border-radius-circle);
+  border-radius: var(--border-radius-primary);
   width: 3rem;
   height: 3rem;
   flex: 0 0 3rem;
@@ -1974,7 +1976,7 @@ textarea {
   align-items: center;
   border: var(--primary-border);
   width: 100%;
-  border-radius: var(--border-radius-circle);
+  border-radius: var(--border-radius-primary);
   background-color: var(--bg-secondary)
 }
 .light .copy-link {
@@ -1992,8 +1994,8 @@ textarea {
   background-color: #f5f5f7;
   color: var(--text-gray);
   border-right: var(--primary-border);
-  border-top-left-radius: var(--border-radius-circle);
-  border-bottom-left-radius: var(--border-radius-circle)
+  border-top-left-radius: var(--border-radius-primary);
+  border-bottom-left-radius: var(--border-radius-primary)
 }
 .copy-link__address {
   flex: 1 1 auto;
@@ -2001,8 +2003,8 @@ textarea {
   color: var(--text-gray);
   padding: .5rem .75rem;
   display: block;
-  border-top-right-radius: var(--border-radius-circle);
-  border-bottom-right-radius: var(--border-radius-circle);
+  border-top-right-radius: var(--border-radius-primary);
+  border-bottom-right-radius: var(--border-radius-primary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis
@@ -2596,7 +2598,6 @@ textarea {
 }
 .login-form__input {
   border-radius: var(--border-radius-primary);
-  border: var(--primary-border);
   min-height: 2.75rem;
   padding: .6875rem 1rem;
   width: 100%;
@@ -2605,6 +2606,7 @@ textarea {
   color: var(--text-light-gray);
   font-weight: 700;
   background-color: var(--bg-dark);
+  border: .0625rem solid transparent;
   transition: all .3s ease
 }
 .light .login-form__input {
@@ -3032,13 +3034,13 @@ textarea {
     align-items: center
   }
   .login {
-    padding-top: 7.8125rem;
-    padding-bottom: 7.8125rem
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem
   }
   .login__container {
     position: relative;
     z-index: 2;
-    max-width: 31.25rem;
+    max-width: 35.625rem;
     width: 100%
   }
   .login__logo img {
@@ -3473,6 +3475,9 @@ textarea {
     font-size: 1.625rem;
     line-height: 1.3
   }
+  .lang__link {
+    width: 100%
+  }
   .header__left {
     flex: 0 0 6.625rem
   }
@@ -3537,6 +3542,9 @@ textarea {
   }
   .gallery__title {
     flex: 1 1 auto
+  }
+  .gallery__items {
+    margin-right: -1.875rem
   }
   .gallery__action {
     margin-top: 1.5rem
@@ -3871,6 +3879,12 @@ textarea {
   .about__title {
     font-size: 1.625rem
   }
+  .download {
+    padding-right: 3.125rem
+  }
+  .download {
+    padding-left: 3.125rem
+  }
   .upload {
     padding-top: 6.25rem
   }
@@ -4013,6 +4027,12 @@ textarea {
   }
 }
 @media (max-width:20em) {
+  .download {
+    padding-right: 1rem
+  }
+  .download {
+    padding-left: 1rem
+  }
   .upload__container {
     gap: 1.5rem
   }
@@ -5109,6 +5129,58 @@ textarea {
     }
   }
 }
+@media (min-width:20em) and (max-width:110.5em) {
+  @supports (padding-right:clamp(1rem ,0.5303867403rem + 2.3480662983vw ,3.125rem)) {
+    .download {
+      padding-right: clamp(1rem ,.5303867403rem + 2.3480662983vw ,3.125rem)
+    }
+  }
+  @supports not (padding-right:clamp(1rem ,0.5303867403rem + 2.3480662983vw ,3.125rem)) {
+    .download {
+      padding-right: calc(1rem + 2.125 * (100vw - 20rem)/ 90.5)
+    }
+  }
+  @supports (padding-left:clamp(1rem ,0.5303867403rem + 2.3480662983vw ,3.125rem)) {
+    .download {
+      padding-left: clamp(1rem ,.5303867403rem + 2.3480662983vw ,3.125rem)
+    }
+  }
+  @supports not (padding-left:clamp(1rem ,0.5303867403rem + 2.3480662983vw ,3.125rem)) {
+    .download {
+      padding-left: calc(1rem + 2.125 * (100vw - 20rem)/ 90.5)
+    }
+  }
+  @supports (gap:clamp(1.5rem ,1.2790055249rem + 1.1049723757vw ,2.5rem)) {
+    .upload__container {
+      gap: clamp(1.5rem ,1.2790055249rem + 1.1049723757vw ,2.5rem)
+    }
+  }
+  @supports not (gap:clamp(1.5rem ,1.2790055249rem + 1.1049723757vw ,2.5rem)) {
+    .upload__container {
+      gap: calc(1.5rem + 1 * (100vw - 20rem)/ 90.5)
+    }
+  }
+  @supports (gap:clamp(1.5rem ,1.2790055249rem + 1.1049723757vw ,2.5rem)) {
+    .form-upload {
+      gap: clamp(1.5rem ,1.2790055249rem + 1.1049723757vw ,2.5rem)
+    }
+  }
+  @supports not (gap:clamp(1.5rem ,1.2790055249rem + 1.1049723757vw ,2.5rem)) {
+    .form-upload {
+      gap: calc(1.5rem + 1 * (100vw - 20rem)/ 90.5)
+    }
+  }
+  @supports (gap:clamp(1.5rem ,1.2790055249rem + 1.1049723757vw ,2.5rem)) {
+    .form-upload__wrapper {
+      gap: clamp(1.5rem ,1.2790055249rem + 1.1049723757vw ,2.5rem)
+    }
+  }
+  @supports not (gap:clamp(1.5rem ,1.2790055249rem + 1.1049723757vw ,2.5rem)) {
+    .form-upload__wrapper {
+      gap: calc(1.5rem + 1 * (100vw - 20rem)/ 90.5)
+    }
+  }
+}
 @media (min-width:26.93625em) and (min-width:48.06125em) and (max-width:110.5em) {
   @supports (width:clamp(5rem ,3.7010733018rem + 2.7026485956vw ,6.6875rem)) {
     .download__container::before {
@@ -5193,38 +5265,6 @@ textarea {
   }
   .about-image__buttons > :first-child {
     display: none
-  }
-}
-@media (min-width:20em) and (max-width:110.5em) {
-  @supports (gap:clamp(1.5rem ,1.2790055249rem + 1.1049723757vw ,2.5rem)) {
-    .upload__container {
-      gap: clamp(1.5rem ,1.2790055249rem + 1.1049723757vw ,2.5rem)
-    }
-  }
-  @supports not (gap:clamp(1.5rem ,1.2790055249rem + 1.1049723757vw ,2.5rem)) {
-    .upload__container {
-      gap: calc(1.5rem + 1 * (100vw - 20rem)/ 90.5)
-    }
-  }
-  @supports (gap:clamp(1.5rem ,1.2790055249rem + 1.1049723757vw ,2.5rem)) {
-    .form-upload {
-      gap: clamp(1.5rem ,1.2790055249rem + 1.1049723757vw ,2.5rem)
-    }
-  }
-  @supports not (gap:clamp(1.5rem ,1.2790055249rem + 1.1049723757vw ,2.5rem)) {
-    .form-upload {
-      gap: calc(1.5rem + 1 * (100vw - 20rem)/ 90.5)
-    }
-  }
-  @supports (gap:clamp(1.5rem ,1.2790055249rem + 1.1049723757vw ,2.5rem)) {
-    .form-upload__wrapper {
-      gap: clamp(1.5rem ,1.2790055249rem + 1.1049723757vw ,2.5rem)
-    }
-  }
-  @supports not (gap:clamp(1.5rem ,1.2790055249rem + 1.1049723757vw ,2.5rem)) {
-    .form-upload__wrapper {
-      gap: calc(1.5rem + 1 * (100vw - 20rem)/ 90.5)
-    }
   }
 }
 @media (max-width:48.06125em) and (min-width:110.5em) {
@@ -5343,6 +5383,9 @@ textarea {
     background-color: var(--bg-dark);
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.19) inset
   }
+  .light .search__input:hover {
+    background-color: transparent
+  }
   .start__search .search__input:hover {
     background-color: var(--bg-dark)
   }
@@ -5443,6 +5486,9 @@ textarea {
   }
   .social__link:hover {
     background-color: var(--accent)
+  }
+  .login-form__input:hover {
+    border: var(--primary-border)
   }
   .login-form__link:hover {
     color: var(--blue)
