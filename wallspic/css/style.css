@@ -755,9 +755,9 @@ textarea {
   transition: all .3s ease,color .3s ease
 }
 .button::before {
-  flex: 0 0 1.5rem;
-  width: 1.5rem;
-  height: 1.5rem;
+  flex: 0 0 1.375rem;
+  width: 1.375rem;
+  height: 1.375rem;
   display: grid;
   place-items: center;
   font-size: 1rem;
@@ -773,7 +773,7 @@ textarea {
   color: var(--text-primary);
   padding: .75rem 1rem;
   width: 100%;
-  background-color: var(--bg-dark);
+  background-color: var(--bg-primary);
   border: .0625rem solid transparent;
   border-radius: var(--border-radius-primary)
 }
@@ -821,7 +821,6 @@ textarea {
 .button--blue,
 .button--green,
 .button--red {
-  border-radius: var(--border-radius-circle);
   padding: .5rem;
   max-width: 100%;
   width: 100%;
@@ -837,7 +836,7 @@ textarea {
 }
 .button--transparent {
   color: var(--text-primary);
-  background-color: var(--bg-dark);
+  background-color: var(--bg-primary);
   border: .0625rem solid transparent
 }
 .light .button--transparent {
@@ -1184,7 +1183,10 @@ textarea {
 .tabs {
   display: flex;
   gap: 2.5rem;
-  border-bottom: .0625rem solid #dedede
+  border-bottom: .0625rem solid #222328
+}
+.light .tabs {
+  border-bottom-color: #dedede
 }
 .tabs__link {
   font-weight: 600;
@@ -1218,7 +1220,11 @@ textarea {
   left: 0;
   width: 100%;
   z-index: 30;
-  transition: top .4s ease
+  transition: top .4s ease;
+  border-bottom: .0625rem solid #222328
+}
+.light .header {
+  border-bottom-color: #e1e1e1
 }
 .app-open .header {
   top: 5rem;
@@ -1227,9 +1233,6 @@ textarea {
 .menu-open .header {
   top: 0;
   transition: top .4s ease
-}
-.header--search {
-  border-bottom: .0625rem solid var(--border-dark)
 }
 .header::before {
   content: "";
@@ -1262,10 +1265,7 @@ textarea {
   transition: top .4s ease
 }
 .header._header-scroll::after {
-  background-color: #000
-}
-.light .header._header-scroll::after {
-  background-color: #fff
+  background-color: var(--bg-primary)
 }
 .header__container {
   display: flex;
@@ -1484,8 +1484,11 @@ textarea {
   margin-bottom: .75rem
 }
 .popular__text {
-  color: var(--text-light-lite);
+  color: #838489;
   margin-top: .75rem
+}
+.light .popular__text {
+  color: var(--text-light-lite)
 }
 .popular__text:not(:last-child) {
   margin-bottom: 1.875rem
@@ -1869,6 +1872,12 @@ textarea {
 .image-actions__spoiler--multi._spoller-active {
   background-color: var(--bg-yellow-active)
 }
+.image-actions__button::before {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: 0 0 1.25rem;
+  font-size: 1.25rem
+}
 .image-actions__body {
   max-height: 28.125rem;
   box-shadow: var(--box-shadow-light);
@@ -1963,12 +1972,21 @@ textarea {
   max-width: 100%;
   color: var(--text-primary);
   font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.5;
-  text-align: center
+  font-size: .875rem;
+  line-height: 1;
+  text-align: center;
+  position: relative
 }
-.image-actions__spoiler .image-actions__link {
-  border-right: .0625rem solid var(--text-dark)
+.image-actions__spoiler .image-actions__link::before {
+  content: "";
+  position: absolute;
+  width: .0625rem;
+  height: 1.875rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 0;
+  background-color: var(--text-dark)
 }
 .copy-link {
   position: relative;
@@ -2301,6 +2319,9 @@ textarea {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg)
 }
+.page-popular__container {
+  max-width: 73.75rem
+}
 .page-popular__header {
   text-align: center
 }
@@ -2543,11 +2564,14 @@ textarea {
   margin-bottom: 1.875rem
 }
 .login__divider {
-  color: var(--text-light-lite);
   font-style: normal;
+  color: #838489;
   display: flex;
   gap: .625rem;
   align-items: center
+}
+.light .login__divider {
+  color: var(--text-light-lite)
 }
 .login__divider:not(:last-child) {
   margin-bottom: 1.875rem
@@ -2558,7 +2582,11 @@ textarea {
   flex: 1 1 auto;
   width: 100%;
   height: .0625rem;
-  background-color: var(--text-light-gray)
+  background-color: #2b2c32
+}
+.light .login__divider::after,
+.light .login__divider::before {
+  background-color: #dadce0
 }
 .login__form:not(:last-child) {
   margin-bottom: 1.875rem
@@ -2575,8 +2603,11 @@ textarea {
   padding: .625rem 1rem;
   gap: .75rem;
   border-radius: var(--border-radius-primary);
-  border: .0625rem solid #dadce0;
-  transition: background-color .3s ease
+  background-color: #303339
+}
+.light .social__link {
+  background-color: initial;
+  border: .0625rem solid #dadce0
 }
 .social__img {
   width: 1.75rem;
@@ -2604,7 +2635,6 @@ textarea {
   display: block;
   caret-color: inherit;
   color: var(--text-light-gray);
-  font-weight: 700;
   background-color: var(--bg-dark);
   border: .0625rem solid transparent;
   transition: all .3s ease
@@ -3258,14 +3288,7 @@ textarea {
     font-size: 2rem;
     line-height: 1.3
   }
-  .login__subtitle,
-  .login__text {
-    font-weight: 700
-  }
   .login__divider {
-    font-weight: 700
-  }
-  .login-form__item {
     font-weight: 700
   }
   .settings {
@@ -3277,8 +3300,11 @@ textarea {
     max-width: 69.375rem;
     width: 100%;
     border-radius: .5rem;
-    border: var(--primary-border);
-    padding: 1.5rem 3.125rem
+    padding: 1.5rem 3.125rem;
+    border: .0625rem solid #222328
+  }
+  .light .settings__container {
+    border-color: #dadce0
   }
   .form-settings__title {
     font-size: 1.375rem
@@ -4008,9 +4034,6 @@ textarea {
   }
 }
 @media (max-width:64em) {
-  .header {
-    border-bottom: .0625rem solid #e1e1e1
-  }
   .footer__top {
     padding-top: 1.875rem;
     padding-bottom: 1.875rem
@@ -5484,8 +5507,11 @@ textarea {
   .login__text a:hover {
     color: var(--blue)
   }
+  .social__link {
+    transition: all .3s ease
+  }
   .social__link:hover {
-    background-color: var(--accent)
+    background-color: var(--bg-hover)
   }
   .login-form__input:hover {
     border: var(--primary-border)
