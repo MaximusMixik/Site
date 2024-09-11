@@ -1855,6 +1855,10 @@ textarea {
 .about-image__buttons > .image-actions__link {
   border-radius: var(--border-radius-primary)
 }
+.image-actions__item {
+  display: flex;
+  flex-direction: column-reverse
+}
 .image-actions__wrapper {
   padding-top: .625rem
 }
@@ -3485,6 +3489,9 @@ textarea {
   .main-menu__button::before {
     font-size: 1.5rem;
     transition: color .3s ease;
+    color: var(--text-light-gray)
+  }
+  .light .main-menu__button::before {
     color: var(--text-light-lite)
   }
   .main-menu__wrapper {
@@ -3551,6 +3558,9 @@ textarea {
     color: var(--text-light)
   }
   .profile-menu__button::before {
+    color: var(--text-light-gray)
+  }
+  .light .profile-menu__button::before {
     color: var(--text-light-lite)
   }
   .profile-menu__link {
@@ -3604,8 +3614,11 @@ textarea {
     transform: translate(-50%,-50%);
     transition: all .3s ease
   }
+  .theme-switch svg path {
+    color: var(--text-light-gray)
+  }
   .light .theme-switch svg path {
-    stroke: var(--text-light-lite)
+    color: var(--text-light-lite)
   }
   .dark .theme-switch svg:last-of-type,
   .light .theme-switch svg:first-of-type {
@@ -4281,7 +4294,8 @@ textarea {
     background-color: var(--bg-primary)
   }
   .profile-menu__button::before {
-    color: var(--text-primary)
+    color: var(--text-primary);
+    font-size: 1.625rem
   }
   .icon-menu {
     display: block;
@@ -4546,7 +4560,7 @@ textarea {
     height: 1.5rem;
     display: grid;
     place-items: center;
-    font-size: 1.125rem;
+    font-size: 1.5rem;
     color: var(--text-primary)
   }
   .filters__icon::after {
