@@ -1,24 +1,24 @@
 @import url(https://fonts.googleapis.com/css?family=DM+Sans:regular,500,600&display=swap);
 @font-face {
   font-family: Lufga;
-  src: url(../../fonts/Lufga-SemiBold.woff2) format("woff2"),url(../../fonts/Lufga-SemiBold.woff) format("woff");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap
-}
-@font-face {
-  font-family: Lufga;
-  src: url(../../fonts/Lufga-Medium.woff2) format("woff2"),url(../../fonts/Lufga-Medium.woff) format("woff");
+  font-display: swap;
+  src: url(../fonts/Lufga-Medium.woff2) format("woff2");
   font-weight: 500;
-  font-style: normal;
-  font-display: swap
+  font-style: normal
 }
 @font-face {
   font-family: Lufga;
-  src: url(../../fonts/Lufga-Regular.woff2) format("woff2"),url(../../fonts/Lufga-Regular.woff) format("woff");
+  font-display: swap;
+  src: url(../fonts/Lufga-Regular.woff2) format("woff2");
   font-weight: 400;
-  font-style: normal;
-  font-display: swap
+  font-style: normal
+}
+@font-face {
+  font-family: Lufga;
+  font-display: swap;
+  src: url(../fonts/Lufga-SemiBold.woff2) format("woff2");
+  font-weight: 600;
+  font-style: normal
 }
 :root {
   --white: #fff;
@@ -578,8 +578,7 @@ body {
   border: .125rem solid #27282b
 }
 .grid-about__item--small {
-  grid-row: span 9;
-  height: 11.25rem
+  grid-row: span 9
 }
 .grid-about__item:nth-child(1) {
   background: radial-gradient(110.91% 150.37% at 136.21% 151.96%,#22504b 0,#222325 100%)
@@ -1533,6 +1532,9 @@ button.swiper-pagination-bullet {
     padding: 2rem;
     height: 12.5rem
   }
+  .grid-about__item--small {
+    height: 11.25rem
+  }
   .content-about__image {
     padding-bottom: 43.5%
   }
@@ -1940,7 +1942,11 @@ button.swiper-pagination-bullet {
     gap: 2.5rem
   }
   .grid-about__item {
+    height: 10.6875rem;
     padding: 1.5rem 1rem
+  }
+  .grid-about__item--small {
+    height: 9.375rem
   }
   .content-about__image {
     height: 14.75rem
