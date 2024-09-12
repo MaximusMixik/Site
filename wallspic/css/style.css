@@ -1683,6 +1683,7 @@ textarea {
 .download__container {
   border-radius: 1.375rem;
   background-color: var(--bg-gray);
+  max-width: 104.25rem;
   overflow: hidden
 }
 .download__body {
