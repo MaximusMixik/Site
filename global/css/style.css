@@ -154,6 +154,10 @@ body {
   font-size: 1.125rem;
   transition: color .3s ease
 }
+.menu__link.active {
+  pointer-events: none;
+  color: var(--hover)
+}
 .icon-menu {
   display: none
 }
@@ -202,8 +206,7 @@ body {
   width: 2.75rem;
   height: 2.75rem;
   position: relative;
-  border-color: #2f776f;
-  transition: width .3s ease
+  border-color: #2f776f
 }
 .button--arrow span {
   opacity: 0;
@@ -251,14 +254,6 @@ body {
 }
 .contacts__row:not(:last-child) {
   margin-bottom: 2.5rem
-}
-header .contacts__row:nth-child(n+2) .contacts__title {
-  font-size: .875rem;
-  font-weight: 500;
-  text-transform: uppercase
-}
-header .contacts__row:nth-child(n+2) .contacts__title:not(:last-child) {
-  margin-bottom: .75rem
 }
 .contacts__title {
   font-family: Lufga;
@@ -1173,20 +1168,7 @@ header .contacts__row:nth-child(n+2) .contacts__title:not(:last-child) {
     gap: 2.5rem;
     transition: right .3s
   }
-  .menu__body::before {
-    content: "";
-    position: fixed;
-    width: 100%;
-    right: -100%;
-    top: 0;
-    transition: right .3s;
-    z-index: 2;
-    background-color: var(--bg-secondary)
-  }
   .menu-open .menu__body {
-    right: 0
-  }
-  .menu-open .menu__body::before {
     right: 0
   }
   .menu__list {
@@ -1323,8 +1305,21 @@ header .contacts__row:nth-child(n+2) .contacts__title:not(:last-child) {
     flex-direction: column;
     height: 100%
   }
+  .menu__body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    right: -100%;
+    top: 0;
+    transition: right .3s;
+    z-index: 2;
+    background-color: var(--bg-secondary)
+  }
+  .menu-open .menu__body::before {
+    right: 0
+  }
 }
-@media (max-width:48.06125em)and (max-width:48.06125em) {
+@media (max-width:48.06125em)and (max-width:29.99875em)and (max-width:48.06125em) {
   .menu__body::before {
     height: 4.625rem
   }
@@ -1503,7 +1498,7 @@ header .contacts__row:nth-child(n+2) .contacts__title:not(:last-child) {
     padding: 6rem 2rem 1.5rem
   }
 }
-@media (max-width:48.06125em)and (min-width:48.06125em) {
+@media (max-width:48.06125em)and (max-width:29.99875em)and (min-width:48.06125em) {
   .menu__body::before {
     height: 8.4375rem
   }
@@ -1564,6 +1559,12 @@ header .contacts__row:nth-child(n+2) .contacts__title:not(:last-child) {
 @media (any-hover:hover) {
   .menu__link:hover {
     color: var(--hover)
+  }
+  .button {
+    transition: width .3s ease,border-color .3s ease
+  }
+  .button:hover {
+    border-color: var(--hover)
   }
   .button--arrow:hover,
   .item-preview:hover .button--arrow {
