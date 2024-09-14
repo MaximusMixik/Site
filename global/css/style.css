@@ -252,12 +252,12 @@ body {
 .contacts__row:not(:last-child) {
   margin-bottom: 2.5rem
 }
-.contacts__row:nth-child(n+2) .contacts__title {
+header .contacts__row:nth-child(n+2) .contacts__title {
   font-size: .875rem;
   font-weight: 500;
   text-transform: uppercase
 }
-.contacts__row:nth-child(n+2) .contacts__title:not(:last-child) {
+header .contacts__row:nth-child(n+2) .contacts__title:not(:last-child) {
   margin-bottom: .75rem
 }
 .contacts__title {
@@ -279,6 +279,17 @@ body {
 }
 .contacts__link {
   transition: color .3s ease
+}
+.contacts__list {
+  display: grid;
+  gap: .75rem
+}
+.contacts__list-item {
+  color: var(--text-secondary);
+  text-transform: uppercase
+}
+.contacts__list-item span {
+  color: var(--hover)
 }
 .pages-hero {
   margin-top: -.625rem;
@@ -1036,7 +1047,7 @@ body {
     justify-content: space-between
   }
   .footer__column {
-    max-width: 12.5rem
+    max-width: 15.375rem
   }
   .hero {
     padding-top: .9375rem;
