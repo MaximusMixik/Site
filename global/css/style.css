@@ -203,13 +203,12 @@ body {
   height: 2.75rem;
   position: relative;
   border-color: #2f776f;
-  transition: all .3s ease
+  transition: width .3s ease
 }
 .button--arrow span {
-  overflow: hidden;
   opacity: 0;
   width: 0;
-  transition: width .4s ease,opacity .3s ease
+  transition: width .4s ease,opacity .1s ease
 }
 .button--arrow svg {
   position: absolute;
@@ -1551,22 +1550,17 @@ body {
   .menu__link:hover {
     color: var(--hover)
   }
-  .button {
-    transition: border-color .3s ease
-  }
-  .button:hover {
-    border-color: var(--hover)
-  }
   .button--arrow:hover,
   .item-preview:hover .button--arrow {
-    width: 6.5rem;
-    border-color: var(--hover)
+    border-color: var(--hover);
+    width: 6.5rem
   }
   .button--arrow:hover span,
   .item-preview:hover .button--arrow span {
     width: 3.75rem;
     padding-right: 1.6875rem;
-    opacity: 1
+    opacity: 1;
+    transition: width .4s ease,opacity .3s ease
   }
   .button--arrow:hover svg path,
   .item-preview:hover .button--arrow svg path {
