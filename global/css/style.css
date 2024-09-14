@@ -285,6 +285,10 @@ header .contacts__row:nth-child(n+2) .contacts__title:not(:last-child) {
   gap: .75rem
 }
 .contacts__list-item {
+  font-family: Lufga;
+  line-height: 1.3;
+  font-weight: 500;
+  font-size: .875rem;
   color: var(--text-secondary);
   text-transform: uppercase
 }
