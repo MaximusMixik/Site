@@ -203,13 +203,13 @@ body {
   height: 2.75rem;
   position: relative;
   border-color: #2f776f;
-  transition: width .3s ease
+  transition: all .3s ease
 }
 .button--arrow span {
   overflow: hidden;
   opacity: 0;
   width: 0;
-  transition: width .3s ease,opacity .4s ease
+  transition: width .4s ease,opacity .3s ease
 }
 .button--arrow svg {
   position: absolute;
