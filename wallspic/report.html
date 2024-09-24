@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Report</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<style>
+		body {
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s;
+		}
+
+		.loaded body {
+			opacity: 1;
+			visibility: visible;
+		}
+	</style>
+	<link rel="stylesheet" href="css/style.min.css?_v=20240924115626">
+	<meta name="description" content="Author: Max.S.O, Wallpapers for everyone. Find the best wallpapers for your phone, tablet or PC">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<main class="report">
+			<div class="report__container">
+				<div class="report__logo">
+					<img loading="lazy" src="img/logo.svg" alt="logo">
+					<img loading="lazy" src="img/logo-black.svg" alt="logo">
+				</div>
+				<div class="report__wrapper">
+					<h1 class="report__title">
+						Report image
+					</h1>
+					<form class="report__form report-form" action="#" method="POST">
+						<div class="report-form__radio-group">
+							<div class="report-form__radio">
+								<input type="radio" id="inappropriate" name="report_reason" checked value="inappropriate">
+								<label for="inappropriate">
+									Inappropriate Content
+								</label>
+
+							</div>
+							<div class="report-form__radio">
+								<input type="radio" id="copyright" name="report_reason" value="copyright">
+								<label for="copyright">
+									Copyright infringement
+								</label>
+
+							</div>
+							<div class="report-form__radio">
+								<input type="radio" id="spam" name="report_reason" value="copyright">
+								<label for="spam">
+									Spam or Scam
+								</label>
+
+							</div>
+							<div class="report-form__radio">
+								<input type="radio" id="privacy" name="report_reason" value="copyright">
+								<label for="privacy">
+									Privacy Violation
+								</label>
+
+							</div>
+							<div class="report-form__radio">
+								<input type="radio" id="nudity" name="report_reason" value="copyright">
+								<label for="nudity">
+									Nudity/Sexual Content
+								</label>
+							</div>
+							<div class="report-form__radio">
+								<input type="radio" id="violence" name="report_reason" value="copyright">
+								<label for="violence">
+									Violence
+								</label>
+							</div>
+						</div>
+						<div class="report-form__fields">
+							<div class="report-form__hide">
+								<h2 class="report-form__subtitle">
+									Please provide the following information:
+								</h2>
+								<div class="report-form__additional-info">
+									<div class="report-form__item">
+										<label class="report-form__label" for="textarea">Your Name:</label>
+										<input class="report-form__input" type="text" id="name" name="name" placeholder="Enter your name">
+									</div>
+									<div class="report-form__item">
+										<label class="report-form__label" for="e-mail">Your Email:</label>
+										<input class="report-form__input" type="text" id="e-mail" name="e-mail" placeholder="Enter your e-mail">
+									</div>
+									<div class="report-form__item">
+										<label class="report-form__label" for="original-link">Enter your e-mail</label>
+
+										<input class="report-form__input" type="url" id="original-link" name="original_link" placeholder="Provide the original content link">
+									</div>
+
+									<!-- <input class="report-form__input" type="email" name="email" placeholder="Enter your email">
+                                    <input class="report-form__input" type="url" name="original_link"
+                                      placeholder="Provide the original content link"> -->
+								</div>
+							</div>
+
+							<div class="report-form__details">
+								<div class="report-form__item">
+									<label class="report-form__label" for="textarea">Details <span>(optional)</span></label>
+									<textarea class="report-form__textarea" id="textarea" placeholder="Give us more details about what is wrong..."></textarea>
+								</div>
+							</div>
+						</div>
+
+						<div class="report-form__row">
+							<button class="report-form__button button button--transparent" type="button">Cancel</button>
+							<button class="report-form__button button  button--secondary " aria-label="submit button" type="submit">Report</button>
+
+						</div>
+					</form>
+
+				</div>
+			</div>
+			<img loading="lazy" class="report__bg" src="img/login/bg.webp" alt="background">
+		</main>
+	</div>
+	<script src="js/app.min.js?_v=20240924115626"></script>
+</body>
+
+</html>
+
+
+<!--             <div class="report-form__item">
+              <label for="email" class="report-form__label">E-mail</label>
+              <input autocomplete="off" required id="email" type="email" name="email" placeholder="Enter your e-mail"
+                class="report-form__input">
+            </div> 
+          
+                      <button class="report-form__button button" aria-label="submit button" type="submit">report</button>
+          -->

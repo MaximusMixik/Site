@@ -6042,6 +6042,17 @@
                 if (passwordInput.type === "password") passwordInput.type = "text"; else passwordInput.type = "password";
             }));
         }
+        function reportAction() {
+            const form = document.querySelector(".report-form");
+            if (!form) return;
+            const radioButtons = document.querySelectorAll(".report-form__radio input");
+            const itemToShow = document.querySelector(".report-form__hide");
+            radioButtons.forEach((input => {
+                input.onchange = () => {
+                    itemToShow.classList.toggle("show-item", input.id === "copyright" && input.checked);
+                };
+            }));
+        }
         //! init main function
                 document.addEventListener("DOMContentLoaded", loading);
         function loading() {
@@ -6058,6 +6069,7 @@
             copyLink();
             initInput();
             imagesUploadAction();
+            reportAction();
         }
         //! TEST
                 function imagesUploadAction() {

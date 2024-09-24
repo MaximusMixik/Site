@@ -2786,6 +2786,205 @@ textarea {
   width: 100%;
   margin-top: 1.875rem
 }
+.report {
+  padding-top: 1.875rem;
+  padding-bottom: 1.875rem
+}
+.report--message {
+  text-align: center
+}
+.report__text {
+  margin-inline: auto;
+  max-width: 80%
+}
+.report__text:not(:last-child) {
+  margin-bottom: 2.5rem
+}
+.report__button {
+  margin-left: auto;
+  padding: .75rem 1.5rem;
+  font-weight: 700
+}
+.report__logo {
+  text-align: center
+}
+.report__title {
+  font-weight: 700;
+  line-height: 1.4
+}
+.report__form {
+  display: grid;
+  gap: 2.5rem
+}
+.report-form__radio-group {
+  display: grid;
+  gap: 1.25rem
+}
+.report-form__radio {
+  position: relative;
+  font-family: "Open Sans";
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.42
+}
+.report-form__radio label {
+  display: inline-flex;
+  align-items: center;
+  gap: .625rem;
+  cursor: pointer
+}
+.report-form__radio label::before {
+  content: "";
+  flex: 0 0 1.125rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 50%;
+  border: .125rem solid var(--bg-secondary);
+  box-shadow: inset 0 0 0 0 transparent;
+  background-color: transparent;
+  transition: all .3s ease
+}
+.report-form__radio input:checked + label:before {
+  border: .125rem solid var(--accent);
+  box-shadow: inset 0 0 0 .25rem var(--bg-dark);
+  background-color: var(--accent)
+}
+.light .report-form__radio input:checked + label:before {
+  box-shadow: inset 0 0 0 .25rem var(--bg-primary)
+}
+.report-form__radio input[type=radio] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+  font-size: 0;
+  visibility: hidden;
+  opacity: 0
+}
+.report-form__additional-info,
+.report-form__item {
+  display: grid;
+  gap: .625rem
+}
+.report-form__subtitle {
+  font-size: 1.125rem;
+  line-height: 1.44
+}
+.report-form__subtitle > :not(:last-child) {
+  margin-bottom: 1.5rem
+}
+.report-form__label {
+  color: var(--text-light);
+  line-height: 1.57
+}
+.report-form__label span {
+  color: var(--text-gray)
+}
+.report-form__input,
+.report-form__textarea {
+  border-radius: var(--border-radius-primary);
+  background: var(--bg-primary);
+  color: var(--text-gray);
+  font-size: .8125rem;
+  line-height: 1.54;
+  border: .0625rem solid transparent;
+  transition: all .3s ease
+}
+.light .report-form__input,
+.light .report-form__textarea {
+  border: var(--primary-border);
+  background-color: var(--bg-primary)
+}
+.report-form__input:focus,
+.report-form__input:focus-visible,
+.report-form__textarea:focus,
+.report-form__textarea:focus-visible {
+  border-color: var(--text-light-lite);
+  outline: 0!important
+}
+.report-form__input::-webkit-input-placeholder,
+.report-form__textarea::-webkit-input-placeholder {
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s
+}
+.report-form__input:-ms-input-placeholder,
+.report-form__textarea:-ms-input-placeholder {
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  -ms-transition: opacity .3s;
+  transition: opacity .3s
+}
+.report-form__input::-ms-input-placeholder,
+.report-form__textarea::-ms-input-placeholder {
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  -ms-transition: opacity .3s;
+  transition: opacity .3s
+}
+.report-form__input::placeholder,
+.report-form__textarea::placeholder {
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  transition: opacity .3s
+}
+.report-form__input:focus::-webkit-input-placeholder,
+.report-form__textarea:focus::-webkit-input-placeholder {
+  opacity: 0
+}
+.report-form__input:focus:-ms-input-placeholder,
+.report-form__textarea:focus:-ms-input-placeholder {
+  opacity: 0
+}
+.report-form__input:focus::-ms-input-placeholder,
+.report-form__textarea:focus::-ms-input-placeholder {
+  opacity: 0
+}
+.report-form__input:focus::placeholder,
+.report-form__textarea:focus::placeholder {
+  opacity: 0
+}
+.report-form__input {
+  padding: .75rem .875rem
+}
+.report-form__textarea {
+  padding: .875rem;
+  min-height: 6.625rem;
+  resize: vertical
+}
+.report-form__row {
+  display: flex;
+  gap: .625rem
+}
+.report-form__row:has(> button) {
+  justify-content: flex-end
+}
+.report-form__button {
+  padding: .75rem 1.5rem;
+  font-weight: 700
+}
+.report-form__button.button--transparent {
+  background-color: transparent
+}
+.report-form__hide {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  padding-bottom: 1.5rem;
+  transition: all .7s ease;
+  display: grid;
+  gap: 1.5rem
+}
+.report-form__hide.show-item {
+  opacity: 1;
+  max-height: 25rem
+}
 .settings {
   padding-bottom: 2.5rem
 }
@@ -3172,6 +3371,50 @@ textarea {
     -o-object-fit: cover;
     object-fit: cover
   }
+  .report {
+    position: relative;
+    min-height: 100svh;
+    min-height: 100vh;
+    display: flex;
+    align-items: center
+  }
+  .report__container {
+    position: relative;
+    z-index: 2;
+    max-width: 38.75rem;
+    width: 100%
+  }
+  .report__logo img {
+    width: 10rem;
+    height: 2.25rem
+  }
+  .report__logo img:last-of-type {
+    display: none
+  }
+  .report__logo:not(:last-child) {
+    margin-bottom: 3.125rem
+  }
+  .report__wrapper {
+    background-color: var(--bg-gray);
+    border-radius: var(--border-radius-primary);
+    padding: 1.875rem;
+    width: 100%;
+    color: var(--text-primary);
+    box-shadow: 0 0 1.375rem 0 rgba(0,0,0,.3)
+  }
+  .light .report__wrapper {
+    background-color: var(--bg-primary);
+    color: var(--text-primary)
+  }
+  .report__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    -o-object-fit: cover;
+    object-fit: cover
+  }
 }
 @media (min-width:26.93625em) and (min-width:110.5em) {
   .download__container::before {
@@ -3364,6 +3607,9 @@ textarea {
   }
   .login__divider {
     font-weight: 700
+  }
+  .report__title {
+    font-size: 1.25rem
   }
   .settings {
     padding-top: 6.25rem;
@@ -4027,6 +4273,9 @@ textarea {
   .content__title {
     font-size: 2rem
   }
+  .report__title:not(:last-child) {
+    margin-bottom: 2.5rem
+  }
 }
 @media (min-width:64em) {
   .footer__top {
@@ -4165,6 +4414,9 @@ textarea {
   }
   .results__column {
     padding-inline: 1.25rem
+  }
+  .report__title:not(:last-child) {
+    margin-bottom: 1.875rem
   }
 }
 @media (max-width:62.56125em) {
@@ -4872,6 +5124,9 @@ textarea {
     font-size: 1.25rem;
     line-height: 1.4
   }
+  .report__title {
+    font-size: 1.125rem
+  }
   .settings {
     padding-top: 4.5rem
   }
@@ -5116,6 +5371,19 @@ textarea {
     margin-bottom: 1.875rem
   }
   .login__bg {
+    display: none
+  }
+  .report__logo img {
+    width: 6.625rem;
+    height: 1.5rem
+  }
+  .report__logo img:first-of-type {
+    display: none
+  }
+  .report__logo:not(:last-child) {
+    margin-bottom: 1.875rem
+  }
+  .report__bg {
     display: none
   }
 }
@@ -5364,6 +5632,16 @@ textarea {
   @supports not (padding-inline:clamp(1.25rem ,0.9737569061rem + 1.3812154696vw ,2.5rem)) {
     .results__column {
       padding-inline: calc(1.25rem + 1.25 * (100vw - 20rem)/ 90.5)
+    }
+  }
+  @supports (margin-bottom:clamp(1.875rem ,1.736878453rem + 0.6906077348vw ,2.5rem)) {
+    .report__title:not(:last-child) {
+      margin-bottom: clamp(1.875rem ,1.736878453rem + .6906077348vw ,2.5rem)
+    }
+  }
+  @supports not (margin-bottom:clamp(1.875rem ,1.736878453rem + 0.6906077348vw ,2.5rem)) {
+    .report__title:not(:last-child) {
+      margin-bottom: calc(1.875rem + .625 * (100vw - 20rem)/ 90.5)
     }
   }
 }
@@ -5681,6 +5959,13 @@ textarea {
   }
   .login-form__link:hover {
     color: var(--blue)
+  }
+  .report-form__input:hover,
+  .report-form__textarea:hover {
+    border: var(--primary-border)
+  }
+  .report-form__button.button--transparent:hover {
+    background-color: var(--bg-hover)
   }
   .form-settings__remove:hover {
     color: var(--text-yellow)
