@@ -4355,7 +4355,25 @@
             }
         }));
     }
+    function openSpoller() {
+        const urlHash = window.location.hash;
+        if (!urlHash) return;
+        const detailsElement = document.querySelector(urlHash);
+        if (detailsElement && detailsElement.tagName.toLowerCase() === "details") {
+            const observer = new IntersectionObserver((entries => {
+                entries.forEach((entry => {
+                    if (entry.isIntersecting) setTimeout((() => {
+                        const summaryElement = detailsElement.querySelector("summary");
+                        if (summaryElement) summaryElement.click();
+                        observer.disconnect();
+                    }), 500);
+                }));
+            }));
+            observer.observe(detailsElement);
+        }
+    }
     window.onload = () => {
+        openSpoller();
         openItems();
         advisoryAction();
     };

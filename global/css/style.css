@@ -108,6 +108,10 @@ h6 {
   font-weight: inherit;
   font-size: inherit
 }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2.5rem
+}
 body {
   background-color: var(--bg-primary)
 }
@@ -256,6 +260,7 @@ summary::marker {
   display: flex;
   justify-content: center;
   align-items: center;
+  -webkit-tap-highlight-color: transparent;
   text-align: center;
   color: var(--white);
   font-family: Lufga;
@@ -396,6 +401,9 @@ summary::marker {
 .navigation__buttons {
   display: flex;
   gap: 1.5rem
+}
+.navigation__button {
+  -webkit-tap-highlight-color: transparent
 }
 .header {
   position: relative;
@@ -1203,6 +1211,7 @@ summary::marker {
 }
 .item-cases__header {
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   display: flex;
   gap: 1rem
 }
@@ -1306,6 +1315,24 @@ summary::marker {
 ._spoller-init .button-cases__icon::before {
   -webkit-transform: translate(-50%,-50%) rotate(-90deg);
   transform: translate(-50%,-50%) rotate(-90deg)
+}
+.button-cases__text,
+.button-cases__text::before {
+  font-family: Lufga;
+  font-size: .9375rem;
+  font-weight: 500
+}
+.button-cases__text::before {
+  transition: all .3s ease
+}
+[open] .button-cases__text {
+  font-size: 0
+}
+[open] .button-cases__text::before {
+  font-family: Lufga;
+  font-size: .9375rem;
+  font-weight: 500;
+  content: "Close"
 }
 .advisory {
   padding-bottom: 12.5rem
@@ -1426,6 +1453,7 @@ summary::marker {
   margin-bottom: 2.875rem
 }
 .advisory-button {
+  -webkit-tap-highlight-color: transparent;
   padding: .75rem 1.125rem;
   border: .125rem solid #3d3f43;
   border-radius: 3.125rem;
@@ -2257,6 +2285,7 @@ button.swiper-pagination-bullet {
     padding: 2rem 1.5rem 3.75rem;
     display: flex;
     position: relative;
+    z-index: 1;
     overflow: hidden
   }
   .member-popup__bg {
@@ -2268,7 +2297,8 @@ button.swiper-pagination-bullet {
     -o-object-fit: cover;
     object-fit: cover;
     -o-object-position: bottom left;
-    object-position: bottom left
+    object-position: bottom left;
+    z-index: -1
   }
   .member-popup__media {
     flex: 0 0 15.375rem
@@ -2277,6 +2307,7 @@ button.swiper-pagination-bullet {
     flex: 1 1 auto;
     padding-top: 1.375rem;
     padding-left: 1.75rem;
+    min-width: 18.75rem;
     line-height: 1.34
   }
   .member-popup__content span {
@@ -2866,8 +2897,8 @@ button.swiper-pagination-bullet {
     height: 1rem;
     position: relative
   }
-  ._spoller-active .button-cases__icon .button-cases__icon::before,
-  .button-cases__icon::after {
+  ._spoller-active .button-cases__icon::after,
+  ._spoller-active .button-cases__icon::before {
     width: .75rem
   }
   ._spoller-active .button-cases__icon::before {
@@ -3173,6 +3204,17 @@ button.swiper-pagination-bullet {
   .member-popup {
     align-items: flex-start;
     padding: 8.3125rem 2rem
+  }
+}
+@media (min-width:29.99875em)and (max-width:43.75em) {
+  .member-popup__container {
+    flex-wrap: wrap
+  }
+  .member-popup__media {
+    flex: 1 1 100%
+  }
+  .member-popup__content {
+    flex: 1 1 80%
   }
 }
 @media (any-hover:hover) {
