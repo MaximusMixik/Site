@@ -1212,6 +1212,21 @@ textarea {
 .tabs__link.active::before {
   opacity: 1
 }
+.theme-logo {
+  text-align: center
+}
+.theme-logo img {
+  margin-inline: auto
+}
+.theme-logo img:last-of-type {
+  display: none
+}
+.light .theme-logo img:last-of-type {
+  display: block
+}
+.light .theme-logo img:first-of-type {
+  display: none
+}
 .header {
   position: fixed;
   top: 0;
@@ -1857,14 +1872,13 @@ textarea {
   border-radius: var(--border-radius-primary)
 }
 .image-actions__item {
-  display: flex;
-  flex-direction: column-reverse
+  position: relative
 }
 .image-actions__wrapper {
-  padding-top: .625rem
-}
-.image-actions__row .image-actions__wrapper {
-  width: calc(100% + 3.625rem)
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 10
 }
 .image-actions__spoiler {
   display: flex
@@ -1888,7 +1902,7 @@ textarea {
   font-size: 1.25rem
 }
 .image-actions__body {
-  max-height: 28.125rem;
+  max-height: 28.75rem;
   box-shadow: var(--box-shadow-light);
   border-radius: .5rem;
   overflow-y: auto;
@@ -2584,9 +2598,6 @@ textarea {
   content: counter(myCounter) "." counter(mySecondCounter);
   counter-increment: mySecondCounter
 }
-.login__logo {
-  text-align: center
-}
 .login__title {
   font-style: normal;
   font-weight: 700
@@ -2805,9 +2816,6 @@ textarea {
   padding: .75rem 1.5rem;
   font-weight: 700
 }
-.report__logo {
-  text-align: center
-}
 .report__title {
   font-weight: 700;
   line-height: 1.4
@@ -2846,7 +2854,7 @@ textarea {
 }
 .report-form__radio input:checked + label:before {
   border: .125rem solid var(--accent);
-  box-shadow: inset 0 0 0 .25rem var(--bg-dark);
+  box-shadow: inset 0 0 0 .1875rem var(--bg-dark);
   background-color: var(--accent)
 }
 .light .report-form__radio input:checked + label:before {
@@ -2976,12 +2984,12 @@ textarea {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  padding-bottom: 1.5rem;
   transition: all .7s ease;
   display: grid;
   gap: 1.5rem
 }
 .report-form__hide.show-item {
+  padding-bottom: 1.5rem;
   opacity: 1;
   max-height: 25rem
 }
@@ -3203,6 +3211,10 @@ textarea {
   .light .profile-menu__list {
     background-color: var(--bg-primary)
   }
+  .theme-logo img {
+    width: 10rem;
+    height: 2.25rem
+  }
   .header__container {
     gap: 1.25rem
   }
@@ -3346,13 +3358,6 @@ textarea {
     max-width: 35.625rem;
     width: 100%
   }
-  .login__logo img {
-    width: 10rem;
-    height: 2.25rem
-  }
-  .login__logo img:last-of-type {
-    display: none
-  }
   .login__logo:not(:last-child) {
     margin-bottom: 3.125rem
   }
@@ -3383,13 +3388,6 @@ textarea {
     z-index: 2;
     max-width: 38.75rem;
     width: 100%
-  }
-  .report__logo img {
-    width: 10rem;
-    height: 2.25rem
-  }
-  .report__logo img:last-of-type {
-    display: none
   }
   .report__logo:not(:last-child) {
     margin-bottom: 3.125rem
@@ -4320,7 +4318,7 @@ textarea {
   }
   .sidebar__body {
     position: sticky;
-    top: 4.0625rem;
+    top: -12.5rem;
     overflow: auto;
     height: calc(100vh - 60px);
     min-height: -webkit-max-content;
@@ -4347,8 +4345,17 @@ textarea {
     box-shadow: 0 0 .625rem 0 rgba(0,0,0,.05);
     background: var(--bg-primary)
   }
+  .image-actions__wrapper {
+    bottom: 120%
+  }
 }
 @media (max-width:75em) {
+  .button--share {
+    background-color: var(--bg-dark)
+  }
+  .button--transparent {
+    background-color: var(--bg-dark)
+  }
   .page-preview__container {
     flex-direction: column
   }
@@ -4368,10 +4375,8 @@ textarea {
   .about-image__buttons {
     order: 3
   }
-  .about-image__buttons {
-    max-width: 38.375rem;
-    width: 100%;
-    margin-inline: auto
+  .image-actions__wrapper {
+    top: 120%
   }
 }
 @media (max-width:64em) {
@@ -5186,6 +5191,10 @@ textarea {
   .profile-menu__link {
     color: var(--text-primary)
   }
+  .theme-logo img {
+    width: 6.625rem;
+    height: 1.5rem
+  }
   .header__container {
     min-height: 3.25rem
   }
@@ -5360,24 +5369,10 @@ textarea {
     padding-top: 1.875rem;
     padding-bottom: 1.875rem
   }
-  .login__logo img {
-    width: 6.625rem;
-    height: 1.5rem
-  }
-  .login__logo img:first-of-type {
-    display: none
-  }
   .login__logo:not(:last-child) {
     margin-bottom: 1.875rem
   }
   .login__bg {
-    display: none
-  }
-  .report__logo img {
-    width: 6.625rem;
-    height: 1.5rem
-  }
-  .report__logo img:first-of-type {
     display: none
   }
   .report__logo:not(:last-child) {
@@ -5385,6 +5380,11 @@ textarea {
   }
   .report__bg {
     display: none
+  }
+  .report-form__input,
+  .report-form__textarea {
+    color: var(--text-light-gray);
+    background-color: var(--bg-dark)
   }
 }
 @media (min-width:26.93625em) and (max-width:62.56125em) {
@@ -5725,10 +5725,9 @@ textarea {
 }
 @media (max-width:75em) and (min-width:34.375em) {
   .about-image__buttons {
-    grid-template-columns: repeat(2,1fr)
-  }
-  .about-image__buttons > :first-child {
-    display: none
+    max-width: 18.75rem;
+    width: 100%;
+    margin-inline: auto
   }
 }
 @media (max-width:48.06125em) and (min-width:110.5em) {
