@@ -17,14 +17,14 @@
 			visibility: visible;
 		}
 	</style>
-	<link rel="stylesheet" href="css/style.min.css?_v=20240929104619">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241001181419">
 	<meta name="description" content="Author: Max.S.O, Wallpapers for everyone. Find the best wallpapers for your phone, tablet or PC">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 	<div class="wrapper">
-		<header class="header">
+		<header class="header" data-lp>
 			<div class="header__container">
 				<div class="header__left">
 					<button type="button" aria-label="burger menu" class="menu__icon icon-menu"><span></span></button>
@@ -394,7 +394,7 @@
 											</div>
 										</div>
 									</details>
-									<button aria-label="button info" class="image-actions__info button button--transparent _icon-info"></button>
+									<button data-popup="#popup" aria-label="button info" class="image-actions__info button button--transparent _icon-info"></button>
 								</div>
 							</div>
 						</div>
@@ -984,7 +984,132 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240929104619"></script>
+	<div id="popup" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content report">
+
+
+				<div class="report__wrapper">
+					<h1 class="report__title">
+						Report image
+					</h1>
+					<form class="report__form report-form" action="#" method="POST">
+						<div class="report-form__radio-group">
+							<div class="report-form__radio">
+								<input type="radio" id="inappropriate" name="report_reason" checked value="inappropriate">
+								<label for="inappropriate">
+									Inappropriate Content
+								</label>
+
+							</div>
+							<div class="report-form__radio">
+								<input type="radio" id="copyright" name="report_reason" value="copyright">
+								<label for="copyright">
+									Copyright infringement
+								</label>
+
+							</div>
+							<div class="report-form__radio">
+								<input type="radio" id="spam" name="report_reason" value="copyright">
+								<label for="spam">
+									Spam or Scam
+								</label>
+
+							</div>
+							<div class="report-form__radio">
+								<input type="radio" id="privacy" name="report_reason" value="copyright">
+								<label for="privacy">
+									Privacy Violation
+								</label>
+
+							</div>
+							<div class="report-form__radio">
+								<input type="radio" id="nudity" name="report_reason" value="copyright">
+								<label for="nudity">
+									Nudity/Sexual Content
+								</label>
+							</div>
+							<div class="report-form__radio">
+								<input type="radio" id="violence" name="report_reason" value="copyright">
+								<label for="violence">
+									Violence
+								</label>
+							</div>
+						</div>
+						<div class="report-form__fields">
+							<div class="report-form__hide">
+								<h2 class="report-form__subtitle">
+									Please provide the following information:
+								</h2>
+								<div class="report-form__additional-info">
+									<div class="report-form__item">
+										<label class="report-form__label" for="textarea">Your Name:</label>
+										<input class="report-form__input" type="text" id="name" name="name" placeholder="Enter your name">
+									</div>
+									<div class="report-form__item">
+										<label class="report-form__label" for="e-mail">Your Email:</label>
+										<input class="report-form__input" type="text" id="e-mail" name="e-mail" placeholder="Enter your e-mail">
+									</div>
+									<div class="report-form__item">
+										<label class="report-form__label" for="original-link">Enter your e-mail</label>
+
+										<input class="report-form__input" type="url" id="original-link" name="original_link" placeholder="Provide the original content link">
+									</div>
+								</div>
+							</div>
+
+							<div class="report-form__details">
+								<div class="report-form__item">
+									<label class="report-form__label" for="textarea">Details <span>(optional)</span></label>
+									<textarea class="report-form__textarea" id="textarea" placeholder="Give us more details about what is wrong..."></textarea>
+								</div>
+							</div>
+						</div>
+
+						<div class="report-form__row">
+							<button data-close class="report-form__button button button--transparent" type="button">Cancel</button>
+
+							<button data-popup="#popup-message" class="report-form__button button  button--secondary " aria-label="submit button" type="submit">Report</button>
+
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="popup-message" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content report report--message">
+
+
+				<div class="report__wrapper">
+					<h1 class="report__title">
+						Thank you for your report!
+					</h1>
+					<div class="report__text">
+						<p>
+							Your report has been submitted successfully.
+						</p>
+						<p>
+							We will review the image and take appropriate action if necessary.
+						</p>
+					</div>
+					<!-- <a href="home.html" class="report__button button  button--secondary ">Home</a> -->
+					<button data-close type="button" class="report__button button  button--secondary ">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- <button data-close type="button" class="popup__close">Закрити</button>
+						<div class="popup__text">
+							Text
+						</div> -->
+	<script src="js/app.min.js?_v=20241001181419"></script>
 </body>
 
 </html>
