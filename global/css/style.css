@@ -113,13 +113,32 @@ html {
   scroll-padding-top: 2.5rem
 }
 body {
-  background-color: var(--bg-primary)
+  background-color: var(--bg-primary);
+  position: relative
 }
-.lock body {
+.lock body,
+.popup-open body {
   overflow: hidden;
   touch-action: none;
   -ms-scroll-chaining: none;
   overscroll-behavior: none
+}
+body::before {
+  content: "";
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15,17,20,.94);
+  opacity: 0;
+  z-index: -1;
+  transition: all .3s ease
+}
+.popup-open body::before {
+  opacity: 1;
+  z-index: 8
 }
 .wrapper {
   min-height: 100%;
@@ -296,7 +315,8 @@ summary::marker {
 .button--blue {
   color: var(--black);
   padding: .75rem 1.25rem;
-  background-color: var(--accent)
+  background-color: var(--accent);
+  border: none
 }
 .main-title {
   font-family: Lufga;
@@ -817,9 +837,6 @@ summary::marker {
 .slide-cases__image:not(:last-child) {
   margin-bottom: 1rem
 }
-.slide-cases__content {
-  padding-inline: 1rem
-}
 .slide-cases__title {
   font-family: Lufga;
   font-size: 1.375rem;
@@ -852,9 +869,6 @@ summary::marker {
   font-weight: 500;
   line-height: 1.14
 }
-.slide-cases__category:not(:last-child) {
-  margin-bottom: .625rem
-}
 .slide-cases__year {
   color: var(--white);
   font-weight: 500
@@ -862,11 +876,12 @@ summary::marker {
 .slide-cases__location {
   font-weight: 600;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: .5rem
 }
 .slide-cases__location span {
-  margin-top: .25rem;
+  margin-top: .1875rem;
   color: #83868d;
   font-size: .875rem;
   display: flex;
@@ -1210,8 +1225,6 @@ summary::marker {
   padding-top: 1.5rem
 }
 .item-cases__header {
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
   display: flex;
   gap: 1rem
 }
@@ -1263,11 +1276,12 @@ summary::marker {
 .item-cases__location {
   font-weight: 600;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: .5rem
 }
 .item-cases__location span {
-  margin-top: .25rem;
+  margin-top: .125rem;
   color: #83868d;
   font-size: .875rem;
   display: flex;
@@ -1288,18 +1302,26 @@ summary::marker {
 }
 .item-cases__content {
   padding-top: 1rem;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height .7s ease;
   color: #d7d7d8;
   line-height: 1.44
+}
+.open-spoller .item-cases__content {
+  max-height: 50rem
 }
 .item-cases__content>:not(:last-child) {
   margin-bottom: 1.5rem
 }
 .button-cases {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   padding: .75rem;
   border: .125rem solid #3d3f43
 }
-._spoller-init .button-cases__icon::after,
-._spoller-init .button-cases__icon::before {
+.button-cases__icon::after,
+.button-cases__icon::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -1312,7 +1334,7 @@ summary::marker {
   background-color: var(--accent);
   width: .9375rem
 }
-._spoller-init .button-cases__icon::before {
+.button-cases__icon::before {
   -webkit-transform: translate(-50%,-50%) rotate(-90deg);
   transform: translate(-50%,-50%) rotate(-90deg)
 }
@@ -1325,10 +1347,10 @@ summary::marker {
 .button-cases__text::before {
   transition: all .3s ease
 }
-[open] .button-cases__text {
+.open-spoller .button-cases__text {
   font-size: 0
 }
-[open] .button-cases__text::before {
+.open-spoller .button-cases__text::before {
   font-family: Lufga;
   font-size: .9375rem;
   font-weight: 500;
@@ -1349,10 +1371,11 @@ summary::marker {
   height: initial!important
 }
 .slide-advisory__wrapper {
-  display: flex;
+  display: inline-flex;
+  align-items: center;
   height: 100%;
   flex-direction: column;
-  padding: 2rem 1.5rem;
+  padding: 1.5rem 1.5rem 2rem;
   border-radius: .75rem;
   background: linear-gradient(164deg,#404246 0,#2f3135 100%)
 }
@@ -1417,12 +1440,11 @@ summary::marker {
   font-size: .875rem;
   font-weight: 500;
   line-height: 1.14;
-  display: grid;
+  display: inline-grid;
   place-items: center;
-  max-width: -webkit-max-content;
-  max-width: max-content;
   margin-inline: auto;
-  padding: .25rem .75rem;
+  padding: .25rem .625rem;
+  min-height: 1.5rem;
   border-radius: .5rem;
   border: .125rem solid #325f5c
 }
@@ -1467,7 +1489,7 @@ summary::marker {
   max-width: -webkit-max-content;
   max-width: max-content;
   margin-inline: auto;
-  transition: color .3s ease,border-color .3s ease
+  transition: border-color .3s ease
 }
 .advisory-button__text,
 .advisory-button__text::before {
@@ -2182,8 +2204,7 @@ button.swiper-pagination-bullet {
     pointer-events: none
   }
   .navigation__button svg path {
-    fill: var(--white);
-    transition: all .4s ease
+    fill: var(--white)
   }
   .navigation__button.swiper-button-disabled {
     pointer-events: none
@@ -2194,7 +2215,7 @@ button.swiper-pagination-bullet {
   .navigation__pagination {
     display: none
   }
-  .navigation__progress {
+  .navigation__scrollbar {
     display: none
   }
   .footer {
@@ -2268,12 +2289,10 @@ button.swiper-pagination-bullet {
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    transition: background-color 0s ease 0s,right .4s ease
+    transition: all .3s ease
   }
-  .member-popup.open {
-    background-color: rgba(15,17,20,.94);
-    right: 0;
-    transition: background-color .4s ease .4s,right .4s ease
+  .popup-open .member-popup {
+    right: 0
   }
   .member-popup__container {
     height: -webkit-max-content;
@@ -2400,9 +2419,6 @@ button.swiper-pagination-bullet {
   .navigation__button:hover {
     border-color: var(--accent)
   }
-  .navigation__button:hover svg path {
-    fill: var(--accent)
-  }
   .member-popup__close {
     transition: border-color .3s ease
   }
@@ -2435,7 +2451,7 @@ button.swiper-pagination-bullet {
     position: relative;
     margin-left: 1rem
   }
-  ._spoller-active .button-cases__icon::before {
+  .open-spoller .button-cases__icon::before {
     -webkit-transform: translate(-50%,-50%) rotate(0);
     transform: translate(-50%,-50%) rotate(0)
   }
@@ -2525,6 +2541,9 @@ button.swiper-pagination-bullet {
   }
   .last-cases {
     padding-top: 5.625rem
+  }
+  .slide-cases__content {
+    padding-inline: 1rem
   }
   .industries__item {
     align-items: flex-start;
@@ -2763,6 +2782,15 @@ button.swiper-pagination-bullet {
     -webkit-transform: translateX(10%);
     transform: translateX(10%)
   }
+  .navigation__scrollbar {
+    flex: 1 1 auto;
+    height: .125rem;
+    background-color: #3d3f43;
+    position: relative
+  }
+  .navigation__scrollbar .swiper-scrollbar-drag {
+    background-color: var(--white)
+  }
   .header__container {
     gap: 3.125rem
   }
@@ -2829,6 +2857,9 @@ button.swiper-pagination-bullet {
   .last-cases {
     padding-top: 3.75rem
   }
+  .slide-cases__content {
+    padding-inline: .5rem
+  }
   .industries__item {
     flex-direction: column
   }
@@ -2842,6 +2873,9 @@ button.swiper-pagination-bullet {
   }
   .cases {
     padding-top: 3.125rem
+  }
+  .advisory-button {
+    max-width: 100%
   }
 }
 @media (max-width:48.06125em)and (max-width:29.99875em) {
@@ -2897,15 +2931,15 @@ button.swiper-pagination-bullet {
     height: 1rem;
     position: relative
   }
-  ._spoller-active .button-cases__icon::after,
-  ._spoller-active .button-cases__icon::before {
+  .button-cases__icon::after,
+  .button-cases__icon::before {
     width: .75rem
   }
-  ._spoller-active .button-cases__icon::before {
+  .open-spoller .button-cases__icon::before {
     -webkit-transform: translate(-50%,-50%) rotate(-45deg);
     transform: translate(-50%,-50%) rotate(-45deg)
   }
-  ._spoller-active .button-cases__icon::after {
+  .open-spoller .button-cases__icon::after {
     -webkit-transform: translate(-50%,-50%) rotate(45deg);
     transform: translate(-50%,-50%) rotate(45deg)
   }
@@ -2957,21 +2991,6 @@ button.swiper-pagination-bullet {
   .navigation__pagination.swiper-pagination-fraction {
     width: -webkit-max-content;
     width: max-content
-  }
-  .navigation__progress {
-    flex: 1 1 auto;
-    height: .125rem;
-    background-color: #3d3f43;
-    position: relative
-  }
-  .navigation__progress span {
-    position: absolute;
-    height: 100%;
-    top: 0;
-    left: 0;
-    width: 8.33%;
-    background-color: var(--white);
-    transition: width .5s ease
   }
   .header__container::after {
     background: url(../img/header/decore-mob.svg) 0 0/contain no-repeat
@@ -3247,8 +3266,7 @@ button.swiper-pagination-bullet {
     transition: background-color .3s ease,border-color .3s ease
   }
   .button--blue:hover {
-    background-color: var(--accent-hover);
-    border-color: transparent
+    background-color: var(--accent-hover)
   }
   .contacts__link:hover {
     color: var(--accent)
@@ -3294,8 +3312,7 @@ button.swiper-pagination-bullet {
     opacity: 1
   }
   .advisory-button:hover {
-    border-color: var(--accent);
-    color: var(--accent)
+    border-color: #515358
   }
 }
 @media (any-hover:none) {
