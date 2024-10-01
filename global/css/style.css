@@ -1,4 +1,24 @@
-@import url(https://fonts.googleapis.com/css?family=DM+Sans:regular,500,600&display=swap);
+@font-face {
+  font-family: DMSans;
+  font-display: swap;
+  src: url(../fonts/DMSans-Medium.woff2) format("woff2");
+  font-weight: 500;
+  font-style: normal
+}
+@font-face {
+  font-family: DMSans;
+  font-display: swap;
+  src: url(../fonts/DMSans-SemiBold.woff2) format("woff2");
+  font-weight: 600;
+  font-style: normal
+}
+@font-face {
+  font-family: DMSans;
+  font-display: swap;
+  src: url(../fonts/DMSans-Regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal
+}
 @font-face {
   font-family: Lufga;
   font-display: swap;
@@ -55,7 +75,7 @@ html {
 body {
   color: var(--text-primary);
   line-height: 1.2;
-  font-family: "DM Sans";
+  font-family: DMSans;
   text-rendering: optimizeLegibility;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -66,7 +86,7 @@ body {
 button,
 input,
 textarea {
-  font-family: "DM Sans";
+  font-family: DMSans;
   font-size: inherit;
   line-height: inherit;
   color: inherit;
@@ -1477,7 +1497,7 @@ summary::marker {
 .advisory-button {
   -webkit-tap-highlight-color: transparent;
   padding: .75rem 1.125rem;
-  border: .125rem solid #3d3f43;
+  border: .125rem solid #515358;
   border-radius: 3.125rem;
   min-height: 2.75rem;
   width: 100%;
@@ -3312,7 +3332,7 @@ button.swiper-pagination-bullet {
     opacity: 1
   }
   .advisory-button:hover {
-    border-color: #515358
+    border-color: var(--accent)
   }
 }
 @media (any-hover:none) {
