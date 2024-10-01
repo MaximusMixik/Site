@@ -3331,6 +3331,12 @@ button.swiper-pagination-bullet {
   .item-partner:hover .item-partner__cover {
     opacity: 1
   }
+  .button-cases {
+    transition: border-color .3s ease
+  }
+  .button-cases:hover {
+    border-color: var(--accent)
+  }
   .advisory-button:hover {
     border-color: var(--accent)
   }
