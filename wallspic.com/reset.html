@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Reset Password</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="description" content="Author: Max.S.O, Wallpapers for everyone. Find the best wallpapers for your phone, tablet or PC">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s;
+		}
+
+		.loaded body {
+			opacity: 1;
+			visibility: visible;
+		}
+	</style>
+	<link rel="stylesheet" href="css/style.min.css?_v=20241003131723">
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<main class="login">
+			<div class="login__container">
+				<div class="login__logo theme-logo">
+					<img loading="lazy" src="img/logo.svg" alt="logo">
+					<img loading="lazy" src="img/logo-black.svg" alt="logo">
+				</div>
+				<div class="login__wrapper">
+					<h1 class="login__title">
+						Reset Password
+					</h1>
+					<div class="login__subtitle">
+						<a href="#" target="_blank">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<path d="M9.57 5.92969L3.5 11.9997L9.57 18.0697" stroke="#0766FF" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M20.4999 12H3.66992" stroke="#0766FF" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+							Back to Login
+						</a>
+					</div>
+					<form class="login__form login-form" action="#" method="POST">
+						<div class="login-form__item">
+							<label for="email" class="login-form__label">E-mail</label>
+							<input autocomplete="off" required id="email" type="email" name="email" placeholder="Enter your e-mail" class="login-form__input">
+						</div>
+
+						<button class="login-form__button button" aria-label="submit button" type="submit">Reset Password</button>
+					</form>
+				</div>
+			</div>
+			<img loading="lazy" class="login__bg" src="img/login/bg.webp" alt="background">
+		</main>
+	</div>
+	<script src="js/app.min.js?_v=20241003131723"></script>
+</body>
+
+</html>

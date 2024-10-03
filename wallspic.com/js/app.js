@@ -294,7 +294,7 @@
  * https://isotope.metafizzy.co
  * Copyright 2010-2018 Metafizzy
  */            (function(window, factory) {
-                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(212), __webpack_require__(485), __webpack_require__(786), __webpack_require__(977), __webpack_require__(530), __webpack_require__(763), __webpack_require__(330), __webpack_require__(534), __webpack_require__(987) ], 
+                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(831), __webpack_require__(485), __webpack_require__(786), __webpack_require__(977), __webpack_require__(530), __webpack_require__(763), __webpack_require__(330), __webpack_require__(534), __webpack_require__(987) ], 
                 __WEBPACK_AMD_DEFINE_RESULT__ = function(Outlayer, getSize, matchesSelector, utils, Item, LayoutMode) {
                     return factory(window, Outlayer, getSize, matchesSelector, utils, Item, LayoutMode);
                 }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== void 0 && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -611,7 +611,7 @@
         530: (module, exports, __webpack_require__) => {
             var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
             (function(window, factory) {
-                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(212) ], __WEBPACK_AMD_DEFINE_FACTORY__ = factory, 
+                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(831) ], __WEBPACK_AMD_DEFINE_FACTORY__ = factory, 
                 __WEBPACK_AMD_DEFINE_RESULT__ = typeof __WEBPACK_AMD_DEFINE_FACTORY__ === "function" ? __WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__) : __WEBPACK_AMD_DEFINE_FACTORY__, 
                 __WEBPACK_AMD_DEFINE_RESULT__ !== void 0 && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
             })(window, (function factory(Outlayer) {
@@ -651,7 +651,7 @@
         763: (module, exports, __webpack_require__) => {
             var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
             (function(window, factory) {
-                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(485), __webpack_require__(212) ], 
+                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(485), __webpack_require__(831) ], 
                 __WEBPACK_AMD_DEFINE_FACTORY__ = factory, __WEBPACK_AMD_DEFINE_RESULT__ = typeof __WEBPACK_AMD_DEFINE_FACTORY__ === "function" ? __WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__) : __WEBPACK_AMD_DEFINE_FACTORY__, 
                 __WEBPACK_AMD_DEFINE_RESULT__ !== void 0 && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
             })(window, (function factory(getSize, Outlayer) {
@@ -835,7 +835,7 @@
  * MIT License
  * by David DeSandro
  */            (function(window, factory) {
-                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(212), __webpack_require__(485) ], 
+                if (true) !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(831), __webpack_require__(485) ], 
                 __WEBPACK_AMD_DEFINE_FACTORY__ = factory, __WEBPACK_AMD_DEFINE_RESULT__ = typeof __WEBPACK_AMD_DEFINE_FACTORY__ === "function" ? __WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__) : __WEBPACK_AMD_DEFINE_FACTORY__, 
                 __WEBPACK_AMD_DEFINE_RESULT__ !== void 0 && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
             })(window, (function factory(Outlayer, getSize) {
@@ -1278,7 +1278,7 @@
                 return Item;
             }));
         },
-        212: (module, exports, __webpack_require__) => {
+        831: (module, exports, __webpack_require__) => {
             var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
             /*!
  * Outlayer v2.1.1
@@ -1740,6 +1740,13 @@
                 document.documentElement.classList.add(className);
             }));
         }
+        function addLoadedClass() {
+            if (!document.documentElement.classList.contains("loading")) window.addEventListener("load", (function() {
+                setTimeout((function() {
+                    document.documentElement.classList.add("loaded");
+                }), 0);
+            }));
+        }
         let _slideUp = (target, duration = 500, showmore = 0) => {
             if (!target.classList.contains("_slide")) {
                 target.classList.add("_slide");
@@ -2010,7 +2017,7 @@
         }
         var isotope = __webpack_require__(334);
         const items = document.querySelector("[data-iso-items]");
-        let gutterSize = 8;
+        let gutterSize = 6;
         if (window.innerWidth > 480) gutterSize = 16; else if (window.innerWidth > 768) gutterSize = 20;
         if (items) {
             const sortButtons = document.querySelectorAll(".filter__sort[data-sort-by]");
@@ -2046,7 +2053,7 @@
                         }));
                         if (!isActive) {
                             button.classList.add("active");
-                            filterCaption.textContent = `Sort by ${label}`;
+                            filterCaption.innerHTML = `Sort by <span>${label}</span>`;
                             filterStatusIndication.classList.add("indication");
                             itemsGrid.arrange({
                                 sortBy
@@ -2079,6 +2086,252 @@
                 }
             }
         }
+        class Popup {
+            constructor(options) {
+                let config = {
+                    logging: true,
+                    init: true,
+                    attributeOpenButton: "data-popup",
+                    attributeCloseButton: "data-close",
+                    fixElementSelector: "[data-lp]",
+                    youtubeAttribute: "data-popup-youtube",
+                    youtubePlaceAttribute: "data-popup-youtube-place",
+                    setAutoplayYoutube: true,
+                    classes: {
+                        popup: "popup",
+                        popupContent: "popup__content",
+                        popupActive: "popup_show",
+                        bodyActive: "popup-show"
+                    },
+                    focusCatch: true,
+                    closeEsc: true,
+                    bodyLock: true,
+                    hashSettings: {
+                        location: true,
+                        goHash: true
+                    },
+                    on: {
+                        beforeOpen: function() {},
+                        afterOpen: function() {},
+                        beforeClose: function() {},
+                        afterClose: function() {}
+                    }
+                };
+                this.youTubeCode;
+                this.isOpen = false;
+                this.targetOpen = {
+                    selector: false,
+                    element: false
+                };
+                this.previousOpen = {
+                    selector: false,
+                    element: false
+                };
+                this.lastClosed = {
+                    selector: false,
+                    element: false
+                };
+                this._dataValue = false;
+                this.hash = false;
+                this._reopen = false;
+                this._selectorOpen = false;
+                this.lastFocusEl = false;
+                this._focusEl = [ "a[href]", 'input:not([disabled]):not([type="hidden"]):not([aria-hidden])', "button:not([disabled]):not([aria-hidden])", "select:not([disabled]):not([aria-hidden])", "textarea:not([disabled]):not([aria-hidden])", "area[href]", "iframe", "object", "embed", "[contenteditable]", '[tabindex]:not([tabindex^="-"])' ];
+                this.options = {
+                    ...config,
+                    ...options,
+                    classes: {
+                        ...config.classes,
+                        ...options?.classes
+                    },
+                    hashSettings: {
+                        ...config.hashSettings,
+                        ...options?.hashSettings
+                    },
+                    on: {
+                        ...config.on,
+                        ...options?.on
+                    }
+                };
+                this.bodyLock = false;
+                this.options.init ? this.initPopups() : null;
+            }
+            initPopups() {
+                this.popupLogging(`Прокинувся`);
+                this.eventsPopup();
+            }
+            eventsPopup() {
+                document.addEventListener("click", function(e) {
+                    const buttonOpen = e.target.closest(`[${this.options.attributeOpenButton}]`);
+                    if (buttonOpen) {
+                        e.preventDefault();
+                        this._dataValue = buttonOpen.getAttribute(this.options.attributeOpenButton) ? buttonOpen.getAttribute(this.options.attributeOpenButton) : "error";
+                        this.youTubeCode = buttonOpen.getAttribute(this.options.youtubeAttribute) ? buttonOpen.getAttribute(this.options.youtubeAttribute) : null;
+                        if (this._dataValue !== "error") {
+                            if (!this.isOpen) this.lastFocusEl = buttonOpen;
+                            this.targetOpen.selector = `${this._dataValue}`;
+                            this._selectorOpen = true;
+                            this.open();
+                            return;
+                        } else this.popupLogging(`Йой, не заповнено атрибут у ${buttonOpen.classList}`);
+                        return;
+                    }
+                    const buttonClose = e.target.closest(`[${this.options.attributeCloseButton}]`);
+                    if (buttonClose || !e.target.closest(`.${this.options.classes.popupContent}`) && this.isOpen) {
+                        e.preventDefault();
+                        this.close();
+                        return;
+                    }
+                }.bind(this));
+                document.addEventListener("keydown", function(e) {
+                    if (this.options.closeEsc && e.which == 27 && e.code === "Escape" && this.isOpen) {
+                        e.preventDefault();
+                        this.close();
+                        return;
+                    }
+                    if (this.options.focusCatch && e.which == 9 && this.isOpen) {
+                        this._focusCatch(e);
+                        return;
+                    }
+                }.bind(this));
+                if (this.options.hashSettings.goHash) {
+                    window.addEventListener("hashchange", function() {
+                        if (window.location.hash) this._openToHash(); else this.close(this.targetOpen.selector);
+                    }.bind(this));
+                    window.addEventListener("load", function() {
+                        if (window.location.hash) this._openToHash();
+                    }.bind(this));
+                }
+            }
+            open(selectorValue) {
+                if (bodyLockStatus) {
+                    this.bodyLock = document.documentElement.classList.contains("lock") && !this.isOpen ? true : false;
+                    if (selectorValue && typeof selectorValue === "string" && selectorValue.trim() !== "") {
+                        this.targetOpen.selector = selectorValue;
+                        this._selectorOpen = true;
+                    }
+                    if (this.isOpen) {
+                        this._reopen = true;
+                        this.close();
+                    }
+                    if (!this._selectorOpen) this.targetOpen.selector = this.lastClosed.selector;
+                    if (!this._reopen) this.previousActiveElement = document.activeElement;
+                    this.targetOpen.element = document.querySelector(this.targetOpen.selector);
+                    if (this.targetOpen.element) {
+                        if (this.youTubeCode) {
+                            const codeVideo = this.youTubeCode;
+                            const urlVideo = `https://www.youtube.com/embed/${codeVideo}?rel=0&showinfo=0&autoplay=1`;
+                            const iframe = document.createElement("iframe");
+                            iframe.setAttribute("allowfullscreen", "");
+                            const autoplay = this.options.setAutoplayYoutube ? "autoplay;" : "";
+                            iframe.setAttribute("allow", `${autoplay}; encrypted-media`);
+                            iframe.setAttribute("src", urlVideo);
+                            if (!this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`)) {
+                                this.targetOpen.element.querySelector(".popup__text").setAttribute(`${this.options.youtubePlaceAttribute}`, "");
+                            }
+                            this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).appendChild(iframe);
+                        }
+                        if (this.options.hashSettings.location) {
+                            this._getHash();
+                            this._setHash();
+                        }
+                        this.options.on.beforeOpen(this);
+                        document.dispatchEvent(new CustomEvent("beforePopupOpen", {
+                            detail: {
+                                popup: this
+                            }
+                        }));
+                        this.targetOpen.element.classList.add(this.options.classes.popupActive);
+                        document.documentElement.classList.add(this.options.classes.bodyActive);
+                        if (!this._reopen) !this.bodyLock ? bodyLock() : null; else this._reopen = false;
+                        this.targetOpen.element.setAttribute("aria-hidden", "false");
+                        this.previousOpen.selector = this.targetOpen.selector;
+                        this.previousOpen.element = this.targetOpen.element;
+                        this._selectorOpen = false;
+                        this.isOpen = true;
+                        setTimeout((() => {
+                            this._focusTrap();
+                        }), 50);
+                        this.options.on.afterOpen(this);
+                        document.dispatchEvent(new CustomEvent("afterPopupOpen", {
+                            detail: {
+                                popup: this
+                            }
+                        }));
+                        this.popupLogging(`Відкрив попап`);
+                    } else this.popupLogging(`Йой, такого попапу немає. Перевірте коректність введення. `);
+                }
+            }
+            close(selectorValue) {
+                if (selectorValue && typeof selectorValue === "string" && selectorValue.trim() !== "") this.previousOpen.selector = selectorValue;
+                if (!this.isOpen || !bodyLockStatus) return;
+                this.options.on.beforeClose(this);
+                document.dispatchEvent(new CustomEvent("beforePopupClose", {
+                    detail: {
+                        popup: this
+                    }
+                }));
+                if (this.youTubeCode) if (this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`)) this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).innerHTML = "";
+                this.previousOpen.element.classList.remove(this.options.classes.popupActive);
+                this.previousOpen.element.setAttribute("aria-hidden", "true");
+                if (!this._reopen) {
+                    document.documentElement.classList.remove(this.options.classes.bodyActive);
+                    !this.bodyLock ? bodyUnlock() : null;
+                    this.isOpen = false;
+                }
+                this._removeHash();
+                if (this._selectorOpen) {
+                    this.lastClosed.selector = this.previousOpen.selector;
+                    this.lastClosed.element = this.previousOpen.element;
+                }
+                this.options.on.afterClose(this);
+                document.dispatchEvent(new CustomEvent("afterPopupClose", {
+                    detail: {
+                        popup: this
+                    }
+                }));
+                setTimeout((() => {
+                    this._focusTrap();
+                }), 50);
+                this.popupLogging(`Закрив попап`);
+            }
+            _getHash() {
+                if (this.options.hashSettings.location) this.hash = this.targetOpen.selector.includes("#") ? this.targetOpen.selector : this.targetOpen.selector.replace(".", "#");
+            }
+            _openToHash() {
+                let classInHash = document.querySelector(`.${window.location.hash.replace("#", "")}`) ? `.${window.location.hash.replace("#", "")}` : document.querySelector(`${window.location.hash}`) ? `${window.location.hash}` : null;
+                const buttons = document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) ? document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) : document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash.replace(".", "#")}"]`);
+                this.youTubeCode = buttons.getAttribute(this.options.youtubeAttribute) ? buttons.getAttribute(this.options.youtubeAttribute) : null;
+                if (buttons && classInHash) this.open(classInHash);
+            }
+            _setHash() {
+                history.pushState("", "", this.hash);
+            }
+            _removeHash() {
+                history.pushState("", "", window.location.href.split("#")[0]);
+            }
+            _focusCatch(e) {
+                const focusable = this.targetOpen.element.querySelectorAll(this._focusEl);
+                const focusArray = Array.prototype.slice.call(focusable);
+                const focusedIndex = focusArray.indexOf(document.activeElement);
+                if (e.shiftKey && focusedIndex === 0) {
+                    focusArray[focusArray.length - 1].focus();
+                    e.preventDefault();
+                }
+                if (!e.shiftKey && focusedIndex === focusArray.length - 1) {
+                    focusArray[0].focus();
+                    e.preventDefault();
+                }
+            }
+            _focusTrap() {
+                const focusable = this.previousOpen.element.querySelectorAll(this._focusEl);
+                if (!this.isOpen && this.lastFocusEl) this.lastFocusEl.focus(); else focusable[0].focus();
+            }
+            popupLogging(message) {
+                this.options.logging ? functions_FLS(`[Попапос]: ${message}`) : null;
+            }
+        }
+        modules_flsModules.popup = new Popup({});
         let formValidate = {
             getErrors(form) {
                 let error = 0;
@@ -5616,11 +5869,12 @@
                 modules: [ Navigation ],
                 observer: true,
                 observeParents: true,
-                freeMode: true,
-                spaceBetween: 10,
+                grabCursor: true,
+                spaceBetween: 12,
                 speed: 800,
                 slidesPerView: "auto",
                 mousewheel: true,
+                freeMode: true,
                 navigation: {
                     prevEl: ".popular__navigation .navigation__button--prev",
                     nextEl: ".popular__navigation .navigation__button--next"
@@ -5647,6 +5901,7 @@
         function headerScroll() {
             addWindowScrollEvent = true;
             const header = document.querySelector("header.header");
+            if (!header) return;
             const headerShow = header.hasAttribute("data-scroll-show");
             const headerShowTimer = header.dataset.scrollShow ? header.dataset.scrollShow : 500;
             const startPoint = header.dataset.scroll ? header.dataset.scroll : 1;
@@ -5945,6 +6200,105 @@
             }));
         }
         //! adaptive images in isotope
+                function darkTheme() {
+            localStorage.setItem("color-theme", "dark");
+            document.body.classList.add("dark");
+            document.body.classList.remove("light");
+        }
+        function lightTheme() {
+            localStorage.setItem("color-theme", "light");
+            document.body.classList.remove("dark");
+            document.body.classList.add("light");
+        }
+        function applySavedTheme() {
+            const savedTheme = localStorage.getItem("color-theme");
+            if (savedTheme === "dark") darkTheme(); else lightTheme();
+        }
+        function toggleTheme() {
+            const currentTheme = localStorage.getItem("color-theme");
+            if (currentTheme === "light") darkTheme(); else lightTheme();
+        }
+        function colorTheme() {
+            applySavedTheme();
+        }
+        function compressImage(file, callback) {
+            const reader = new FileReader;
+            reader.readAsDataURL(file);
+            reader.onload = function(event) {
+                const img = new Image;
+                img.src = event.target.result;
+                img.onload = function() {
+                    const canvas = document.createElement("canvas");
+                    const ctx = canvas.getContext("2d");
+                    const maxWidth = 300;
+                    const maxHeight = 300;
+                    let width = img.width;
+                    let height = img.height;
+                    if (width > height) {
+                        if (width > maxWidth) {
+                            height *= maxWidth / width;
+                            width = maxWidth;
+                        }
+                    } else if (height > maxHeight) {
+                        width *= maxHeight / height;
+                        height = maxHeight;
+                    }
+                    canvas.width = width;
+                    canvas.height = height;
+                    ctx.drawImage(img, 0, 0, width, height);
+                    const compressedDataUrl = canvas.toDataURL("image/jpeg", .7);
+                    callback(compressedDataUrl);
+                };
+            };
+        }
+        function initAvatarUpload() {
+            const avatarImage = document.querySelector(".avatar-settings__img img");
+            const avatarInput = document.querySelector(".avatar-settings__row input ");
+            const chooseAvatarButton = document.querySelector(".avatar-settings__button");
+            if (avatarImage && avatarInput && chooseAvatarButton) {
+                const savedAvatar = localStorage.getItem("avatar");
+                if (savedAvatar) avatarImage.src = savedAvatar;
+                chooseAvatarButton.addEventListener("click", (function() {
+                    avatarInput.click();
+                }));
+                avatarInput.addEventListener("change", (function() {
+                    const file = avatarInput.files[0];
+                    if (file) compressImage(file, (function(compressedDataUrl) {
+                        avatarImage.src = compressedDataUrl;
+                        localStorage.setItem("avatar", compressedDataUrl);
+                    }));
+                }));
+            }
+        }
+        document.addEventListener("DOMContentLoaded", (() => {
+            applySavedTheme();
+            initAvatarUpload();
+            const button = document.querySelector(".theme-switch");
+            if (!button) return;
+            button.addEventListener("click", (e => {
+                toggleTheme();
+            }));
+        }));
+        function togglePassword() {
+            const passwordInput = document.getElementById("password");
+            const button = document.querySelector(".login-form__show-password");
+            if (!button) return;
+            button.addEventListener("click", (e => {
+                e.preventDefault();
+                if (passwordInput.type === "password") passwordInput.type = "text"; else passwordInput.type = "password";
+            }));
+        }
+        function reportAction() {
+            const form = document.querySelector(".report-form");
+            if (!form) return;
+            const radioButtons = document.querySelectorAll(".report-form__radio input");
+            const itemToShow = document.querySelector(".report-form__hide");
+            radioButtons.forEach((input => {
+                input.onchange = () => {
+                    itemToShow.classList.toggle("show-item", input.id === "copyright" && input.checked);
+                };
+            }));
+        }
         //! init main function
                 document.addEventListener("DOMContentLoaded", loading);
         function loading() {
@@ -5953,12 +6307,15 @@
         }
         window.addEventListener("load", windowLoaded);
         function windowLoaded() {
+            colorTheme();
+            togglePassword();
             hearerSearchAction();
             filterOpen();
             galleryItemAction();
             copyLink();
             initInput();
             imagesUploadAction();
+            reportAction();
         }
         //! TEST
                 function imagesUploadAction() {
@@ -6052,6 +6409,7 @@
         }
         window["FLS"] = false;
         isWebp();
+        addLoadedClass();
         menuInit();
         spollers();
         headerScroll();

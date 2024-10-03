@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Page-404</title>
+	<title>Edit Profile</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="description" content="Author: Max.S.O, Wallpapers for everyone. Find the best wallpapers for your phone, tablet or PC">
@@ -180,34 +180,175 @@
 				</div>
 			</div>
 		</header>
-
 		<main class="page">
-			<section class="page__not-found not-found">
-				<div class="not-found__container">
-					<div class="not-found__content">
-						<div class="not-found__subtitle">
-							Oops....
+			<section class="page__settings settings">
+				<div class="settings__container">
+					<h1 class="settings__title title">
+						Account Settings
+					</h1>
+					<div class="settings__avatar avatar-settings">
+						<div class="avatar-settings__label">
+							Avatar
 						</div>
-						<h1 class="not-found__title ">
-							Page not found
-						</h1>
-						<div class="not-found__text">
-							<p>
-								This Page doesn`t exist or was removed!
-								We suggest you back to home.
-							</p>
+						<div class="avatar-settings__row">
+							<div class="avatar-settings__img">
+								<img src="img/settings/avatar.webp" alt="avatar">
+							</div>
+							<input type="file" style="display:none;">
+							<button class="avatar-settings__button button">
+								Choose file
+							</button>
 						</div>
-						<!-- _icon-arrow_right -->
-						<a href="home.html" class="not-found__button button _icon-chevron">
-							Back to home
-						</a>
+
 					</div>
-					<div class="not-found__image">
-						<img src="img/404/Illustration.svg" alt="breaking robot">
-					</div>
+					<form action="#" method="POST" class="settings__form form-settings">
+						<div class="form-settings__item">
+							<label for="name" class="form-settings__label">
+								Username
+							</label>
+							<input autocomplete="off" id="name" required type="text" name="name" class="form-settings__input">
+						</div>
+						<div class="form-settings__item">
+							<label for="name" class="form-settings__label">E-mail</label>
+							<input autocomplete="off" required id="email" type="email" name="email" placeholder="puzzles@gmail.com" class="form-settings__input">
+						</div>
+						<div class="form-settings__item">
+							<label for="textarea" class="form-settings__label">About me</label>
+							<textarea class="form-settings__textarea" minlength="30" required name="textarea" id="textarea"></textarea>
+						</div>
+						<h2 class="form-settings__title">
+							Change Password
+						</h2>
+						<div class="form-settings__item">
+							<label for="current-password" class="form-settings__label">Current password</label>
+							<input autocomplete="off" required id="current-password" type="password" name="current-password" class="form-settings__input">
+							<div class="form-settings__alert">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none">
+									<mask id="a" width="14" height="14" x="1" y="3" maskUnits="userSpaceOnUse" style="mask-type:alpha">
+										<path fill="#000" fill-rule="evenodd" d="M8.00065 3.33301c-3.68 0-6.66667 2.98666-6.66667 6.66666 0 3.68003 2.98667 6.66663 6.66667 6.66663 3.68005 0 6.66665-2.9866 6.66665-6.66663 0-3.68-2.9866-6.66666-6.66665-6.66666Zm0 7.33329c-.36667 0-.66667-.3-.66667-.66663V7.33301c0-.36667.3-.66667.66667-.66667s.66667.3.66667.66667v2.66666c0 .36663-.3.66663-.66667.66663Zm-.66667 1.3334v1.3333h1.33334v-1.3333H7.33398Z" clip-rule="evenodd" />
+									</mask>
+									<g mask="url(#a)">
+										<path fill="#DA1414" d="M0 2h16v16H0z" />
+									</g>
+								</svg>
+								<span>
+									Current password is invalid
+								</span>
+							</div>
+						</div>
+						<div class="form-settings__item">
+							<label for="new-password" class="form-settings__label">New Pussword</label>
+							<input autocomplete="off" required id="new-password" type="password" name="new-password" class="form-settings__input">
+						</div>
+						<div class="form-settings__item">
+							<label for="confirm-password" class="form-settings__label">Confirm new password</label>
+							<input autocomplete="off" required id="confirm-password" type="password" name="confirm-password" class="form-settings__input">
+						</div>
+						<button class="form-settings__remove">
+							Remove account
+						</button>
+						<div class="form-settings__actions">
+							<button class="form-settings__button button" aria-label="save button" type="submit">
+								Save changes
+							</button>
+							<button class="form-settings__button button button--transparent" aria-label="Cancel button" type="reset">
+								Cancel
+							</button>
+						</div>
+					</form>
 				</div>
 			</section>
 		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__top top-footer">
+					<div class="top-footer__content">
+						<h2 class="top-footer__title">
+							Wallspic
+						</h2>
+						<div class="top-footer__text">
+							<p>
+								Best wallpapers for your desktop, mobile phone, or tablet. Explore our extensive collection of images and
+								photos
+								available for free download.
+							</p>
+						</div>
+						<div class="top-footer__store">
+							<a href="#" class="top-footer__image	">
+								<img src="img/footer/apple.svg" alt="apple store">
+							</a>
+							<a href="#" class="top-footer__image	">
+								<img src="img/footer/google.svg" alt="google play">
+							</a>
+						</div>
+					</div>
+					<div data-spollers="430, max" class="top-footer__navigation ">
+						<details class="top-footer__column">
+							<summary class="top-footer__title">
+								Популярное
+							</summary>
+							<ul class="top-footer__list">
+								<li class="top-footer__item"> <a href="#" class="top-footer__link">Популярные обои</a></li>
+								<li class="top-footer__item"> <a href="#" class="top-footer__link">Популярные теги</a></li>
+								<li class="top-footer__item"> <a href="#" class="top-footer__link">Популярные теги</a></li>
+							</ul>
+						</details>
+						<details class="top-footer__column">
+							<summary class="top-footer__title">
+								Обои
+							</summary>
+							<ul class="top-footer__list">
+								<li class="top-footer__item"><a href="#" class="top-footer__link">Заставки на телефон</a></li>
+								<li class="top-footer__item"><a href="#" class="top-footer__link">Обои для Android</a></li>
+								<li class="top-footer__item"><a href="#" class="top-footer__link">Обои 4k</a></li>
+								<li class="top-footer__item"><a href="#" class="top-footer__link">Обои для iPhone</a></li>
+								<li class="top-footer__item"><a href="#" class="top-footer__link">Обои Full HD</a></li>
+								<li class="top-footer__item"><a href="#" class="top-footer__link">Обои для Samsung</a></li>
+							</ul>
+						</details>
+						<details class="top-footer__column">
+							<summary class="top-footer__title">
+								Бесплатные картинки
+							</summary>
+							<ul class="top-footer__list">
+								<li class="top-footer__item"><a href="#" class="top-footer__link">Обои машины</a></li>
+								<li class="top-footer__item"><a href="#" class="top-footer__link">Черно-белые заставки</a></li>
+								<li class="top-footer__item"><a href="#" class="top-footer__link">Новогодние картинки</a></li>
+								<li class="top-footer__item"><a href="#" class="top-footer__link">Обои закат</a></li>
+								<li class="top-footer__item"> <a href="#" class="top-footer__link">Обои любовь</a></li>
+								<li class="top-footer__item"> <a href="#" class="top-footer__link">Обои с девушками</a></li>
+							</ul>
+						</details>
+					</div>
+				</div>
+				<div class="footer__down down-footer">
+					<div class="down-footer__copyright">
+						© 2024 Wallspic
+					</div>
+					<ul class="down-footer__list">
+						<li class="down-footer__item"><a href="#" class="down-footer__link">Пользовательское соглашение</a></li>
+						<li class="down-footer__item"><a href="#" class="down-footer__link">Политика конфиденциальности</a></li>
+						<li class="down-footer__item"><a href="#" class="down-footer__link">Contact Us</a></li>
+					</ul>
+					<div class=" down-footer__lang lang dropdown">
+						<div class="lang__current">English</div>
+						<button class="lang__icon _icon-chevron" type="button" aria-label="language menu">
+						</button>
+						<div class="lang__wrapper">
+							<ul class="lang__list">
+								<li class="lang__item"><a href="#" class="lang__link">English</a></li>
+								<li class="lang__item"><a href="#" class="lang__link">Español</a></li>
+								<li class="lang__item"><a href="#" class="lang__link">Français</a></li>
+								<li class="lang__item"><a href="#" class="lang__link">Deutsch</a></li>
+								<li class="lang__item"><a href="#" class="lang__link">中文, 汉语</a></li>
+								<li class="lang__item"><a href="#" class="lang__link">Русский</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</footer>
 	</div>
 	<script src="js/app.min.js?_v=20241003131723"></script>
 </body>
