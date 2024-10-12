@@ -5,12 +5,25 @@
 	<title>Jobs</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20241010192917">
+	<style>
+		body {
+			opacity: 0;
+			background-color: #000;
+			visibility: hidden;
+			transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s;
+		}
+
+		.loaded body {
+			opacity: 1;
+			visibility: visible;
+		}
+	</style>
+	<link rel="stylesheet" href="css/style.min.css?_v=20241012161051">
 	<meta name="description" content="Customer Service & Call Centers for your brand">
 	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 
 <body>
@@ -24,17 +37,17 @@
 					<button type="button" aria-label="burger menu" class="menu__icon icon-menu"><span></span></button>
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="home.html" class="menu__link link">Home</a></li>
+							<li class="menu__item"><a href="index.html" class="menu__link link">Home</a></li>
 							<li class="menu__item"><a href="pricing.html" class="menu__link link">Pricing</a></li>
 							<li class="menu__item"><a href="start.html" class="menu__link link">How to start?</a></li>
 							<li class="menu__item"><a href="jobs.html" class="menu__link link">Jobs</a></li>
 						</ul>
-						<button class="menu__btn btn">
+						<a href="index.html#contacts" class="menu__btn btn">
 							Contact Us
 							<svg>
 								<use xlink:href="img/icons/icons.svg#contact"></use>
 							</svg>
-						</button>
+						</a>
 					</nav>
 				</div>
 			</div>
@@ -59,9 +72,9 @@
 							<h2 class="support__title">
 								Customer Support Agent
 							</h2>
-							<button class="support__btn  btn btn--green">
+							<a href="index.html#contacts" class="support__btn  btn btn--green">
 								Position open
-							</button>
+							</a>
 						</div>
 						<div class="support__text">
 							<p>
@@ -195,7 +208,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20241010192917"></script>
+	<script src="js/app.min.js?_v=20241012161051"></script>
 </body>
 
 </html>

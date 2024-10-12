@@ -1,168 +1,349 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+	<title>Home</title>
 	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<style>
+		body {
+			opacity: 0;
+			background-color: #000;
+			visibility: hidden;
+			transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s;
+		}
+
+		.loaded body {
+			opacity: 1;
+			visibility: visible;
+		}
+	</style>
+	<link rel="stylesheet" href="css/style.min.css?_v=20241012161051">
+	<meta name="description" content="Customer Service & Call Centers for your brand">
+	<!-- <link rel="shortcut icon" href="favicon.ico"> -->
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Верстка «carebout»</title>
+
 </head>
 
 <body>
-	<div class="rootpage">
-		<h1>Верстка «carebout»</h1>
-		<div class="rootpage__info">
-			Опис проєкту
-		</div>
-		<h2>Готові сторінки:</h2>
-		<ol class="rootpage__list">
-			<li><a target="_blank" href="home.html">home</a></li>
-			<li><a target="_blank" href="pricing.html">pricing</a></li>
-			<li><a target="_blank" href="start.html">start</a></li>
-			<li><a target="_blank" href="jobs.html">jobs</a></li>
-		</ol>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__logo">
+					<img src="img/logo.svg" alt="logo">
+				</div>
+				<div class="header__menu menu">
+					<button type="button" aria-label="burger menu" class="menu__icon icon-menu"><span></span></button>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item"><a href="index.html" class="menu__link link">Home</a></li>
+							<li class="menu__item"><a href="pricing.html" class="menu__link link">Pricing</a></li>
+							<li class="menu__item"><a href="start.html" class="menu__link link">How to start?</a></li>
+							<li class="menu__item"><a href="jobs.html" class="menu__link link">Jobs</a></li>
+						</ul>
+						<a href="index.html#contacts" class="menu__btn btn">
+							Contact Us
+							<svg>
+								<use xlink:href="img/icons/icons.svg#contact"></use>
+							</svg>
+						</a>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<section class="hero hero--line">
+				<div class="hero__container">
+					<div class="hero__content ">
+						<div class="hero__image red-line">
+							<img src="img/home/hero/logo.svg" alt="logo">
+						</div>
+						<h1 class="hero__title title">
+							Customer Service & Call Centers
+							for your brand
+						</h1>
+					</div>
+				</div>
+			</section>
+			<section class="services">
+				<div class="services__container">
+					<h2 class="services__title title">
+						Our <span>Services</span>
+					</h2>
+					<ul class="services__list">
+						<li class="item-services">
+							<div class="item-services__icon">
+								<img src="img/home/services/icon1.svg" alt="icon">
+							</div>
+							<div class="item-services__content">
+								<h3 class="item-services__title">
+									General Support
+								</h3>
+								<div class="item-services__text">
+									<p>
+										We provide comprehensive customer support for all users of your brand, ensuring seamless
+										communication and efficient
+										resolution of any issues. Our teams are trained to handle inquiries across multiple channels,
+										delivering consistent,
+										high-quality assistance to keep your customers satisfied.
+									</p>
+								</div>
+							</div>
+						</li>
 
+						<li class="item-services">
+							<div class="item-services__icon">
+								<img src="img/home/services/icon2.svg" alt="icon">
+							</div>
+							<div class="item-services__content">
+								<h3 class="item-services__title">
+									Payment Anti Fraud Services
+								</h3>
+								<div class="item-services__text">
+									<p>
+										Our specialized team conducts manual checks of client payments, offering an additional layer of
+										security to prevent
+										fraud. By carefully analyzing transactions, we help minimize risks, ensuring the safety and
+										integrity of your payment
+										processes.
+									</p>
+								</div>
+							</div>
+						</li>
+						<li class="item-services">
+							<div class="item-services__icon">
+								<img src="img/home/services/icon3.svg" alt="icon">
+							</div>
+							<div class="item-services__content">
+								<h3 class="item-services__title">
+									KYC Services
+								</h3>
+								<div class="item-services__text">
+									<p>
+										We offer fast, manual verification of client documents to meet regulatory requirements and enhance
+										security. Our KYC
+										(Know Your Customer) services are designed for accuracy and speed, ensuring a smooth onboarding
+										process for your
+										customers while maintaining compliance.
+									</p>
+								</div>
+							</div>
+						</li>
+						<li class="item-services">
+							<div class="item-services__icon">
+								<img src="img/home/services/icon4.svg" alt="icon">
+							</div>
+							<div class="item-services__content">
+								<h3 class="item-services__title">
+									Call Center
+								</h3>
+								<div class="item-services__text">
+									<p>
+										Our call center is focused on driving sales by increasing player spending. We use targeted
+										strategies to engage with
+										your customers, helping to boost transaction values and improve overall revenue through proactive
+										sales initiatives.
+									</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="work">
+				<div class="work__container">
+					<h2 class="work__title title">
+						We <span>work</span> with:
+					</h2>
+					<div class="work__body">
+						<div class="work__industries industries">
+							<h3 class="industries__subtitle work__subtitle">
+								<svg xmlns="http://www.w3.org/2000/svg" width="13" height="26" fill="none">
+									<path fill="#CD1211" d="M4 26H0v-6h3c2 0 3-1 3-3v-2H0V0h13v17c0 6-3 9-9 9Z" />
+								</svg>
+								Industries
+							</h3>
+							<ul class="industries__list">
+								<li class="industries__item item-industries">
+									<img class="item-industries__icon" src="img/home/work/igaming.svg" alt="iGaming">
+									<p class="item-industries__text">
+										iGaming
+									</p>
+								</li>
+								<li class="industries__item item-industries">
+									<img class="item-industries__icon" src="img/home/work/favorite.svg" alt="Dating & Social Discovery">
+									<p class="item-industries__text">
+										Dating & Social Discovery
+									</p>
+								</li>
+								<li class="industries__item item-industries">
+									<img class="item-industries__icon" src="img/home/work/trading.svg" alt="Trading">
+									<p class="item-industries__text">
+										Trading
+									</p>
+								</li>
+							</ul>
+
+						</div>
+						<div class="work__locations locations ">
+							<h3 class="locations__subtitle work__subtitle">
+								<svg xmlns="http://www.w3.org/2000/svg" width="13" height="26" fill="none">
+									<path fill="#CD1211" d="M4 26H0v-6h3c2 0 3-1 3-3v-2H0V0h13v17c0 6-3 9-9 9Z" />
+								</svg>
+								Geos
+							</h3>
+							<ul class="locations__list">
+								<li class="locations__item">
+									<a href="#" class="locations__link">
+										Geos
+									</a>
+								</li>
+								<li class="locations__item">
+									<a href="#" class="locations__link">
+										LatAm
+									</a>
+								</li>
+								<li class="locations__item">
+									<a href="#" class="locations__link">
+										Asia
+									</a>
+								</li>
+								<li class="locations__item">
+									<a href="#" class="locations__link">
+										CIS
+									</a>
+								</li>
+								<li class="locations__item">
+									<a href="#" class="locations__link">
+										Tier-1
+									</a>
+								</li>
+								<li class="locations__item">
+									<a href="#" class="locations__link">
+										Africa
+									</a>
+								</li>
+								<li class="locations__item">
+									<a href="#" class="locations__link">
+										and more!
+									</a>
+								</li>
+							</ul>
+							<div class="locations__image">
+								<img src="img/home/work/map.webp" alt="map">
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</section>
+			<section id="contacts" class="contacts">
+				<div class="contacts__container">
+					<div class="contacts__wrapper">
+						<div class="contacts__header ">
+							<h2 class="contacts__title title">
+								<span>Contact </span> us
+							</h2>
+							<svg class="contacts__icon" xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="none">
+								<path fill="#fff" fill-rule="evenodd" d="m53 15-5 2-19 6a129 129 0 0 0-8 3c-2 2-2 5 0 6l2 1 6 2 2 1 3 3 1 2a130 130 0 0 0 3 8c1 2 4 2 6 0l1-2 2-6 6-19 2-5v-2h-2Zm0-3 4 1 1 4-2 6-6 19a130 130 0 0 1-4 9c-3 3-8 3-10 0l-2-3-2-6-1-2-1-1-2-1-6-2-3-2c-3-2-3-7 0-10l3-2 6-2 19-6 6-2Z" clip-rule="evenodd" opacity=".3" />
+							</svg>
+							<div class="contacts__text">
+								<p>
+									Let's discuss your project!
+								</p>
+							</div>
+						</div>
+						<form class="contacts__form form" action="#" method="POST">
+							<div class="form__row">
+								<div class="form__item">
+									<label class="form__label" for="user_name">
+										Your name
+									</label>
+									<input id="user_name" type="text" name="name" data-error="Error" placeholder="Your name" class="form__input">
+								</div>
+								<div class="form__item">
+									<label class="form__label" for="user_email">
+										Email Address
+									</label>
+									<input id="user_email" type="email" name="email" data-error="Error" placeholder="Email Address" class="form__input">
+								</div>
+								<div class="form__item">
+									<label class="form__label" for="user_phone">
+										Phone Number
+									</label>
+									<input id="user_phone" type="tel" name="phone" placeholder="Phone Number" class="form__input ">
+								</div>
+							</div>
+							<div class="form__column">
+								<div class="form__item">
+									<label class="form__label" for="user_message">
+										Your Message
+									</label>
+									<textarea class="form__textarea" name="message" id="user_message" placeholder="Type your message..."></textarea>
+								</div>
+								<button type="submit" class="form__btn btn">
+									Contact Us
+									<svg>
+										<use xlink:href="img/icons/icons.svg#contact"></use>
+									</svg>
+								</button>
+							</div>
+
+						</form>
+					</div>
+
+				</div>
+
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__logo">
+					<img src="img/logo.svg" alt="logo">
+				</div>
+				<div class="footer__menu menu-footer">
+					<ul class="menu-footer__list">
+						<li class="menu-footer__item"><a href="home.html" class="menu-footer__link link">Home</a></li>
+						<li class="menu-footer__item "><a href="pricing.html" class="menu-footer__link link">Pricing</a></li>
+						<li class="menu-footer__item "><a href="start.html" class="menu-footer__link link">How to start?</a></li>
+						<li class="menu-footer__item "><a href="jobs.html" class="menu-footer__link link">Jobs</a></li>
+					</ul>
+				</div>
+				<div class="footer__socials socials">
+					<ul class="socials__list">
+						<li class="socials__item">
+							<a href="#" class="socials__link">
+								<img src="img/footer/social-linkedin.svg" alt="linkedin">
+							</a>
+						</li>
+						<li class="socials__item">
+							<a href="#" class="socials__link">
+								<img src="img/footer/social-message.svg" alt="message">
+							</a>
+						</li>
+						<li class="socials__item">
+							<a href="#" class="socials__link">
+								<img src="img/footer/social-instagram.svg" alt="instagram">
+							</a>
+						</li>
+
+						<li class="socials__item">
+							<a href="#" class="socials__link">
+								<img src="img/footer/social-telegram.svg" alt="telegram">
+								<div class="socials__text">
+									Contact Us
+								</div>
+							</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</footer>
 	</div>
+	<script src="js/app.min.js?_v=20241012161051"></script>
 </body>
-<style>
-	@charset "UTF-8";
-	@import url("https://fonts.googleapis.com/css?family=Montserrat:regular,700&display=swap");
-
-	*,
-	*::before,
-	*::after {
-		padding: 0px;
-		margin: 0px;
-		border: 0px;
-		box-sizing: border-box;
-	}
-
-	html,
-	body {
-		height: 100%;
-		margin: 0;
-		padding: 0;
-		min-width: 320px;
-		width: 100%;
-		color: #fff;
-		background-color: #5e5373;
-	}
-
-	body {
-		font-family: Montserrat;
-		font-size: 100%;
-		line-height: 1;
-		font-size: 1rem;
-	}
-
-	a {
-		text-decoration: underline;
-		color: #ebe691
-	}
-
-	a:visited {
-		text-decoration: underline;
-		color: #aaa768;
-	}
-
-	a:hover {
-		text-decoration: none;
-	}
-
-	ul li {
-		list-style: none;
-	}
-
-	img {
-		vertical-align: top;
-	}
-
-	.wrapper {
-		width: 100%;
-		min-height: 100%;
-		overflow: hidden;
-	}
-
-	.rootpage {
-		padding: 30px;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-	}
-
-	@media (max-width: 767px) {
-		.rootpage {
-			padding: 30px 15px;
-		}
-	}
-
-	h1 {
-		color: #ebe691;
-		font-size: 2.5rem;
-		margin: 0px 0px 1.25rem 0px;
-	}
-
-	@media (max-width: 767px) {
-		h1 {
-			font-size: 1.85rem;
-			margin: 0px 0px 1.25rem 0px;
-		}
-	}
-
-	h2 {
-		color: #ebe691;
-		font-size: 1.25rem;
-		margin: 0px 0px 1rem 0px;
-	}
-
-	@media (max-width: 767px) {
-		h2 {
-			font-size: 1.125rem;
-			margin: 0px 0px 1rem 0px;
-		}
-	}
-
-	.rootpage__info {
-		line-height: 140%;
-		margin: 0px 0px 1.5rem 0px;
-	}
-
-	.rootpage__list {
-		margin: 0px 0px 2.25rem 1.25rem;
-	}
-
-	.rootpage__list li:not(:last-child) {
-		margin: 0px 0px 15px 0px;
-	}
-
-	.rootpage__contacts,
-	.rootpage__tnx {
-		border-radius: 200px;
-		padding: 20px 65px;
-		line-height: 140%;
-	}
-
-	@media (max-width: 767px) {
-
-		.rootpage__contacts,
-		.rootpage__tnx {
-			border-radius: 40px;
-			padding: 20px;
-		}
-	}
-
-	.rootpage__contacts {
-		background: #32b5a4;
-
-	}
-
-	.rootpage__contacts a {
-		color: #ebe691;
-	}
-
-	.rootpage__tnx {
-		background: #c22d63;
-		margin: 0px 0px 1rem 0px;
-	}
-</style>
 
 </html>
