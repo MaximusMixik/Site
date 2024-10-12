@@ -412,11 +412,11 @@ body:has(#wpadminbar) .header .menu__body::before {
   font-weight: 600;
   line-height: 1.2
 }
-.hero--line svg.hero__container {
+.hero--line .hero__container {
   position: relative;
   padding-top: 6.6875rem
 }
-.hero--line svg.hero__container::before {
+.hero--line .hero__container::before {
   content: "";
   position: absolute;
   height: 1.0625rem;
@@ -427,17 +427,17 @@ body:has(#wpadminbar) .header .menu__body::before {
   width: 100%;
   background: linear-gradient(90deg,var(--bg-gray) 0,transparent 100%)
 }
-svg.hero__image {
+.hero__image {
   text-align: center;
   position: relative
 }
-svg.hero__title {
+.hero__title {
   margin-inline: auto
 }
-svg.hero__title.red-line {
+.hero__title.red-line {
   padding-top: 2.625rem
 }
-svg.hero__btn {
+.hero__btn {
   margin-inline: auto
 }
 .services {
@@ -704,6 +704,25 @@ svg.hero__btn {
 }
 .form__btn svg {
   display: none
+}
+.contacts__form.form .wpcf7 form .wpcf7-response-output {
+  margin: 0;
+  outline: 0;
+  border: none
+}
+.contacts__form.form .wpcf7 form .wpcf7-response-output,
+.contacts__form.form .wpcf7-not-valid-tip {
+  color: inherit;
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.2
+}
+.contacts__form.form .wpcf7-not-valid-tip {
+  margin-top: 10px
+}
+input.wpcf7-not-valid {
+  background-color: #ffa5a5
 }
 .support__wrapper {
   background-color: var(--bg-gray);
@@ -1180,24 +1199,24 @@ svg.hero__btn {
     width: 12.125rem;
     height: 3.625rem
   }
-  svg.hero__container {
+  .hero__container {
     padding-top: 7.5rem;
     padding-bottom: 4.375rem
   }
-  svg.hero__image.red-line {
+  .hero__image.red-line {
     padding-bottom: 3.625rem
   }
-  svg.hero__image:not(:last-child) {
+  .hero__image:not(:last-child) {
     margin-bottom: 3.1875rem
   }
-  svg.hero__image img {
+  .hero__image img {
     width: 25.8125rem;
     height: 3.6875rem
   }
-  svg.hero__title {
+  .hero__title {
     max-width: 90%
   }
-  svg.hero__btn {
+  .hero__btn {
     margin-top: 2.5rem
   }
   .item-services {
@@ -1307,27 +1326,27 @@ svg.hero__btn {
     flex-direction: column;
     gap: .5rem
   }
-  svg.hero__container {
+  .hero__container {
     padding-bottom: 8.375rem
   }
-  .hero--line svg.hero__container {
+  .hero--line .hero__container {
     padding-bottom: 12.625rem
   }
-  svg.hero__content {
+  .hero__content {
     margin-inline: auto;
     z-index: 3;
     max-width: 40.75rem;
     position: relative
   }
-  .hero--line svg.hero__content {
+  .hero--line .hero__content {
     max-width: 47.1875rem
   }
-  svg.hero__content::after,
-  svg.hero__content::before {
+  .hero__content::after,
+  .hero__content::before {
     content: "";
     position: absolute
   }
-  svg.hero__content::before {
+  .hero__content::before {
     width: 12.25rem;
     height: 11.875rem;
     bottom: -4.6875rem;
@@ -1336,11 +1355,11 @@ svg.hero__btn {
     -webkit-transform: translateX(-130%);
     transform: translateX(-130%)
   }
-  .hero--line svg.hero__content::before {
+  .hero--line .hero__content::before {
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%)
   }
-  svg.hero__content::after {
+  .hero__content::after {
     width: 5.4375rem;
     height: 8.625rem;
     top: 0;
@@ -1349,7 +1368,7 @@ svg.hero__btn {
     transform: translate(250%,-30%);
     background: url("data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"87\" height=\"138\" fill=\"none\"><path fill=\"%23131313\" d=\"m52 133-16 4-9-29 15-4c8-3 11-6 8-15l-3-10-27 8L0 18 61 0l23 78c8 29-4 47-32 55Z\"/></svg>") center/contain no-repeat
   }
-  .hero--line svg.hero__content::after {
+  .hero--line .hero__content::after {
     -webkit-transform: translateX(150%);
     transform: translateX(150%)
   }
@@ -1491,7 +1510,7 @@ svg.hero__btn {
     flex-wrap: wrap;
     justify-content: center
   }
-  .hero--line svg.hero__container::before {
+  .hero--line .hero__container::before {
     width: calc(100% - 240px)
   }
 }
@@ -1590,7 +1609,7 @@ svg.hero__btn {
   .menu-footer__link {
     padding: .625rem 1rem
   }
-  .hero--line svg.hero__container::before {
+  .hero--line .hero__container::before {
     width: calc(100% - 80px)
   }
   .services {
@@ -1696,7 +1715,7 @@ svg.hero__btn {
   .icon-menu::after {
     bottom: .75rem
   }
-  .hero--line svg.hero__container {
+  .hero--line .hero__container {
     padding-bottom: 6.25rem
   }
 }
@@ -1751,27 +1770,27 @@ svg.hero__btn {
   .socials__item:has(.socials__text) {
     flex: 1 1 100%
   }
-  svg.hero__container {
+  .hero__container {
     padding-top: 6.25rem;
     padding-bottom: 2.25rem
   }
-  .hero--line svg.hero__container::before {
+  .hero--line .hero__container::before {
     width: calc(100% - 40px)
   }
-  svg.hero__image.red-line {
+  .hero__image.red-line {
     padding-bottom: 3.4375rem
   }
-  svg.hero__image:not(:last-child) {
+  .hero__image:not(:last-child) {
     margin-bottom: 3rem
   }
-  svg.hero__image img {
+  .hero__image img {
     width: 14.625rem;
     height: 2.125rem
   }
-  svg.hero__title {
+  .hero__title {
     max-width: 75%
   }
-  svg.hero__btn {
+  .hero__btn {
     margin-top: 2.25rem
   }
   .services {
@@ -1984,7 +2003,7 @@ svg.hero__btn {
   }
 }
 @media (max-width:48.06125em)and (min-width:23.4375em)and (max-width:48.06125em) {
-  .hero--line svg.hero__container {
+  .hero--line .hero__container {
     padding-bottom: clamp(6.25rem ,3.6324813442rem + 11.1680795979vw ,9rem)
   }
 }
