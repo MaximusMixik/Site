@@ -94,8 +94,7 @@ html {
   min-width: 375px
 }
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 2.5rem
+  scroll-behavior: smooth
 }
 body {
   line-height: 1.71;
@@ -1271,9 +1270,6 @@ input.wpcf7-not-valid {
     padding-top: 3.125rem;
     padding-bottom: 2.5rem
   }
-  .steps__list {
-    grid-template-columns: repeat(3,1fr)
-  }
   .item-steps__label:not(:last-child) {
     margin-bottom: 2rem
   }
@@ -1304,8 +1300,14 @@ input.wpcf7-not-valid {
   .services__list {
     grid-template-columns: repeat(2,1fr)
   }
+  .steps__list {
+    grid-template-columns: repeat(3,1fr)
+  }
 }
 @media (min-width:48.06125em) {
+  html {
+    scroll-padding-top: 7.5rem
+  }
   .menu__body,
   .menu__list {
     display: flex;
@@ -1519,6 +1521,9 @@ input.wpcf7-not-valid {
   }
 }
 @media (max-width:48.06125em) {
+  html {
+    scroll-padding-top: 1.875rem
+  }
   [class*=__container] {
     max-width: 45rem
   }
