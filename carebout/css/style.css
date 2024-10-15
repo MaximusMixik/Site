@@ -201,6 +201,10 @@ textarea {
   min-width: 0;
   grid-column: 3/4
 }
+.grecaptcha-badge {
+  visibility: hidden;
+  pointer-events: none
+}
 .menu__btn {
   flex: 0 0 auto
 }
@@ -1736,7 +1740,7 @@ input.wpcf7-not-valid {
 @media (max-width:29.99875em) {
   [class*=__container] {
     max-width: none;
-    padding: 0 1.25rem
+    padding-inline: 1.25rem
   }
   .pages-hero {
     padding-top: 3.125rem;
