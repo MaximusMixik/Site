@@ -5489,11 +5489,6 @@ body::after {
   .report__bg {
     display: none
   }
-  .report-form__input,
-  .report-form__textarea {
-    color: var(--text-light-gray);
-    background-color: var(--bg-dark)
-  }
 }
 @media (min-width:26.93625em) and (max-width:62.56125em) {
   @supports (padding-left:clamp(1rem ,-0.6067236842rem + 5.9649122807vw ,3.125rem)) {
