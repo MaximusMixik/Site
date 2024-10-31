@@ -1,5 +1,12 @@
 (() => {
     "use strict";
+    function addLoadedClass() {
+        if (!document.documentElement.classList.contains("loading")) window.addEventListener("load", (function() {
+            setTimeout((function() {
+                document.documentElement.classList.add("loaded");
+            }), 0);
+        }));
+    }
     let _slideUp = (target, duration = 500, showmore = 0) => {
         if (!target.classList.contains("_slide")) {
             target.classList.add("_slide");
@@ -4250,6 +4257,7 @@
     const da = new DynamicAdapt("max");
     da.init();
     window["FLS"] = false;
+    addLoadedClass();
     menuInit();
     spollers();
     headerScroll();

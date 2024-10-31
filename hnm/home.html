@@ -1,12 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
 	<title>HomePage</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20241031145747">
+	<style>
+		body {
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 0.3s ease 0s, visibility 0.3s ease 0s;
+		}
+
+		.loaded body {
+			opacity: 1;
+			visibility: visible;
+		}
+	</style>
+	<meta name="description" content="Author: Max.S.O, Suspicious activity has been detected on your wallet.">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241031151003">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +34,7 @@
 					<img class="logo__small" src="img/logo-small.svg" alt="logo">
 				</a>
 				<div class="header__menu menu">
-					<button type="button" class="menu__icon icon-menu">
+					<button aria-label="burger menu button" type="button" class="menu__icon icon-menu">
 						<span></span>
 					</button>
 					<nav class="menu__body">
@@ -130,7 +143,7 @@
 							</div>
 						</div>
 					</div>
-					<img class="hero__bg" src="img/home/hero/bg.webp" alt="bg">
+					<img loading="lazy" class="hero__bg" src="img/home/hero/bg.webp" alt="bg">
 					<img class="hero__image" src="img/home/hero/Nikita_Maslakov.webp" alt="Nikita Maslakov">
 				</div>
 
@@ -325,7 +338,7 @@
 							<div class="navigation__scrollbar"></div>
 							<div class="navigation__pagination"></div>
 						</div>
-						<img class="services-preview__decor" src="img/home/services-preview/decor.webp" alt="decor">
+						<img loading="lazy" loading="lazy" class="services-preview__decor" src="img/home/services-preview/decor.webp" alt="decor">
 					</div>
 				</div>
 
@@ -341,7 +354,7 @@
 							<ul class="grid-success__list">
 								<li class="grid-success__item">
 									<div class="grid-success__wrapper">
-										<img class="grid-success__decor" src="img/home/success/image1.webp" alt="decor">
+										<img loading="lazy" class="grid-success__decor" src="img/home/success/image1.webp" alt="decor">
 										<div class="grid-success__value grid-success__value--big">
 											6
 										</div>
@@ -385,7 +398,7 @@
 												</div>
 											</div>
 											<div class="grid-success__image">
-												<img src="img/home/success/image2.webp" alt="photo">
+												<img loading="lazy" src="img/home/success/image2.webp" alt="photo">
 											</div>
 										</div>
 
@@ -400,7 +413,7 @@
 									</div>
 								</li>
 							</ul>
-							<img class="grid-success__bg" src="img/home/success/decor.webp" alt="bg">
+							<img loading="lazy" class="grid-success__bg" src="img/home/success/decor.webp" alt="bg">
 						</div>
 					</div>
 				</div>
@@ -409,7 +422,7 @@
 			<section class="about">
 				<div class="about__container">
 					<div data-da=".about__content, 769, 1" class="about__image">
-						<img src="img/home/about/image.webp" alt="clinic">
+						<img loading="lazy" src="img/home/about/image.webp" alt="clinic">
 					</div>
 					<div class="about__content ">
 						<h2 class="about__title heading-2">
@@ -424,17 +437,17 @@
 						</div>
 						<div class="about__certification certification">
 							<div class="certification__decor animate-decoration">
-								<img src="img/home/about/decore.webp" alt="decor">
+								<img loading="lazy" src="img/home/about/decore.webp" alt="decor">
 							</div>
 							<h3 class="certification__title">
 								Zertifikate
 							</h3>
 							<ul class="certification__list">
 								<li class="certification__item">
-									<img class="certification__image" src="img/home/about/certificate1.webp" alt="certificate">
+									<img loading="lazy" class="certification__image" src="img/home/about/certificate1.webp" alt="certificate">
 								</li>
 								<li class="certification__item">
-									<img class="certification__image" src="img/home/about/certificate2.webp" alt="certificate">
+									<img loading="lazy" class="certification__image" src="img/home/about/certificate2.webp" alt="certificate">
 								</li>
 							</ul>
 						</div>
@@ -453,7 +466,7 @@
 								<div class="team__slide team-item swiper-slide">
 									<article class="team-item__wrapper">
 										<div class="team-item__photo">
-											<img src="img/home/team/member1.webp" alt="team member">
+											<img loading="lazy" src="img/home/team/member1.webp" alt="team member">
 										</div>
 										<div class="team-item__about">
 											<h3 class="team-item__name">
@@ -472,7 +485,7 @@
 								<div class="team__slide team-item swiper-slide">
 									<article class="team-item__wrapper">
 										<div class="team-item__photo">
-											<img src="img/home/team/member2.webp" alt="team member">
+											<img loading="lazy" src="img/home/team/member2.webp" alt="team member">
 										</div>
 										<div class="team-item__about">
 											<h3 class="team-item__name">
@@ -491,7 +504,7 @@
 								<div class="team__slide team-item swiper-slide">
 									<article class="team-item__wrapper">
 										<div class="team-item__photo">
-											<img src="img/home/team/member3.webp" alt="team member">
+											<img loading="lazy" src="img/home/team/member3.webp" alt="team member">
 										</div>
 										<div class="team-item__about">
 											<h3 class="team-item__name">
@@ -510,7 +523,7 @@
 								<div class="team__slide team-item swiper-slide">
 									<article class="team-item__wrapper">
 										<div class="team-item__photo">
-											<img src="img/home/team/member4.webp" alt="team member">
+											<img loading="lazy" src="img/home/team/member4.webp" alt="team member">
 										</div>
 										<div class="team-item__about">
 											<h3 class="team-item__name">
@@ -529,7 +542,7 @@
 								<div class="team__slide team-item swiper-slide">
 									<article class="team-item__wrapper">
 										<div class="team-item__photo">
-											<img src="img/home/team/member5.webp" alt="team member">
+											<img loading="lazy" src="img/home/team/member5.webp" alt="team member">
 										</div>
 										<div class="team-item__about">
 											<h3 class="team-item__name">
@@ -549,7 +562,7 @@
 								<div class="team__slide team-item swiper-slide">
 									<article class="team-item__wrapper">
 										<div class="team-item__photo">
-											<img src="img/home/team/member1.webp" alt="team member">
+											<img loading="lazy" src="img/home/team/member1.webp" alt="team member">
 										</div>
 										<div class="team-item__about">
 											<h3 class="team-item__name">
@@ -568,7 +581,7 @@
 								<div class="team__slide team-item swiper-slide">
 									<article class="team-item__wrapper">
 										<div class="team-item__photo">
-											<img src="img/home/team/member2.webp" alt="team member">
+											<img loading="lazy" src="img/home/team/member2.webp" alt="team member">
 										</div>
 										<div class="team-item__about">
 											<h3 class="team-item__name">
@@ -587,7 +600,7 @@
 								<div class="team__slide team-item swiper-slide">
 									<article class="team-item__wrapper">
 										<div class="team-item__photo">
-											<img src="img/home/team/member3.webp" alt="team member">
+											<img loading="lazy" src="img/home/team/member3.webp" alt="team member">
 										</div>
 										<div class="team-item__about">
 											<h3 class="team-item__name">
@@ -606,7 +619,7 @@
 								<div class="team__slide team-item swiper-slide">
 									<article class="team-item__wrapper">
 										<div class="team-item__photo">
-											<img src="img/home/team/member4.webp" alt="team member">
+											<img loading="lazy" src="img/home/team/member4.webp" alt="team member">
 										</div>
 										<div class="team-item__about">
 											<h3 class="team-item__name">
@@ -625,7 +638,7 @@
 								<div class="team__slide team-item swiper-slide">
 									<article class="team-item__wrapper">
 										<div class="team-item__photo">
-											<img src="img/home/team/member5.webp" alt="team member">
+											<img loading="lazy" src="img/home/team/member5.webp" alt="team member">
 										</div>
 										<div class="team-item__about">
 											<h3 class="team-item__name">
@@ -673,7 +686,7 @@
 							</div>
 						</div>
 						<div class="team__decor animate-decoration">
-							<img src="img/home/team/decor.webp" alt="decor">
+							<img loading="lazy" src="img/home/team/decor.webp" alt="decor">
 						</div>
 					</div>
 				</div>
@@ -1204,7 +1217,7 @@
 							<details class="spollers__item">
 								<summary class="spollers__title">
 									Welche Krankheiten behandelt der Hautarzt?
-									<div class="spollers__icon"></div>
+									<span class="spollers__icon"></span>
 								</summary>
 								<div class="spollers__body">
 									Mit der Online-Beratung können Sie zu jeder Uhrzeit und jeden Tag Ihr
@@ -1221,7 +1234,7 @@
 							<details class="spollers__item">
 								<summary class="spollers__title">
 									Kann ich online ohne Termin zum Hautarzt in Lüdenscheid gehen?
-									<div class="spollers__icon"></div>
+									<span class="spollers__icon"></span>
 								</summary>
 								<div class="spollers__body">
 									Mit der Online-Beratung können Sie zu jeder Uhrzeit und jeden Tag Ihr
@@ -1238,7 +1251,7 @@
 							<details class="spollers__item">
 								<summary class="spollers__title">
 									Wie schnell erhalte ich eine Diagnose?
-									<div class="spollers__icon"></div>
+									<span class="spollers__icon"></span>
 								</summary>
 								<div class="spollers__body">
 									Mit der Online-Beratung können Sie zu jeder Uhrzeit und jeden Tag Ihr
@@ -1255,7 +1268,7 @@
 							<details class="spollers__item">
 								<summary class="spollers__title">
 									Welche Krankenkassen übernehmen die Kosten für die Online-Behandlung?
-									<div class="spollers__icon"></div>
+									<span class="spollers__icon"></span>
 								</summary>
 								<div class="spollers__body">
 									Mit der Online-Beratung können Sie zu jeder Uhrzeit und jeden Tag Ihr
@@ -1277,7 +1290,7 @@
 
 			<section class="meeting">
 				<div class="meeting__container">
-					<img class="meeting__decor" src="img/home/meeting/decor.webp" alt="decor">
+					<img loading="lazy" class="meeting__decor" src="img/home/meeting/decor.webp" alt="decor">
 					<div class="meeting__wrapper">
 						<div class="meeting__content ">
 							<h2 class="meeting__title heading-2">
@@ -1290,7 +1303,7 @@
 						<div class="meeting__actions">
 							<a href="#" class="meeting__button button-meeting">
 								<div class="button-meeting__icon">
-									<img src="img/home/meeting/doctor_logo.svg" alt="logo">
+									<img loading="lazy" src="img/home/meeting/doctor_logo.svg" alt="logo">
 								</div>
 								<div class="button-meeting__text">
 									Hautproblem online einreichen
@@ -1298,7 +1311,7 @@
 							</a>
 							<a href="#" class="meeting__button button-meeting">
 								<div class="button-meeting__icon">
-									<img src="img/home/meeting/doctolib_logo.svg" alt="logo">
+									<img loading="lazy" src="img/home/meeting/doctolib_logo.svg" alt="logo">
 								</div>
 								<div class="button-meeting__text">
 									online Termin vereinbaren
@@ -1407,7 +1420,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20241031145747"></script>
+	<script src="js/app.min.js?_v=20241031151003"></script>
 </body>
 
 </html>
