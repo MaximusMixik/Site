@@ -313,7 +313,7 @@ body {
   width: 100%;
   height: .125rem;
   background-color: var(--bg-accent);
-  bottom: 0;
+  bottom: -.25rem;
   right: 0
 }
 .heading-1,
@@ -1739,6 +1739,7 @@ h2 {
   left: 0;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
+  pointer-events: none;
   will-change: transform;
   -webkit-transform-origin: center center;
   transform-origin: center center;
@@ -4055,7 +4056,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     padding: 1.375rem 2.0625rem
   }
   .button-meeting__text {
-    padding: 1.125rem 1.5rem
+    padding: 1.125rem 1.25rem
   }
   .team {
     padding-block: 5rem
