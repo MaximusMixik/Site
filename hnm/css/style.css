@@ -1721,7 +1721,7 @@ h2 {
 .team {
   background-color: var(--bg-accent)
 }
-.team--slider .navigation__pagination {
+.team .navigation__pagination {
   color: #44898a
 }
 .team__title:not(:last-child) {
