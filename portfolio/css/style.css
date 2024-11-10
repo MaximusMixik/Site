@@ -2352,6 +2352,18 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .main__container::after {
     height: 26.875rem
   }
+  .gallery__container::after {
+    width: 26.875rem
+  }
+  .gallery__container::after {
+    height: 26.875rem
+  }
+  .gallery__container._showmore-active::before {
+    width: 26.875rem
+  }
+  .gallery__container._showmore-active::before {
+    height: 26.875rem
+  }
   .why-me__media::after {
     width: 26.875rem
   }
