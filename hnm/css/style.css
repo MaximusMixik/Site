@@ -474,6 +474,51 @@ h2 {
   align-items: center;
   gap: .9375rem
 }
+.announcement-bar {
+  padding-block: 1rem;
+  background-color: #ffe5ad;
+  z-index: 20;
+  transition: opacity .3s ease,-webkit-transform .3s ease;
+  transition: transform .3s ease,opacity .3s ease;
+  transition: transform .3s ease,opacity .3s ease,-webkit-transform .3s ease
+}
+.announcement-bar.hidden {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  display: none
+}
+.announcement-bar__container {
+  display: flex;
+  align-items: center;
+  gap: .5rem 1.5rem
+}
+.announcement-bar__content {
+  font-size: .9375rem
+}
+.announcement-bar__content a {
+  text-decoration: underline;
+  -webkit-text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
+  color: #bd6200
+}
+.announcement-bar__icon {
+  flex: 0 0 2rem;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center
+}
+.announcement-bar__icon--close {
+  flex: 0 0 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer
+}
+.announcement-bar:not(.hidden)+.header._header-scroll {
+  top: .75rem
+}
 .header {
   width: 100%;
   top: 0;
@@ -897,7 +942,7 @@ h2 {
   margin-inline: auto
 }
 .impressum__container {
-  max-width: 52.5rem
+  max-width: 54.5rem
 }
 .impressum__header:not(:last-child),
 .impressum__header>:not(:last-child) {
@@ -917,6 +962,13 @@ h2 {
 .impressum__content h6:not(:last-child) {
   margin-bottom: 1rem
 }
+.impressum__content h2:not(:first-child),
+.impressum__content h3:not(:first-child),
+.impressum__content h4:not(:first-child),
+.impressum__content h5:not(:first-child),
+.impressum__content h6:not(:first-child) {
+  margin-top: 2.5rem
+}
 .impressum__content h3 {
   font-size: 1.75rem;
   font-weight: 500
@@ -935,8 +987,44 @@ h2 {
 .impressum__content h6 {
   font-size: 1.125rem
 }
-.impressum__content section {
-  margin-top: 2.5rem
+.impressum__content a {
+  color: var(--blue);
+  line-height: 1.5;
+  text-decoration-line: underline
+}
+.impressum__content ul li {
+  position: relative;
+  padding-left: 1.25rem
+}
+.impressum__content ul li::before {
+  content: "";
+  position: absolute;
+  width: .3125rem;
+  height: .3125rem;
+  top: .4375rem;
+  left: .4375rem;
+  background-color: var(--accent);
+  border-radius: 50%
+}
+.impressum__content ol,
+.impressum__content ul {
+  line-height: 1.4
+}
+.impressum__content ol:not(:last-child),
+.impressum__content ul:not(:last-child) {
+  margin-bottom: 1.375rem
+}
+.impressum__content ol {
+  padding-left: 1.375rem
+}
+.impressum__content ol li::marker {
+  color: var(--accent)
+}
+.impressum__content ol ol {
+  list-style-type: lower-alpha
+}
+.impressum__content p:not(:last-child) {
+  margin-bottom: 1.375rem
 }
 .info-block {
   display: grid
@@ -3108,6 +3196,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .navigation__scrollbar {
     display: none
   }
+  .announcement-bar__content {
+    flex: 1 1 auto
+  }
   .bottom-footer__wrapper {
     flex-wrap: wrap;
     justify-content: space-between
@@ -3274,6 +3365,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .footer .schedule__body {
     max-width: -webkit-max-content;
     max-width: max-content
+  }
+  .announcement-bar:not(.hidden)+.header {
+    top: 4.25rem
   }
   .header__logo {
     padding-top: .5rem
@@ -3760,6 +3854,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .navigation__scrollbar .swiper-scrollbar-drag {
     background-color: var(--bg-dark-hover)
   }
+  .announcement-bar:not(.hidden)+.header {
+    padding-top: 5.375rem
+  }
   .header__container {
     padding-block: 1.5rem
   }
@@ -3778,8 +3875,6 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     position: absolute;
     width: -webkit-max-content;
     width: max-content;
-    height: -webkit-max-content;
-    height: max-content;
     bottom: 3rem
   }
   .hero__bg {
@@ -3881,6 +3976,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     padding-bottom: 2.5rem;
     border-bottom: .125rem solid #d3e5e5
   }
+  .announcement-bar:not(.hidden)+.header {
+    padding-top: 7.5rem
+  }
+  .announcement-bar:not(.hidden)+.header .menu__body {
+    padding-top: 16.875rem
+  }
   .header__actions {
     order: -1;
     justify-content: center
@@ -3955,6 +4056,20 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .navigation__pagination.swiper-pagination-fraction {
     width: -webkit-max-content;
     width: max-content
+  }
+  .announcement-bar__container {
+    flex-wrap: wrap;
+    justify-content: space-between
+  }
+  .announcement-bar__content {
+    flex: 1 1 100%;
+    order: 3
+  }
+  .announcement-bar__icon--close {
+    order: 2
+  }
+  .announcement-bar:not(.hidden)+.header {
+    padding-top: 10.625rem
   }
   .footer__logo {
     margin-inline: auto
@@ -4139,6 +4254,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     padding: 7rem 2rem 2.5rem 2.5rem;
     border-bottom-left-radius: 1rem
   }
+  .announcement-bar:not(.hidden)+.header .menu__body {
+    padding-top: 12.5rem
+  }
   .header__actions {
     order: 2;
     flex: 1 1 auto;
@@ -4283,6 +4401,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .button--blue:hover {
     background-color: var(--bg-accent-hover)
   }
+  .announcement-bar__content a:hover {
+    text-decoration: none
+  }
   .actions-header__link:hover {
     background-color: var(--bg-accent-hover)
   }
@@ -4313,6 +4434,9 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
   .article__button:hover svg path {
     fill: var(--bg-primary)
+  }
+  .impressum__content a:hover {
+    text-decoration-line: none
   }
   .info-block__link:hover {
     text-decoration-line: none

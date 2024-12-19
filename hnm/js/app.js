@@ -6303,7 +6303,31 @@ PERFORMANCE OF THIS SOFTWARE.
                 resizeTimeout = setTimeout(applyCorners, 100);
             }));
         }
+        function setCookie(name, value, days) {
+            const date = new Date;
+            date.setTime(date.getTime() + days * 24 * 60 * 60 * 1e3);
+            document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
+        }
+        function getCookie(name) {
+            const cookies = document.cookie.split("; ");
+            for (let i = 0; i < cookies.length; i++) {
+                const [key, value] = cookies[i].split("=");
+                if (key === name) return value;
+            }
+            return null;
+        }
+        function cookiesActions() {
+            const notification = document.getElementById("announcement-bar");
+            const closeButton = document.getElementById("close-bar");
+            if (!notification) return;
+            if (getCookie("notification_hidden") === "true") notification.classList.add("hidden");
+            closeButton.addEventListener("click", (() => {
+                notification.classList.add("hidden");
+                setCookie("notification_hidden", "true", 365);
+            }));
+        }
         window.onload = () => {
+            cookiesActions();
             borderRadiusFunction();
         };
         window["FLS"] = false;
