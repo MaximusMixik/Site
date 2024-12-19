@@ -3875,6 +3875,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     position: absolute;
     width: -webkit-max-content;
     width: max-content;
+    height: auto;
     bottom: 3rem
   }
   .hero__bg {
